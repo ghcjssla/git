@@ -16,7 +16,7 @@ public class MemberDAOImpl implements MemberDAO{
 	@Inject
 	private SqlSession sqlSession;
 	
-	private static final String packageRoot = "com.happylopers.first.";
+	private static final String packageRoot = "com.happylopers.first.mappers.";
 	private static final String namespace = packageRoot+"MemberMapper";
 
 	@Override

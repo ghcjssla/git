@@ -2,8 +2,10 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
-<mapper namespace="org.zerock.mapper.MemberMapper">
+<!-- 
+패키지 명이 중복된다 중복문제가 보인다 해결방법 있을꺼다 변수선언해서 저기다 박아 놓자
+ -->
+<mapper namespace="com.happylopers.first.mappers.MemberMapper">
 
 	<select id="getTime" resultType="string">
 		select now()
@@ -14,12 +16,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		(#{userid}, #{userpw}, #{username}, #{email})
 	</insert>
 	
-	<select id="selectMember" resultType="org.zerock.domain.MemberVO">
+	<select id="selectMember" resultType="com.happylopers.first.vo.MemberVO">
 	select * from tbl_member
 	where userid = #{userid}
 	</select>
 	
-	<select id="readWithPW" resultType="org.zerock.domain.MemberVO">
+	<select id="readWithPW" resultType="com.happylopers.first.vo.MemberVO">
 	select * from tbl_member where userid = #{userid} and userpw = #{userpw}
 	</select>
 	
