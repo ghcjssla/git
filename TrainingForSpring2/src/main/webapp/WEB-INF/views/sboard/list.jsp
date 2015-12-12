@@ -92,7 +92,7 @@
 
 							<c:if test="${pageMaker.prev}">
 								<li><a
-									href="listPage${pageMaker.makeSearch(pageMaker.startPage - 1) }">&laquo;</a></li>
+									href="list${pageMaker.makeSearch(pageMaker.startPage - 1) }">&laquo;</a></li>
 							</c:if>
 
 							<c:forEach begin="${pageMaker.startPage }"
@@ -105,7 +105,7 @@
 
 							<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
 								<li><a
-									href="listPage${pageMaker.makeSearch(pageMaker.endPage +1) }">&raquo;</a></li>
+									href="list${pageMaker.makeSearch(pageMaker.endPage +1) }">&raquo;</a></li>
 							</c:if>
 
 						</ul>
@@ -142,7 +142,7 @@
 		
 		var jobForm = $("#jobForm");
 		jobForm.find("[name='page']").val(targetPage);
-		jobForm.attr("action","/board/listPage").attr("method", "get");
+		jobForm.attr("action","/board/list").attr("method", "get");
 		jobForm.submit();
 	});
 	 */
