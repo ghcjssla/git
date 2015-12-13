@@ -45,7 +45,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="count" resultType="int">
 		select count(bno) from tbl_reply where bno =#{bno}
 	</select>
-
+    
+    <select id="getBno" resultType="int">
+        select bno from tbl_reply where rno = #{rno}
+    </select>
 
 </mapper>
 
