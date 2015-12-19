@@ -1,0 +1,879 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Spring</title>
+  <link rel="alternate" href="https://spring.io/blog" />
+  <link rel="self" href="https://spring.io/blog.atom" />
+  <id>http://spring.io/blog.atom</id>
+  <icon>https://spring.io/favicon.ico</icon>
+  <updated>2015-12-18T19:01:07Z</updated>
+  <entry>
+    <title>Spring IO Platform 2.0.1.RELEASE</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/12/18/spring-io-platform-2-0-1-release" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Andy Wilkinson</name>
+    </author>
+    <id>tag:spring.io,2015-12-18:2329</id>
+    <updated>2015-12-18T19:01:07Z</updated>
+    <content type="html">&lt;p&gt;&lt;a href="http://platform.spring.io/platform"&gt;Spring IO Platform&lt;/a&gt; 2.0.1.RELEASE is now available from both &lt;a href="http://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and &lt;a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3Aio.spring.platform"&gt;Maven Central&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;This maintenance release upgrades the versions of a number of the projects in the Platform to pick up their latest maintenance releases:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Reactor 2.0.7.RELEASE&lt;/li&gt;
+  &lt;li&gt;Spring Batch 3.0.6.RELEASE&lt;/li&gt;
+  &lt;li&gt;Spring Boot 1.3.1.RELEASE&lt;/li&gt;
+  &lt;li&gt;Spring Cloud Connectors 1.2.1.RELEASE&lt;/li&gt;
+  &lt;li&gt;Spring Framework 4.2.4.RELEASE&lt;/li&gt;
+  &lt;li&gt;Spring Data Gosling SR2A&lt;/li&gt;
+  &lt;li&gt;Spring Integration 4.2.4.RELEASE&lt;/li&gt;
+  &lt;li&gt;Spring Integration Kafka 1.2.1.RELEASE&lt;/li&gt;
+  &lt;li&gt;Spring REST Docs 1.0.1.RELEASE&lt;/li&gt;
+  &lt;li&gt;Spring Social 1.1.4.RELEASE&lt;/li&gt;
+  &lt;li&gt;Spring Social Facebook 2.0.3.RELEASE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The versions of many third-party dependencies have also been updated.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://platform.spring.io/platform"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-io/platform"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-io/platform/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/platform/docs/2.0.1.RELEASE/reference/htmlsingle"&gt;Documentation&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring IO Platform 1.1.5.RELEASE</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/12/18/spring-io-platform-1-1-5-release" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Andy Wilkinson</name>
+    </author>
+    <id>tag:spring.io,2015-12-18:2327</id>
+    <updated>2015-12-18T19:00:51Z</updated>
+    <content type="html">&lt;p&gt;&lt;a href="http://platform.spring.io/platform"&gt;Spring IO Platform&lt;/a&gt; 1.1.5.RELEASE is now available from both &lt;a href="http://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and &lt;a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3Aio.spring.platform"&gt;Maven Central&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;This maintenance release upgrades the versions of a number of the projects in the Platform to pick up their latest maintenance releases:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Batch 3.0.6.RELEASE&lt;/li&gt;
+  &lt;li&gt;Spring Boot 1.2.8.RELEASE&lt;/li&gt;
+  &lt;li&gt;Spring Framework 4.1.9.RELEASE&lt;/li&gt;
+  &lt;li&gt;Spring Integration 4.1.8.RELEASE&lt;/li&gt;
+  &lt;li&gt;Spring Security 3.2.9.RELEASE&lt;/li&gt;
+  &lt;li&gt;Spring Security OAuth 2.0.8.RELEASE&lt;/li&gt;
+  &lt;li&gt;Spring Social 1.1.4.RELEASE&lt;/li&gt;
+  &lt;li&gt;Spring Social Facebook 2.0.3.RELEASE&lt;/li&gt;
+  &lt;li&gt;Spring Web Services 2.2.3.RELEASE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The versions of many third-party dependencies have also been updated.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://platform.spring.io/platform"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-io/platform"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-io/platform/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/platform/docs/1.1.5.RELEASE/reference/htmlsingle"&gt;Documentation&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Data release train Gosling SR2 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/12/18/spring-data-release-train-gosling-sr2-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Oliver Gierke</name>
+    </author>
+    <id>tag:spring.io,2015-12-18:2326</id>
+    <updated>2015-12-18T18:24:00Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the Spring Data team I&amp;rsquo;d like to announce the availability of the second service release of the Spring Data Gosling release train. The release ships &lt;a href="https://jira.spring.io/issues/?filter=15342"&gt;45 issues fixed&lt;/a&gt; and contains an important bugfix for an issue in Spring Data JPA&amp;rsquo;s method metadata detection. Thus it&amp;rsquo;s a recommended upgrade for all Gosling users and also users of previous release trains.&lt;/p&gt;
+&lt;p&gt;The release is be included in the &lt;a href="https://spring.io/blog/2015/12/18/spring-boot-1-3-1-and-1-2-8-available-now"&gt;just released Spring Boot 1.3.1 release&lt;/a&gt; which should make the upgrade a non-issue. If you&amp;rsquo;re using the BOM, make sure you upgrade to &lt;code&gt;Gosling-SR2A&lt;/code&gt; (note the trailing A). A tiny glitch during the release forced us into that slightly weird version number.&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s the list of modules involved:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Data Commons 1.11.2 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-commons/1.11.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/commons/docs/1.11.2.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/commons/docs/1.11.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/commons/docs/1.11.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data JPA 1.9.2 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-jpa/1.9.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/jpa/docs/1.9.2.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/jpa/docs/1.9.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/jpa/docs/1.9.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data MongoDB 1.8.2 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-mongodb/1.8.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/mongodb/docs/1.8.2.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/mongodb/docs/1.8.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/mongodb/docs/1.8.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Redis 1.6.2 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-redis/1.6.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/redis/docs/1.6.2.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/redis/docs/1.6.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/redis/docs/1.6.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data REST 2.4.2 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-rest-webmvc/2.4.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/rest/docs/2.4.2.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/rest/docs/2.4.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/rest/docs/2.4.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Solr 1.5.2 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-solr/1.5.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/solr/docs/1.5.2.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/solr/docs/1.5.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/solr/docs/1.5.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data KeyValue 1.0.2 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-keyvalue/1.0.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/keyvalue/docs/1.0.2.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/keyvalue/docs/1.0.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/keyvalue/docs/1.0.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Gemfire 1.7.2 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-gemfire/1.7.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/gemfire/docs/1.7.2.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/gemfire/docs/1.7.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/gemfire/docs/1.7.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Elasticsearch 1.3.2 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-elasticsearch/1.3.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/elasticsearch/docs/1.3.2.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/elasticsearch/docs/1.3.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/elasticsearch/docs/1.3.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Neo4j 3.4.2 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-neo4j/3.4.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/neo4j/docs/3.4.2.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/neo4j/docs/3.4.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/neo4j/docs/3.4.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Cassandra 1.3.2 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-cassandra/1.3.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/cassandra/docs/1.3.2.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/cassandra/docs/1.3.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/cassandra/docs/1.3.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Couchbase 1.4.2 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-couchbase/1.4.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/couchbase/docs/1.4.2.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/couchbase/docs/1.4.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/couchbase/docs/1.4.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Boot 1.3.1 and 1.2.8 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/12/18/spring-boot-1-3-1-and-1-2-8-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>St?phane Nicoll</name>
+    </author>
+    <id>tag:spring.io,2015-12-18:2328</id>
+    <updated>2015-12-18T14:25:20Z</updated>
+    <content type="html">&lt;p&gt;Spring Boot 1.2.8 and 1.3.1 have been released and are available now from &lt;a href="http://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and &lt;a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework.boot%22"&gt;Maven Central&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;If you haven&amp;rsquo;t tried Spring Boot 1.3 yet, now may be the time to do so: 1.3.1 is a maintenance release that brings &lt;a href="https://github.com/spring-projects/spring-boot/issues?q=milestone%3A1.3.1+is%3Aclosed"&gt;126 fixes and improvements&lt;/a&gt;, almost half of those being pull requests. Thanks again to our amazing contributors!&lt;/p&gt;
+&lt;p&gt;Spring Boot 1.2.8 is a maintenance release with &lt;a href="https://github.com/spring-projects/spring-boot/issues?q=milestone%3A1.2.8+is%3Aclosed"&gt;a selection of fixes and improvements&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As we have fixed a &lt;a href="https://github.com/spring-projects/spring-boot/issues/4763"&gt;security vulnerability&lt;/a&gt;, we highly recommend an immediate upgrade for all Spring Boot users.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle"&gt;Documentation&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Framework 3.2.16 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/12/17/spring-framework-3-2-16-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>St?phane Nicoll</name>
+    </author>
+    <id>tag:spring.io,2015-12-17:2325</id>
+    <updated>2015-12-17T14:15:05Z</updated>
+    <content type="html">&lt;p&gt;After &lt;a href="https://spring.io/blog/2015/12/17/spring-framework-4-2-4-4-1-9-released"&gt;4.2.4 and 4.1.9 earlier today&lt;/a&gt;, it is my pleasure to announce that Spring Framework &lt;a href="https://jira.spring.io/secure/ReleaseNote.jspa?projectId=10000&amp;version=15402"&gt;3.2.16 is now available&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-framework/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework"&gt;GitHub&lt;/a&gt; | &lt;a href="https://jira.spring.io/browse/SPR"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/htmlsingle/"&gt;Documentation&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Framework 4.2.4 &amp; 4.1.9 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/12/17/spring-framework-4-2-4-4-1-9-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Juergen Hoeller</name>
+    </author>
+    <id>tag:spring.io,2015-12-15:2322</id>
+    <updated>2015-12-17T10:00:00Z</updated>
+    <content type="html">&lt;p&gt;Dear Spring community,&lt;/p&gt;
+&lt;p&gt;It is my pleasure to announce that Spring Framework &lt;a href="https://jira.spring.io/jira/secure/ReleaseNote.jspa?projectId=10000&amp;version=15353"&gt;4.2.4&lt;/a&gt; and &lt;a href="https://jira.spring.io/jira/secure/ReleaseNote.jspa?projectId=10000&amp;version=15349"&gt;4.1.9&lt;/a&gt; are available from &lt;a href="https://repo.spring.io/"&gt;repo.spring.io&lt;/a&gt; and &lt;a href="http://search.maven.org/"&gt;Maven Central&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;4.2.4 addresses a few regressions in the 4.2.x line and includes many fixes and enhancements, with no immediate issues remaining. &lt;b&gt;4.2.4 is a recommended upgrade for all 4.x users now.&lt;/b&gt; Please note that the 4.2.x line moves into maintenance mode at this point, with a low-volume &lt;a href="https://jira.spring.io/browse/SPR/fixforversion/15439"&gt;4.2.5 maintenance release&lt;/a&gt; scheduled for mid February.&lt;/p&gt;
+&lt;p&gt;4.1.9 is designed as the last release in the 4.1.x line, backporting applicable bug fixes as well as selected recent enhancements from 4.2.3 / 4.2.4. &lt;b&gt;Note that this is the ultimate 4.1.x release: Your next upgrade step beyond 4.1.9 is the above-mentioned 4.2.5 in February, even for compatibility issues and security vulnerabilities.&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;In the meantime, development towards 4.3 has started already, soon to be found in our master branch. We are aiming for a &lt;b&gt;4.3 release candidate in early April&lt;/b&gt; and a &lt;b&gt;4.3 GA release in June&lt;/b&gt;. So if you happen to be interested in the latest developments there, check out &lt;a href="https://jira.spring.io/browse/SPR/fixforversion/15350"&gt;4.3 RC1 issues&lt;/a&gt; on JIRA and 4.3 build snapshots as they become available&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Cheers,&lt;br/&gt;Juergen&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>This Week in Spring - December 15th, 2015</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/12/16/this-week-in-spring-december-15th-2015" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2015-12-16:2324</id>
+    <updated>2015-12-16T00:21:08Z</updated>
+    <content type="html">&lt;p&gt;Wow! It&amp;rsquo;s December 15th, friends; many of us on this planet will &lt;em&gt;soon&lt;/em&gt; celebrate a new year! Hopefully, you&amp;rsquo;ve done a better job than I have of getting all my new year&amp;rsquo;s resolutions finished in time for 2016! If you haven&amp;rsquo;t, at least catching up on the latest and greatest in the Pivotal community won&amp;rsquo;t be insurmountable! Let&amp;rsquo;s see what&amp;rsquo;s happened this week..&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Greg Turnquist&amp;rsquo;s epic blog series on using &lt;a href="https://spring.io/blog/2015/12/15/check-out-our-new-tutorial-react-js-and-spring-data-rest"&gt;Spring with React.js is now available online as a tutorial&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Batch lead Michael Minella just announced &lt;a href="https://spring.io/blog/2015/12/11/spring-batch-3-0-6-release-is-now-available"&gt;Spring Batch 3.0.6 which contains lots of great contributions and bug fixes from the community&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;the good Dr. David Syer put together a &lt;em&gt;very&lt;/em&gt; &lt;a href="https://spring.io/blog/2015/12/10/spring-boot-memory-performance"&gt;good look at Spring Boot&amp;rsquo;s memory characteristics in various configurations&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring RestDocs &lt;a href="https://spring.io/blog/2015/12/10/spring-rest-docs-1-0-1-release"&gt;lead Andy Wilkinson just announced Spring Rest Docs 1.0.1&lt;/a&gt; which is maintenance release that includes a number of changes, including improved support for documenting attributes in XML payloads. An immediate&lt;/li&gt;
+  &lt;li&gt;Spring Social lead Craig Walls &lt;a href="https://spring.io/blog/2015/12/09/spring-social-facebook-2-0-3-released"&gt;has been hard at work adapting Spring Social to a recent breaking change&lt;/a&gt; in Facebook&amp;rsquo;s Graph API which prevented connections and sign-in from working with Spring Social Facebook. In addition, the API binding has been adjusted to target Graph API v2.5.&lt;/li&gt;
+  &lt;li&gt;Duncan Brown wrote a great look at &lt;a href="https://dzone.com/articles/do-not-publish-migrating-spring-data-neo4j-3x-to-4"&gt;how to migrate Spring Data Neo4J 3.0 projects to the new 4.0 line&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I &lt;em&gt;think&lt;/em&gt; this Chinese-language &lt;a href="http://www.jianshu.com/p/a35b25f4c1ec"&gt;post introduces how to use Spring Boot&lt;/a&gt;, in which case - enjoy!&lt;/li&gt;
+  &lt;li&gt;Couchbase&amp;rsquo;s Simon Basl? put together a nice post on using Spring Data Couchbase and the various things it supports, &lt;a href="http://blog.couchbase.com/2015/december/couchbase-spring-cache"&gt;including the &lt;code&gt;Cache&lt;/code&gt; abstraction and Spring Data repositories&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;the &lt;em&gt;AppMite&lt;/em&gt; blog has a neat introduction to standing up &lt;a href="http://appmite.com/spring-with-backbone-marionette-hello-world/"&gt;a simple Spring Boot application to serve as the backend for a Backbone + Marionette-based JavaScript client&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Marko ?valjek has put together a very cool post on handling stream &lt;a href="http://msvaljek.blogspot.com/2015/12/stream-processing-with-spring-kafka_44.html"&gt;processing with Spring Boot, Kafka, and more&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Duy Hai Doan, an Apache Cassandra evangelist at DataStax, put together a very &lt;a href="https://academy.datastax.com/demos/getting-started-killrchat-example-data-model-messaging"&gt;cool post on a sample application, &lt;em&gt;KillrChat&lt;/em&gt;, based on Spring Boot, Cassandra, and more&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Want a &lt;a href="https://www.youtube.com/watch?v=3xrRIesGneg"&gt;quick introduction to using Spring Boot and AOP&lt;/a&gt;?&lt;/li&gt;
+  &lt;li&gt;Christoph Strobl&amp;rsquo;s talk from SpringOne2GX 2015, &lt;a href="http://www.infoq.com/presentations/spring-boot-search"&gt;&lt;em&gt;Boot Your Search with Spring&lt;/em&gt;&lt;/a&gt;, is now available online.&lt;/li&gt;
+  &lt;li&gt;Learn about &lt;a href="http://toedter.com/2015/12/13/creating-colorful-banners-for-spring-boot-applications/"&gt;Spring Boot 1.3&amp;rsquo;s new support for colored banners&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Recently, a friend of the community, &lt;a href="https://twitter.com/craigburke1"&gt;Craig Burke&lt;/a&gt;, made an &lt;a href="https://github.com/spring-projects/spring-boot/pull/4647"&gt;&lt;em&gt;epic&lt;/em&gt; pull-request&lt;/a&gt; after Spring Boot 1.3 debuted the aforementioned support for color banner ASCII art: a &lt;code&gt;Banner&lt;/code&gt; implementation that &lt;em&gt;also&lt;/em&gt; knows to look for &lt;code&gt;banner.jpg&lt;/code&gt;, not just &lt;code&gt;banner.txt&lt;/code&gt;! Seizing upon this, I created a simple Boot-based CLI and &lt;a href="http://bootiful-banners.cfapps.io/banners"&gt;a Cloud Foundry web service&lt;/a&gt; whose &lt;a href="http://github.com/joshlong/bootiful-banners"&gt;code are available online&lt;/a&gt; - thanks Craig!&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Check out our new tutorial -&gt; React.js and Spring Data REST</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/12/15/check-out-our-new-tutorial-react-js-and-spring-data-rest" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Greg Turnquist</name>
+    </author>
+    <id>tag:spring.io,2015-12-15:2323</id>
+    <updated>2015-12-15T18:07:29Z</updated>
+    <content type="html">&lt;p&gt;Greetings Spring Community,&lt;/p&gt;
+&lt;p&gt;I hope you enjoyed my blog series on React.js + Spring Data REST. In that series, you got to build up a rich web app with hypermedia controls, conditional operations, messaging, and security. &lt;/p&gt;
+&lt;p&gt;To make things even better, that series has been bundled up and converted into a tutorial: &lt;a href="https://spring.io/guides/tutorials/react-and-spring-data-rest/"&gt;https://spring.io/guides/tutorials/react-and-spring-data-rest/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Some key updates made along the way:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;require.js has been replaced with webpack as the JavaScript module builder/loader of choice&lt;/li&gt;
+  &lt;li&gt;The code is upgraded to ES6. This means that some of JavaScript&amp;rsquo;s newest features like classes, arrow functions, and more are being used.&lt;/li&gt;
+  &lt;li&gt;bower has been replaced by npm as the package manager of choice&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Hopefully, this tutorial will give you new ideas about building frontend/backend apps in the future based on the Spring portfolio.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Batch 3.0.6.RELEASE is now available</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/12/11/spring-batch-3-0-6-release-is-now-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Michael Minella</name>
+    </author>
+    <id>tag:spring.io,2015-12-11:2321</id>
+    <updated>2015-12-11T21:55:32Z</updated>
+    <content type="html">&lt;p&gt;We are pleased to announce that Spring Batch 3.0.6.RELEASE is now available via Maven Central, Github and the Pivotal download repository. This is the 6th maintenance release for the 3.0.x branch of Spring Batch and addresses a number of minor bug fixes and enhancements. Many thanks to all of those who submitted the many &lt;a href="https://github.com/spring-projects/spring-batch/pulls"&gt;pull requests&lt;/a&gt; that went into this release.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-batch"&gt;Spring Batch Home&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-batch"&gt;Source on GitHub&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-batch/"&gt;Reference Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We look forward to your feedback in &lt;a href="https://jira.spring.io/browse/BATCH"&gt;Jira&lt;/a&gt;, &lt;a href="http://stackoverflow.com/questions/tagged/spring-batch"&gt;StackOverflow&lt;/a&gt;, or to me directly via Twitter &lt;a href="twitter.com/michaelminella"&gt;@michaelminella&lt;/a&gt;.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Boot Memory Performance</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/12/10/spring-boot-memory-performance" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Dave Syer</name>
+    </author>
+    <id>tag:spring.io,2015-12-10:2320</id>
+    <updated>2015-12-10T17:31:00Z</updated>
+    <content type="html">&lt;p&gt;It has sometimes been suggested that Spring and Spring Boot are &amp;ldquo;heavyweight&amp;rdquo;, perhaps just because they allow apps to punch above their weight, providing a lot of features for not very much user code. In this article we concentrate on memory usage and ask if we can quantify the effect of using Spring? Specifically we would like to know more about the real overhead of using Spring compared to other JVM applications. We start by creating a basic application with Spring Boot, and look at a few different ways to measure it when it is running. Then we look at some comparison points: plain Java apps, apps that use Spring but not Spring Boot, an app that uses Spring Boot but no autoconfiguration, and some Ratpack sample apps.&lt;/p&gt;&lt;h2&gt;&lt;a href="#vanilla-spring-boot-app" class="anchor" name="vanilla-spring-boot-app"&gt;&lt;/a&gt;Vanilla Spring Boot App&lt;/h2&gt;
+&lt;p&gt;As a baseline we build a static app with a few webjars and &lt;code&gt;spring.resources.enabled=true&lt;/code&gt;. This is perfectly fine for serving nice-looking static content maybe with a REST endpoint or two. The source code for the app we used to test is &lt;a href="https://github.com/dsyer/spring-boot-memory-blog/blob/master/demo"&gt;in github&lt;/a&gt;. You can build it with the &lt;code&gt;mvnw&lt;/code&gt; wrapper script if you have a JDK 1.8 available and on your path (&lt;code&gt;mvnw package&lt;/code&gt;). It can be launched like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;$ java -Xmx32m -Xss256k -jar target/demo-0.0.1-SNAPSHOT.jar
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The we add some load, just to warm up the thread pools and force all the code paths to be exercised:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;$ ab -n 2000 -c 4 http://localhost:8080/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can try and limit threads a bit in &lt;code&gt;application.properties&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;server.tomcat.max-threads: 4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;but in the end it doesn&amp;rsquo;t make a lot of difference to the numbers. We conclude from the analysis below that it would save at most a MB with the stack size we are using. All the Spring Boot webapps we analyse have this same configuration.&lt;/p&gt;
+&lt;p&gt;We might have to worry about how big the classpath is, in order to estimate what happens to the memory. Despite some claims in the internet that the JVM memory maps all jars on the classpath, we actually don&amp;rsquo;t find any evidence that the size of the classpath has any effect on the running app. For reference, the size of the dependency jars (not including JDK) in the vanilla sample is 18MB:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;$ jar -tvf  target/demo-0.0.1-SNAPSHOT.jar | grep lib/.*.jar | awk &amp;#39;{tot+=$1;} END {print tot}&amp;#39;&#xD;
+18893563
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This includes Spring Boot Web and Actuator starters, plus 3 or 4 webjars for static resources and the webjar locator. A completely minimal Spring Boot application including Spring and some logging but no web server would be around 5MB of jars.&lt;/p&gt;&lt;h3&gt;&lt;a href="#jvm-tools" class="anchor" name="jvm-tools"&gt;&lt;/a&gt;JVM Tools&lt;/h3&gt;
+&lt;p&gt;To measure memory usage there are some tools in the JVM. You can get quite a lot of useful information from JConsole or JVisualVM (with the JConsole plugin so you can inspect MBeans).&lt;/p&gt;
+&lt;p&gt;Heap usage for our vanilla app is a saw tooth, bounded above by the heap size and below by the amount of memory used in a quiescent state. The average weighs in at roughly 25MB for an app under load (and 22MB after a manual GC). JConsole also reports 50MB non-heap usage (which is the same as you get from the &lt;code&gt;java.lang:type=Memory&lt;/code&gt; MBean). The non-heap usage breaks down as Metaspace: 32MB, Compressed Class Space: 4MB, Code Cache: 13MB (you can get these numbers from the &lt;code&gt;java.lang:type=MemoryPool,name=*&lt;/code&gt; MBeans). There are 6200 classes and 25 threads, including a few that are added by the monitoring tool that we use to measure them.&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s a graph of the heap usage from a quiescent app under load,&lt;br/&gt;followed by a manual garbage collection (the double nick in the&lt;br/&gt;middle) and a new equilibrium with a lower heap usage.&lt;/p&gt;
+&lt;img src="https://raw.githubusercontent.com/dsyer/spring-boot-memory-blog/master/manual-gc-web.png" width="80%"/&gt;
+&lt;p&gt;Some tools in the JVM other than JConsole might also be&lt;br/&gt;interesting. The first is &lt;code&gt;jps&lt;/code&gt; which is useful for getting the&lt;br/&gt;process id of the app you want to inspect with the other tools:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;$ jps&#xD;
+4289 Jps&#xD;
+4330 demo-0.0.1-SNAPSHOT.jar
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then we have the &lt;code&gt;jmap&lt;/code&gt; histogram:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;$ jmap -histo 4330 | head&#xD;
+&#xD;
+ num     #instances         #bytes  class name&#xD;
+----------------------------------------------&#xD;
+   1:          5241        6885088  [B&#xD;
+   2:         21233        1458200  [C&#xD;
+   3:          2548        1038112  [I&#xD;
+   4:         20970         503280  java.lang.String&#xD;
+   5:          6023         459832  [Ljava.lang.Object;&#xD;
+   6:         13167         421344  java.util.HashMap$Node&#xD;
+   7:          3386         380320  java.lang.Class&#xD;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This data is of limited use because you can&amp;rsquo;t trace the &amp;ldquo;big&amp;rdquo; objects back to their owners. For that you need a more fully featured profiler, like YourKit. YourKit does the aggregation for you and presents a list (although the details of how it does that are rather unclear).&lt;/p&gt;
+&lt;p&gt;Classloader statistics might also be revealing, and &lt;code&gt;jmap&lt;/code&gt; has a way to inspect the classloaders in an app. It needs to run as root:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;$ sudo ~/Programs/jdk1.8.0/bin/jmap -clstats 4330&#xD;
+Attaching to process ID 4330, please wait...&#xD;
+Debugger attached successfully.&#xD;
+Server compiler detected.&#xD;
+JVM version is 25.60-b23&#xD;
+finding class loader instances ..done.&#xD;
+computing per loader stat ..done.&#xD;
+please wait.. computing liveness....................................liveness analysis may be inaccurate ...&#xD;
+class_loader  classes  bytes  parent_loader  alive?  type&#xD;
+&#xD;
+&amp;lt;bootstrap&amp;gt;	2123	3609965	  null  	live	&amp;lt;internal&amp;gt;&#xD;
+0x00000000f4b0d730	1	1476	0x00000000f495c890	dead	sun/reflect/DelegatingClassLoader@0x0000000100009df8&#xD;
+0x00000000f5a26120	1	1483	0x00000000f495c890	dead	sun/reflect/DelegatingClassLoader@0x0000000100009df8&#xD;
+0x00000000f52ba3a8	1	1472	  null  	dead	sun/reflect/DelegatingClassLoader@0x0000000100009df8&#xD;
+0x00000000f5a30520	1	880	0x00000000f495c890	dead	sun/reflect/DelegatingClassLoader@0x0000000100009df8&#xD;
+0x00000000f495c890	3972	6362902	0x00000000f495c8f0	dead	org/springframework/boot/loader/LaunchedURLClassLoader@0x0000000100060828&#xD;
+0x00000000f5b639b0	1	1473	0x00000000f495c890	dead	sun/reflect/DelegatingClassLoader@0x0000000100009df8&#xD;
+0x00000000f4b80a30	1	1473	0x00000000f495c890	dead	sun/reflect/DelegatingClassLoader@0x0000000100009df8&#xD;
+...&#xD;
+&#xD;
+total = 93	6300	10405986	    N/A    	alive=1, dead=92	    N/A
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;There are loads of &amp;ldquo;dead&amp;rdquo; entries, but there is also a warning that the liveness information is not accurate. A manual GC doesn&amp;rsquo;t get rid of them.&lt;/p&gt;&lt;h3&gt;&lt;a href="#kernel-memory-tools" class="anchor" name="kernel-memory-tools"&gt;&lt;/a&gt;Kernel Memory Tools&lt;/h3&gt;
+&lt;p&gt;You would think that a Linux OS would provide plenty of insight into a running process, and it does, but Java processes are notoriously hard to analyse. This &lt;a href="http://stackoverflow.com/questions/561245/virtual-memory-usage-from-java-under-linux-too-much-memory-used"&gt;popular SO link&lt;/a&gt; talks about some of the problems in general. Lets have a look at some of the tools that are available and see what they tell us about our app.&lt;/p&gt;
+&lt;p&gt;First up is the good old &lt;code&gt;ps&lt;/code&gt; (the tool you use to look at processes on the command line). You can get a lot of the same information from &lt;code&gt;top&lt;/code&gt;. Here&amp;rsquo;s our application process:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;$ ps -au&#xD;
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND&#xD;
+dsyer     4330  2.4  2.1 2829092 169948 pts/5  Sl   18:03   0:37 java -Xmx32m -Xss256k -jar target/demo-0.0.1-SNAPSHOT.jar&#xD;
+...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;RSS (Resident Set Size) values are in the range 150-190MB according to &lt;code&gt;ps&lt;/code&gt;. There is a tool called &lt;code&gt;smem&lt;/code&gt; that is supposed to give a more sanitized view, and to accurately reflect non-shared memory, but the values there (for instance of PSS) aren&amp;rsquo;t that different. Interestingly the PSS values for a non-JVM process are usually ?*significantly*? lower than RSS, whereas for a JVM they are comparable. The JVM is very jealous of its memory.&lt;/p&gt;
+&lt;p&gt;A lower level tool is &lt;code&gt;pmap&lt;/code&gt;, where we can look at the memory&lt;br/&gt;allocations assigned to a process. Numbers from &lt;code&gt;pmap&lt;/code&gt; don&amp;rsquo;t seem to&lt;br/&gt;make much sense either:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;$ pmap 4330&#xD;
+0000000000400000      4K r-x-- java&#xD;
+0000000000600000      4K rw--- java&#xD;
+000000000184c000    132K rw---   [ anon ]&#xD;
+00000000fe000000  36736K rw---   [ anon ]&#xD;
+00000001003e0000 1044608K -----   [ anon ]&#xD;
+...&#xD;
+00007ffe2de90000      8K r-x--   [ anon ]&#xD;
+ffffffffff600000      4K r-x--   [ anon ]&#xD;
+ total          3224668K
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;i.e. over 3GB for a process that we know is only using 80MB. Just counting the &amp;lsquo;&amp;mdash;&amp;ndash;&amp;rsquo; entries gives you nearly all the 3GB. At least that&amp;rsquo;s consistent with the VSZ numbers from &lt;code&gt;ps&lt;/code&gt;, but not very useful for capacity management.&lt;/p&gt;
+&lt;p&gt;Someone commented that the RSS values were accurate on his machine, which is interesting. They definitely didn&amp;rsquo;t work for me (Ubuntu 14.04 on Lenovo Thinkpad). Also, here&amp;rsquo;s another interesting article on &lt;a href="https://www.ibm.com/developerworks/community/blogs/kevgrig/entry/linux_glibc_2_10_rhel_6_malloc_may_show_excessive_virtual_memory_usage?lang=en"&gt;JVM memory stats in Linux&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#scale-up-processes" class="anchor" name="scale-up-processes"&gt;&lt;/a&gt;Scale up Processes&lt;/h3&gt;
+&lt;p&gt;A good test of how much memory is actually being used by a process is to keep launching more of them until the operating system starts to crumple. For example, to launch 40 identical vanilla processes:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;$ for f in {8080..8119}; do (java -Xmx32m -Xss256k -jar target/demo-0.0.1-SNAPSHOT.jar --server.port=$f 2&amp;gt;&amp;amp;1 &amp;gt; target/$f.log &amp;amp;); done
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;They are all competing for memory resources so it takes them all a while to start, which is fair enough. Once they all start they serve their home pages quite efficiently (51ms latency over a crappy LAN at 99th percentile). Once they are up and running, stopping and starting one of the processes is relatively quick (a few seconds not a few minutes).&lt;/p&gt;
+&lt;p&gt;The VSZ numbers from &lt;code&gt;ps&lt;/code&gt; are off the scale (as expected). The RSS numbers look high too:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;$ ps -au&#xD;
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND&#xD;
+dsyer    27429  2.4  2.1 2829092 169948 pts/5  Sl   18:03   0:37 java -Xmx32m -Xss256k -jar target/demo-0.0.1-SNAPSHOT.jar --server.port=8081&#xD;
+dsyer    27431  3.0  2.2 2829092 180956 pts/5  Sl   18:03   0:45 java -Xmx32m -Xss256k -jar target/demo-0.0.1-SNAPSHOT.jar --server.port=8082&#xD;
+...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;RSS values are still in the range 150-190MB. If all 40 processes were indepenently using this much memory that would account for 6.8GB, which would blow my 8GB laptop out of the water. It runs fine, so most of that RSS value is not really independent of other processes.&lt;/p&gt;
+&lt;p&gt;The Proportional Shared Size (PSS) from &lt;code&gt;smem&lt;/code&gt; might a better estimate we have of actual memory usage, but in fact it is not that different from the RSS values:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;$ smem&#xD;
+  PID User     Command                         Swap      USS      PSS      RSS&#xD;
+...&#xD;
+27435 dsyer    java -Xmx32m -Xss256k -jar         0   142340   142648   155516 &#xD;
+27449 dsyer    java -Xmx32m -Xss256k -jar         0   142452   142758   155568 &#xD;
+...&#xD;
+27441 dsyer    java -Xmx32m -Xss256k -jar         0   175156   175479   188796 &#xD;
+27451 dsyer    java -Xmx32m -Xss256k -jar         0   175256   175579   188900 &#xD;
+27463 dsyer    java -Xmx32m -Xss256k -jar         0   179592   179915   193224 &#xD;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can hypothesize that maybe the PSS number is still hugely inflated by shared read-only memory (e.g. mapped jar files).&lt;/p&gt;
+&lt;p&gt;The 40 processes pretty much filled up the available memory on my laptop (3.6GB before the apps started), and some paging was happening, but not much. We can turn that into an estimate of the process size: 3.6GB/40 = 90MB. Not far off the JConsole estimate.&lt;/p&gt;&lt;h2&gt;&lt;a href="#do-nothing-plain-java-app" class="anchor" name="do-nothing-plain-java-app"&gt;&lt;/a&gt;Do Nothing Plain Java App&lt;/h2&gt;
+&lt;p&gt;As a useful comparison point, let&amp;rsquo;s make a really basic Java application that stays alive when we run it so we can meaure its memory consumption:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;public class Main throws Exception {&#xD;
+  public static void main (String[] args) {&#xD;
+    System.in.read();&#xD;
+  }&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Results: heap 6MB, non-heap 14MB (Code Cache 4MB, Compressed Class Space 1MB, Metaspace 9MB), 1500 classes. Hardly any classes loaded so no surprise really.&lt;/p&gt;&lt;h2&gt;&lt;a href="#do-nothing-spring-boot-app" class="anchor" name="do-nothing-spring-boot-app"&gt;&lt;/a&gt;Do Nothing Spring Boot App&lt;/h2&gt;
+&lt;p&gt;Now suppose we do the same thing but load a Spring application context as well:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;@SpringBootApplication&#xD;
+public class MainApplication implements ApplicationRunner {&#xD;
+&#xD;
+  @Override&#xD;
+  public void run(ApplicationArguments args) throws Exception {&#xD;
+    System.in.read();&#xD;
+  }&#xD;
+&#xD;
+  public static void main(String[] args) throws Exception {&#xD;
+    SpringApplication.run(MainApplication.class, args);&#xD;
+  }&#xD;
+&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Heap 12MB (but drops to 6MB after a manual GC), non-heap 26MB (Code Cache 7MB, Compressed Class Space 2MB, Metaspace 17MB), 3200 classes. The graph below shows the heap usage from launching the app to the end state. The big drop in the middle is the manual GC, and you can see that after this the app stabilizes at a different saw tooth.&lt;/p&gt;
+&lt;img src="https://raw.githubusercontent.com/dsyer/spring-boot-memory-blog/master/manual-gc.png" width="80%"/&gt;
+&lt;p&gt;Does Spring Boot itself (as opposed to just Spring) add a lot of overhead to this application? For starters, we can test that by removing the &lt;code&gt;@SpringBootApplication&lt;/code&gt; annotation. Doing that means that we load a context but don&amp;rsquo;t do any autoconfiguration. The result is: heap 11MB (drops to 5MB after a manual GC), non-heap 22MB (Code Cache 5MB, Compressed Class Space 2MB, Metaspace 15MB), 2700 classes. The Spring Boot autoconfiguration premium, measured this way, is about 1MB heap and 4MB non-heap.&lt;/p&gt;
+&lt;p&gt;Going a step further, we can create a Spring application context manually without using any Spring Boot code at all. Doing this drops the heap usage to 10MB (drops to 5MB after a manual GC), non-heap to 20MB (Code Cache 5MB, Compressed Class Space 2MB, Metaspace 13MB), 2400 classes. The Spring Boot total premium, measured this way, is less than 2MB heap and about 6MB non-heap memory.&lt;/p&gt;&lt;h2&gt;&lt;a href="#ratpack-groovy-app" class="anchor" name="ratpack-groovy-app"&gt;&lt;/a&gt;Ratpack Groovy App&lt;/h2&gt;
+&lt;p&gt;A simple Ratpack groovy app can be created using &lt;a href="https://github.com/pledbrook/lazybones"&gt;lazybones&lt;/a&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;$ lazybones create ratpack .&#xD;
+$ ./gradlew build&#xD;
+$ unzip build/distributions/ratpack.zip&#xD;
+$ JAVA_OPTS=&amp;#39;-Xmx32m -Xss256k&amp;#39; ./ratpack/bin/ratpack
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;$ ls -l build/distributions/ratpack/lib/*.jar | awk &amp;#39;{tot+=$5;} END {print tot}&amp;#39;&#xD;
+16277607
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The used heap is pretty low to start with (13MB), grows to 22MB over time. Metaspace is about 34MB. JConsole reports 43MB non-heap usage. There are 31 threads.&lt;/p&gt;&lt;h2&gt;&lt;a href="#ratpack-java-app" class="anchor" name="ratpack-java-app"&gt;&lt;/a&gt;Ratpack Java App&lt;/h2&gt;
+&lt;p&gt;Here&amp;rsquo;s a really basic static app:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;import ratpack.server.BaseDir;&#xD;
+import ratpack.server.RatpackServer;&#xD;
+&#xD;
+public class DemoApplication {&#xD;
+&#xD;
+  public static void main(String[] args) throws Exception {&#xD;
+    RatpackServer.start(s -&amp;gt; s&#xD;
+        .serverConfig(c -&amp;gt; c.baseDir(BaseDir.find()))&#xD;
+        .handlers(chain -&amp;gt; chain&#xD;
+            .all(ctx -&amp;gt; ctx.render(&amp;quot;root handler!&amp;quot;))&#xD;
+        )&#xD;
+    );&#xD;
+  }&#xD;
+&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It runs in about 16MB heap, 28MB non-heap as a Spring Boot fat jar. As a regular gradle application it&amp;rsquo;s a bit lighter on heap (the cached jars aren&amp;rsquo;t needed) but uses the same non-heap memory. There are 30 threads. Interestingly there is no object that is bigger than 300KB, whereas our Spring Boot apps with Tomcat generally have 10 or more objects above that level.&lt;/p&gt;&lt;h2&gt;&lt;a href="#variations-on-the-vanilla-app" class="anchor" name="variations-on-the-vanilla-app"&gt;&lt;/a&gt;Variations on the Vanilla App&lt;/h2&gt;
+&lt;p&gt;Running from exploded jar shaves up to 6MB off the heap (the difference is cached jar data in the launcher). Also makes startup a bit faster: less than 5s compared to as much as 7s when memory is constrained with the fat jar.&lt;/p&gt;
+&lt;p&gt;A slimmed down version of the app with no static resources or webjars runs at 23MB heap and 41MB non-heap as exploded archive (starts in less than 3s). The non-heap usage breaks down as Metaspace: 35MB, Compressed Class Space: 4MB, Code Cache: 4MB. Spring &lt;code&gt;ReflectionUtils&lt;/code&gt; jumps to near the top of the memory chart in YourKit with Spring 4.2.3 (2nd only to Tomcat &lt;code&gt;NioEndpoint&lt;/code&gt;). The &lt;code&gt;ReflectionUtils&lt;/code&gt; should shrink under memory pressure but they don&amp;rsquo;t in practice so Spring 4.2.4 &lt;a href="https://jira.spring.io/browse/SPR-13783"&gt;clears the caches&lt;/a&gt; once the context has started, resulting in some memory savings (down to about 20MB heap). &lt;code&gt;DefaultListableBeanFactory&lt;/code&gt; drops down to 3rd place and is almost half the size it was with the resource chain (webjars locator) but it won&amp;rsquo;t shrink any further without removing more features.&lt;/p&gt;
+&lt;p&gt;In turns out that the &lt;code&gt;NioEndpoint&lt;/code&gt; has a 1MB &amp;ldquo;oom parachute&amp;rdquo; that it holds onto until it detects an &lt;code&gt;OutOfMemoryError&lt;/code&gt;. You can customize it to zero and forgo the parachute to save an extra MB of heap, e.g:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;@SpringBootApplication&#xD;
+public class SlimApplication implements EmbeddedServletContainerCustomizer {&#xD;
+&#xD;
+  @Override&#xD;
+  public void customize(ConfigurableEmbeddedServletContainer container) {&#xD;
+    if (container instanceof TomcatEmbeddedServletContainerFactory) {&#xD;
+      TomcatEmbeddedServletContainerFactory tomcat = (TomcatEmbeddedServletContainerFactory) container;&#xD;
+      tomcat.addConnectorCustomizers(connector -&amp;gt; {&#xD;
+        ProtocolHandler handler = connector.getProtocolHandler();&#xD;
+        if (handler instanceof Http11NioProtocol) {&#xD;
+          Http11NioProtocol http = (Http11NioProtocol) handler;&#xD;
+          http.getEndpoint().setOomParachute(0);&#xD;
+        }&#xD;
+      });&#xD;
+    }&#xD;
+  }&#xD;
+&#xD;
+...&#xD;
+&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Using Jetty instead of Tomcat makes no difference whatsoever to the overall memory or heap, even though the &lt;code&gt;NioEndpoint&lt;/code&gt; is high on the &amp;ldquo;Biggest objects&amp;rdquo; list in YourKit (takes about 1MB), and there is no corresponding blip for Jetty. It also doesn&amp;rsquo;t start up any quicker.&lt;/p&gt;
+&lt;p&gt;As an example of a &amp;ldquo;real&amp;rdquo; Spring Boot app, Zipkin (Java) runs fine with with &lt;code&gt;-Xmx32m -Xss256k&lt;/code&gt;, at least for short periods. It settles with a heap of about 24MB and non-heap about 55MB.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;spring-cloud-stream&lt;/code&gt; sample sink (with Redis transport) also runs fine with &lt;code&gt;-Xmx32m -Xss256k&lt;/code&gt; and similar memory usage profile (i.e. roughly 80MB total). The actuator endpoints are active but don&amp;rsquo;t do much to the memory profile. Slightly slower startup maybe.&lt;/p&gt;&lt;h2&gt;&lt;a href="#tomcat-container" class="anchor" name="tomcat-container"&gt;&lt;/a&gt;Tomcat Container&lt;/h2&gt;
+&lt;p&gt;Instead of using the emedded container in Spring Boot, what if we deploy a traditional war file to a Tomcat container?&lt;/p&gt;
+&lt;img src="https://raw.githubusercontent.com/dsyer/spring-boot-memory-blog/master/manual-gc-tomcat.png" width="80%"/&gt;
+&lt;p&gt;The container starts and warms up a bit and uses of order 50MB heap, and 40MB non-heap. Then we deploy a war of the vanilla Spring Boot app, and there&amp;rsquo;s a spike in heap usage, which settles down to about 100MB. We do a manual GC and it drops down to below 50MB, and then add some load and it jumps up to about 140MB. A manual GC drops it back down to below 50MB. So we have no reason to believe this app is really using much if any additional heap compared to the container. It uses some when under load, but it can always reclaim it under GC pressure.&lt;/p&gt;
+&lt;p&gt;Metaspace, however tells a different story, it goes up from 14MB to 41MB in the single app under load. Total non-heap usage is reported at 59MB in the final state.&lt;/p&gt;&lt;h3&gt;&lt;a href="#deploy-another-application" class="anchor" name="deploy-another-application"&gt;&lt;/a&gt;Deploy another application&lt;/h3&gt;
+&lt;p&gt;If we add another copy of the same application to the Tomcat container, trough heap consumption goes up a bit (above 50MB) and metaspace is up to 55MB. Under load heap usage jumps to 250MB or so, but always seems to be reclaimable.&lt;/p&gt;
+&lt;p&gt;Then we add some more apps. With six apps deployed the metaspace is up to 115MB and total non-heap to 161MB. This is consistent with what we saw for a single app: each one costs us about 20MB non-heap memory. Heap usage hits 400MB under load, so this doesn&amp;rsquo;t go up proportionally (however it is being managed from above, so maybe that&amp;rsquo;s not surprising). The trough of heap usage is up to about 130MB, so the cumulative effect of adding apps on the heap is visible there (about 15MB per app).&lt;/p&gt;
+&lt;p&gt;When we constrain Tomcat to the same amount of heap that the six apps would have in our vanilla embedded launch (&lt;code&gt;-Xmx192m&lt;/code&gt;) the heap under load is more or less at its limit (190MB), and the trough after a manual GC is 118MB. Non-heap memory is reported as 154MB. The heap trough and non-heap usage is not identical but consistent with the unconstrained Tomcat instance (which actually had a 1GB heap). Compared to the embedded containers the total memory usage, including the full heap, is a bit smaller because some of the non-heap memory is apparently shared between apps (344MB compared to 492MB). For more realistic apps that require more heap themselves the difference will not be proportionally as big (50MB out of 8GB is negligible). Also any app that manages its own thread pool (not uncommon in real life Spring applications) will incur an additional non-heap memory penalty for the threads it needs.&lt;/p&gt;&lt;h2&gt;&lt;a href="#rule-of-thumb-process-sizes" class="anchor" name="rule-of-thumb-process-sizes"&gt;&lt;/a&gt;Rule of Thumb Process Sizes&lt;/h2&gt;
+&lt;p&gt;A very rough estimate for actual memory usage would be the heap size plus 20 times the stack size (for the 20 threads typical in a servlet container), plus a bit, so maybe 40MB per process in our vanilla app. That estimate is a bit low, given the JConsole numbers (50MB plus the heap, or 82MB). We can observe, though, that the non-heap usage in our apps is roughly proportional to the number of classes loaded. Once you correct for the stack size the correlation improves, so a better rule of thumb might be one that is proportional to the number of classes loaded:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;memory = heap + non-heap&#xD;
+&#xD;
+non-heap = threads x stack + classes x 7/1000 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The vanilla app loads about 6000 classes and the do nothing Java main loads about 1500. The estimate is accurate for the vanilla app and the do nothing Java app.&lt;/p&gt;
+&lt;p&gt;Adding Spring Cloud Eureka discovery only loads about another 1500 classes, and uses about 40 threads, so it should use a bit more non-heap memory, but not a lot (and indeed it does use about 70MB with 256KB stacks, where the rule of thumb would predict 63MB).&lt;/p&gt;
+&lt;p&gt;The performance of this model for the apps we measured is shown below:&lt;/p&gt;
+&lt;img src="https://raw.githubusercontent.com/dsyer/spring-boot-memory-blog/master/non-heap-correlation.png" width="80%"/&gt;&lt;h2&gt;&lt;a href="#summary-of-data" class="anchor" name="summary-of-data"&gt;&lt;/a&gt;Summary of Data&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Application &lt;/th&gt;
+      &lt;th&gt;Heap (MB) &lt;/th&gt;
+      &lt;th&gt;Non Heap (MB) &lt;/th&gt;
+      &lt;th&gt;Threads &lt;/th&gt;
+      &lt;th&gt;Classes &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Vanilla &lt;/td&gt;
+      &lt;td&gt;22 &lt;/td&gt;
+      &lt;td&gt;50 &lt;/td&gt;
+      &lt;td&gt;25 &lt;/td&gt;
+      &lt;td&gt;6200&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Plain Java &lt;/td&gt;
+      &lt;td&gt;6 &lt;/td&gt;
+      &lt;td&gt;14 &lt;/td&gt;
+      &lt;td&gt;11 &lt;/td&gt;
+      &lt;td&gt;1500&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Boot &lt;/td&gt;
+      &lt;td&gt;6 &lt;/td&gt;
+      &lt;td&gt;26 &lt;/td&gt;
+      &lt;td&gt;11 &lt;/td&gt;
+      &lt;td&gt;3200&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;No Actuator &lt;/td&gt;
+      &lt;td&gt;5 &lt;/td&gt;
+      &lt;td&gt;22 &lt;/td&gt;
+      &lt;td&gt;11 &lt;/td&gt;
+      &lt;td&gt;2700&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Only &lt;/td&gt;
+      &lt;td&gt;5 &lt;/td&gt;
+      &lt;td&gt;20 &lt;/td&gt;
+      &lt;td&gt;11 &lt;/td&gt;
+      &lt;td&gt;2400&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Eureka Client &lt;/td&gt;
+      &lt;td&gt;80* &lt;/td&gt;
+      &lt;td&gt;70 &lt;/td&gt;
+      &lt;td&gt;40 &lt;/td&gt;
+      &lt;td&gt;7600&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ratpack Groovy &lt;/td&gt;
+      &lt;td&gt;22 &lt;/td&gt;
+      &lt;td&gt;43 &lt;/td&gt;
+      &lt;td&gt;24 &lt;/td&gt;
+      &lt;td&gt;5300&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ratpack Java &lt;/td&gt;
+      &lt;td&gt;16 &lt;/td&gt;
+      &lt;td&gt;28 &lt;/td&gt;
+      &lt;td&gt;22 &lt;/td&gt;
+      &lt;td&gt;3000&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;* Only the Eureka client has a larger heap: all the others are set&lt;br/&gt;explicitly to &lt;code&gt;-Xmx32m&lt;/code&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#conclusions" class="anchor" name="conclusions"&gt;&lt;/a&gt;Conclusions&lt;/h2&gt;
+&lt;p&gt;The effect Spring Boot on its own has on a Java application is to use a bit more heap and non-heap memory, mostly because of extra classes it has to load. The difference can be quantified as roughly an extra 2MB heap and 12MB non-heap. In a real application that might consume many times as much for actual business purposes this is pretty insignificant. The difference between vanilla Spring and Spring Boot is a few MB total (neither here nor there really). The Spring Boot team have only just started measuring things in this level of detail so we can probably expect optimizations in the future anyway. When we compare memory usage for apps deployed in a single Tomcat container with the same apps deployed as independent processes, not surprisingly the single container packs the apps more densely in memory. The penalty for a standalone process is mainly related to non-heap usage though, which adds up to maybe 30MB per app when the number of apps is much larger than the number of containers (and less otherwise). We wouldn&amp;rsquo;t expect this to increase as apps use more heap, so in most real apps it is not significant. The benefits of deploying an app as an independent process following the &lt;a href="http://12factor.net"&gt;twelve-factor&lt;/a&gt; and Cloud Native principles outweigh the cost of using a bit more memory in our opinion. As a final note, we observe that the native tools in the operating system are not nearly as good as the ones provided by the JVM, when you want to inspect a process and find out about its memory usage.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring REST Docs 1.0.1.RELEASE</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/12/10/spring-rest-docs-1-0-1-release" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Andy Wilkinson</name>
+    </author>
+    <id>tag:spring.io,2015-12-10:2319</id>
+    <updated>2015-12-10T10:46:23Z</updated>
+    <content type="html">&lt;p&gt;I&amp;rsquo;m delighted to announce that &lt;a href="https://github.com/spring-projects/spring-restdocs"&gt;Spring REST Docs&lt;/a&gt; 1.0.1.RELEASE is available from Maven Central, JCenter, and our &lt;a href="https://repo.spring.io/release"&gt;release repository&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This maintenance release includes a &lt;a href="https://github.com/spring-projects/spring-restdocs/issues?q=milestone%3A1.0.1.RELEASE"&gt;number of changes&lt;/a&gt;, including improved support for documenting attributes in XML payloads. An immediate upgrade is recommended for all Spring REST Docs users.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-restdocs"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-restdocs"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-restdocs/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-restdocs/docs/1.0.1.RELEASE"&gt;Documentation&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Social Facebook 2.0.3 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/12/09/spring-social-facebook-2-0-3-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Craig Walls</name>
+    </author>
+    <id>tag:spring.io,2015-12-09:2318</id>
+    <updated>2015-12-09T16:27:42Z</updated>
+    <content type="html">&lt;p&gt;Dear Spring Community,&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m pleased to announce the release of Spring Social Facebook 2.0.3.RELEASE. This is a maintenance release that addresses a few bugs, the most significant of which was a breaking change introduced recently in Facebook&amp;rsquo;s Graph API which prevented connections and sign-in from working with Spring Social Facebook. In addition, the API binding has been adjusted to target Graph API v2.5.&lt;/p&gt;
+&lt;p&gt;View the &lt;a href="https://raw.githubusercontent.com/spring-projects/spring-social-facebook/master/src/dist/changelog.txt"&gt;changelog&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-social-facebook/"&gt;Project Site&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-social-facebook/docs/2.0.3.RELEASE/reference/htmlsingle/"&gt;Reference&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-social-facebook/docs/2.0.3.RELEASE/apidocs/"&gt;JavaDoc&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>This Week in Spring - December 8th, 2015</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/12/08/this-week-in-spring-december-8th-2015" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2015-12-08:2317</id>
+    <updated>2015-12-08T19:06:14Z</updated>
+    <content type="html">&lt;p&gt;Welcome to another installation of &lt;em&gt;This Week in Spring&lt;/em&gt;! This week I&amp;rsquo;m in Chicago speaking to customers and then it&amp;rsquo;s off to &lt;a href="http://www.meetup.com/DC-Cloud-Native-Meetup/events/226775603/"&gt;Washington D.C.&lt;/a&gt;, and &lt;a href="http://www.meetup.com/Cloud-Native-New-York/events/226870607/"&gt;New York City&lt;/a&gt; for Cloud Native meetups! I hope you&amp;rsquo;ll consider joining us at either event!&lt;/p&gt;
+&lt;p&gt;Time sure is flying! We&amp;rsquo;re darned close to 2016! &lt;/p&gt;
+&lt;p&gt;Anyway, as usual, &lt;em&gt;lots&lt;/em&gt; to cover so let&amp;rsquo;s get to it!&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;I really like the looks of this Caffeine local cache. It uses a pretty &lt;a href="https://www.voxxed.com/blog/2015/12/add-a-boost-of-caffeine-to-your-java/"&gt;interesting algorithm to ensure near optimal cache hits&lt;/a&gt; It already features a JSR 170 (JCache) integration which means using it could be as simple as configuring the JCache adapter along with Spring&amp;rsquo;s Cache abstraction.&lt;/li&gt;
+  &lt;li&gt;I really enjoyed Pivotal Labs&amp;rsquo; Brian Kelly&amp;rsquo;s presentation, &lt;a href="http://presentations.spilth.org/spring-boot-for-rails-developers/#1"&gt;&lt;em&gt;Spring Boot for Rails Developers&lt;/em&gt;&lt;/a&gt;. Check it out!&lt;/li&gt;
+  &lt;li&gt;3Pillar has an interesting &lt;a href="http://www.3pillarglobal.com/insights/building-microservice-architecture-spring-boot-docker-part-iv"&gt;post on using Spring Boot with Docker&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Framework lead Juergen Hoeller &lt;a href="https://spring.io/blog/2015/12/03/spring-framework-5-0-roadmap-update"&gt;has revisited the Spring 5.0 roadmap in light of the recent 6 month delay for JDK 9&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring RestDocs lead, Spring IO Platform lead, and Spring Boot ninja Andy Wilkinson &lt;a href="https://spring.io/blog/2015/12/03/gradle-dependency-management-plugin-0-5-4-released"&gt;has just announced that the Gradle dependency management plugin 0.5.4.RELEASE is now available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Cloud and Cloud Foundry ninja Scott Frederick has just &lt;a href="https://spring.io/blog/2015/12/02/spring-cloud-connectors-1-2-1-released"&gt;announced that the Spring Cloud Connectors 1.2.1 are now available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Simon Basl? and Laurent Doguin&amp;rsquo;s presentation &lt;a href="http://www.infoq.com/presentations/rxjava-spring-boot"&gt;on using RxJava with Spring Boot is now available on InfoQ&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;our pal Petri Kainulainen is at it again, this time with a &lt;a href="http://www.petrikainulainen.net/programming/spring-framework/spring-data-jpa-tutorial-adding-custom-methods-into-all-repositories"&gt;post on adding custom methods into &lt;em&gt;all&lt;/em&gt; Spring Data repositories&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I really enjoyed Biju Kunjummen&amp;rsquo;s blog on &lt;a href="http://www.java-allandsundry.com/2015/12/spring-cloud-rest-client-with-netflix.html"&gt;using the Spring Cloud auto-configured &lt;code&gt;RestTemplate&lt;/code&gt; with Netflix Ribbon&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;..as well as on &lt;a href="http://www.java-allandsundry.com/2015/11/spring-cloud-support-for-hystrix.html"&gt;using Spring Cloud&amp;rsquo;s support for Hystrix&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Framework 5.0 Roadmap Update</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/12/03/spring-framework-5-0-roadmap-update" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Juergen Hoeller</name>
+    </author>
+    <id>tag:spring.io,2015-12-02:2314</id>
+    <updated>2015-12-03T18:15:00Z</updated>
+    <content type="html">&lt;p&gt;You might have heard the news already: JDK 9 is going to be &lt;a href="http://mail.openjdk.java.net/pipermail/jdk9-dev/2015-December/003149.html"&gt;delayed by half a year&lt;/a&gt;, now aiming for a March 2017 release instead of its original September 2016 target.&lt;/p&gt;
+&lt;p&gt;Since Spring 5 is designed to track JDK 9 very closely, we decided to revisit our own roadmap as well: We are nevertheless going to start our release candidate phase in Q4 2016 but we won&amp;rsquo;t go GA before March 2017 either. That said, we really mean it: The goal is for Spring Framework 5.0 to go GA right after JDK 9&amp;rsquo;s GA date then.&lt;/p&gt;
+&lt;p&gt;The opportunity for you to start working with Spring 5 features will begin much sooner anyway, with the first Spring Framework 5.0 milestone scheduled for June 2016&amp;hellip;&lt;/p&gt;
+&lt;p&gt;In the meantime, our &lt;a href="https://github.com/spring-projects/spring-reactive/"&gt;spring-reactive&lt;/a&gt; R&amp;amp;D project is making a lot of progress already; feel free to chime in with design feedback at this point! The reactive R&amp;amp;D project will get merged into Spring Framework 5.0 proper when the actual 5.0 branch starts next year.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Gradle dependency management plugin 0.5.4 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/12/03/gradle-dependency-management-plugin-0-5-4-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Andy Wilkinson</name>
+    </author>
+    <id>tag:spring.io,2015-12-03:2316</id>
+    <updated>2015-12-03T15:21:00Z</updated>
+    <content type="html">&lt;p&gt;I am pleased to announce that &lt;a href="https://github.com/spring-gradle-plugins/dependency-management-plugin"&gt;Gradle dependency management plugin&lt;/a&gt; 0.5.4.RELEASE is now available from Maven Central, JCenter, and the &lt;a href="https://plugins.gradle.org/plugin/io.spring.dependency-management"&gt;Gradle Plugin Portal&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This maintenance release includes a significant improvement in the performance of applying Maven-style exclusions to your Gradle builds. &lt;a href="https://github.com/spring-gradle-plugins/dependency-management-plugin/commit/3ca43491495769e511f1d051ccd1a3cf59da7425"&gt;The change&lt;/a&gt; provides a 20x speed up, reducing the overhead, even with very complex dependency graphs, to 50ms or less.&lt;/p&gt;
+&lt;p&gt;For more information about how the plugin can improve your Gradle builds, please read the &lt;a href="https://spring.io/blog/2015/02/23/better-dependency-management-for-gradle"&gt;introductory blog post&lt;/a&gt;.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Cloud Connectors 1.2.1 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/12/02/spring-cloud-connectors-1-2-1-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Scott Frederick</name>
+    </author>
+    <id>tag:spring.io,2015-12-02:2315</id>
+    <updated>2015-12-02T21:29:01Z</updated>
+    <content type="html">&lt;p&gt;I¡¯m pleased to announce the availability of Spring Cloud Connectors 1.2.1. This is a maintenance release with a few new features and a few bug fixes. &lt;/p&gt;
+&lt;p&gt;Here are the highlights:&lt;/p&gt;&lt;h1&gt;&lt;a href="#heroku-connector" class="anchor" name="heroku-connector"&gt;&lt;/a&gt;Heroku Connector&lt;/h1&gt;&lt;h2&gt;&lt;a href="#relational-databases" class="anchor" name="relational-databases"&gt;&lt;/a&gt;Relational Databases&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;The Heroku cloud connector now recognizes the &lt;code&gt;DATABASE_URL&lt;/code&gt; environment variable when detecting &lt;a href="https://devcenter.heroku.com/articles/heroku-postgresql#create-a-new-database"&gt;PostgreSQL database&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;h2&gt;&lt;a href="#redis" class="anchor" name="redis"&gt;&lt;/a&gt;Redis&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://elements.heroku.com/addons/heroku-redis"&gt;Heroku Redis&lt;/a&gt; is now supported.&lt;/li&gt;
+&lt;/ul&gt;&lt;h1&gt;&lt;a href="#spring-connector" class="anchor" name="spring-connector"&gt;&lt;/a&gt;Spring Connector&lt;/h1&gt;&lt;h2&gt;&lt;a href="#relational-databases" class="anchor" name="relational-databases"&gt;&lt;/a&gt;Relational Databases&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;When creating a &lt;code&gt;DataSource&lt;/code&gt;, Spring Cloud Connectors will look for a pooling &lt;code&gt;DataSource&lt;/code&gt; implementation on the classpath and choose one based on a &lt;a href="http://cloud.spring.io/spring-cloud-connectors/spring-cloud-spring-service-connector.html#_detection_and_prioritization_of_code_datasource_code_implementations"&gt;default priority&lt;/a&gt;. The priority of detection has been changed to more closely match the order used in &lt;a href="http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-connect-to-production-database"&gt;Spring Boot&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Applications can customize the priority order of pooled &lt;code&gt;DataSource&lt;/code&gt; implementations using either &lt;a href="http://cloud.spring.io/spring-cloud-connectors/spring-cloud-spring-service-connector.html#_reordering_implementation_priority"&gt;Java configuration&lt;/a&gt; or &lt;a href="http://cloud.spring.io/spring-cloud-connectors/spring-cloud-spring-service-connector.html#_reordering_implementation_priority_2"&gt;XML configuration&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;DataSourceConfig&lt;/code&gt; will now accept a map of key/value pairs to allow setting arbitrary properties of the created &lt;code&gt;DataSource&lt;/code&gt;. This allows overriding of the default JDBC driver class name and validation query set up by Connectors, in addition to other properties of the &lt;code&gt;DataSource&lt;/code&gt;. This can be used by Java configuration or XML configuration.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;See the full list of &lt;a href="https://github.com/spring-cloud/spring-cloud-connectors/issues?q=milestone%3A1.2.1"&gt;resolved issues in GitHub&lt;/a&gt;. &lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>This Week in Spring - December 1, 2015</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/12/01/this-week-in-spring-december-1-2015" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2015-12-01:2313</id>
+    <updated>2015-12-01T12:52:39Z</updated>
+    <content type="html">&lt;p&gt;Wow! Can you believe we&amp;rsquo;re already staring down 2016? Time sure flies! Remember, &lt;em&gt;This Week in Spring&lt;/em&gt; was &lt;em&gt;started&lt;/em&gt; the first week of 2011, so we&amp;rsquo;ll soon mark the fifth anniversairry of TWiS!&lt;/p&gt;
+&lt;p&gt;This week I&amp;rsquo;m in Shanghai, China, for &lt;em&gt;the Cloud Foundry Summit Asia&lt;/em&gt; and then off to Ft. Lauderdale, Florida, USA, for the &lt;em&gt;Rich Web Experience&lt;/em&gt;! If you&amp;rsquo;re in either place, &lt;a href="mailto:josh@joshlong.com"&gt;don&amp;rsquo;t hesitate to reach me&lt;/a&gt;! &lt;/p&gt;
+&lt;p&gt;As usual, we&amp;rsquo;ve got a lot to cover so let&amp;rsquo;s get to it!&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Boot co-founder and Spring framework contributor Phil Webb put up a really thoughtful post helping people looking at Spring (which has been around for 10+ years) to &lt;a href="http://spring.io/blog/2015/11/29/how-not-to-hate-spring-in-2016"&gt;avoid some of the common pitfalls facing new developers in 2016&lt;/a&gt;. A &lt;em&gt;very&lt;/em&gt; recommended read!&lt;/li&gt;
+  &lt;li&gt;Florian Benz did a great job discussing the motivations and use of comprehensive REST &lt;a href="https://medium.com/@flbenz/beautiful-api-documentation-with-negligible-overhead-2ba523205f61#.fo0hrc2lv"&gt;documentation as generated with Spring Rest Docs&lt;/a&gt;. This is a really cool, &lt;em&gt;quick&lt;/em&gt; read!&lt;/li&gt;
+  &lt;li&gt;Speaking of Spring Rest Docs, there&amp;rsquo;s a great interview with the project lead, the amazing Andy Wilkinson who - in his ample free time - also manages the Spring IO Platform as well as contributes to Spring Boot. &lt;a href="https://dzone.com/articles/a-qa-with-andy-wilkinson-on-spring-rest-docs"&gt;Read on to learn more about one of my heroes&lt;/a&gt;!&lt;/li&gt;
+  &lt;li&gt;Spring Boot and Spring Cloud co-founder Dr. Dave Syer has put [up a nice post on &lt;a href="http://spring.io/blog/2015/11/25/migrating-spring-cloud-apps-from-spring-boot-1-2-to-1-3"&gt;migrating Spring Cloud applications from Spring Boot 1.2 to the just released 1.3&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Social lead Craig Walls just &lt;a href="http://spring.io/blog/2015/11/25/spring-social-1-1-4-released"&gt;announced Spring Social 1.1.4 which includes a few recommended bugfixes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data ninja Thomas Risberg &lt;a href="http://spring.io/blog/2015/11/25/news-for-spring-data-jdbc-extensions-project"&gt;just announced Spring Data JDBC Extensions 1.2 and a slew of other great updates&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Tool Suite lead Martin Lippert &lt;a href="http://spring.io/blog/2015/11/27/spring-tool-suite-3-7-2-released"&gt;just announced the STS 3.7.2 release of STS&lt;/a&gt; which includes an updated Spring Boot Dashboard, Spring Boot 1.3.0 compatibility, quick text search and more.&lt;/li&gt;
+  &lt;li&gt;Spring Boot, Spring Cloud and Spring Security OAuth contributor, co-founder and ninja Dr. Dave Syer&amp;rsquo;s &lt;a href="http://spring.io/blog/2015/11/30/migrating-oauth2-apps-from-spring-boot-1-2-to-1-3"&gt;post on migrating OAuth-based code from Spring Cloud Angel to Brixton&lt;/a&gt;, given the introduction of some of those features in Spring Boot 1.3, is a very cool read!&lt;/li&gt;
+  &lt;li&gt;Speaking of Spring Cloud Security, check &lt;a href="https://dzone.com/articles/securing-microservices-with-spring-cloud-security"&gt;out my pal Will Tran&amp;rsquo;s epic talk from SpringOne2GX 2015&lt;/a&gt;!&lt;/li&gt;
+  &lt;li&gt;Check out Spring Cloud co-founder Spencer Gibb&amp;rsquo;s epic talk from &lt;a href="http://www.infoq.com/presentations/spring-cloud-alternatives?utm_source=infoq&amp;utm_medium=videos_homepage&amp;utm_campaign=videos_row2"&gt;SpringOne2GX on alternative implementations of common extension hooks for Spring Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Migrating OAuth2 Apps from Spring Boot 1.2 to 1.3</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/11/30/migrating-oauth2-apps-from-spring-boot-1-2-to-1-3" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Dave Syer</name>
+    </author>
+    <id>tag:spring.io,2015-11-24:2306</id>
+    <updated>2015-11-30T15:29:29Z</updated>
+    <content type="html">&lt;p&gt;There are some new features in &lt;a href="http://projects.spring.io/spring-boot/"&gt;Spring Boot&lt;/a&gt; 1.3 to do with &lt;a href="https://tools.ietf.org/html/rfc6749"&gt;OAuth2&lt;/a&gt; clients and servers and &lt;a href="http://projects.spring.io/spring-security-oauth/"&gt;Spring Security OAuth2&lt;/a&gt;. Some of those features were ported from &lt;a href="http://cloud.spring.io/spring-cloud-Security/,"&gt;Spring Cloud Security&lt;/a&gt; and hence were in the Angel release train of &lt;a href="http://projects.spring.io/spring-cloud/"&gt;Spring Cloud&lt;/a&gt;, but are not in the Brixton release train. This article helps you navigate the changes and update any existing apps to use the new features.&lt;/p&gt;&lt;h2&gt;&lt;a href="#dependency-management" class="anchor" name="dependency-management"&gt;&lt;/a&gt;Dependency Management&lt;/h2&gt;
+&lt;p&gt;If you are not using Spring Cloud you should be able to just change the version number of your Spring Boot dependency. Since some of the OAuth2 features migrated from Spring Cloud Security to Spring Boot in 1.3, it is likely that things are slightly more complicated than that. A &lt;a href="https://spring.io/blog/2015/11/25/migrating-spring-cloud-apps-from-spring-boot-1-2-to-1-3"&gt;separate article&lt;/a&gt; deals with upgrading Spring Cloud apps from Spring Boot 1.2 to 1.3. If you are using the Spring Cloud Angel release train then you should consult that article for details of how to manage the dependencies (independent of any specific features).&lt;/p&gt;&lt;h2&gt;&lt;a href="#authorization-server" class="anchor" name="authorization-server"&gt;&lt;/a&gt;Authorization Server&lt;/h2&gt;
+&lt;p&gt;An OAuth2 Authorization Server is responsible first and foremost for issuing access tokens. To do this it must be able to authenticate client apps and (optionally) users.&lt;/p&gt;
+&lt;p&gt;A very simple OAuth2 Authorization Server with a single client can be implemented by convention and some configuration properties in Spring Boot 1.3. So a really basic example like the vanilla auth server from the &lt;a href="https://spring.io/guides/tutorials/spring-security-and-angular-js/#_sso_with_oauth2_angular_js_and_spring_security_part_v"&gt;Angular JS Spring Securrity Tutorial&lt;/a&gt; from spring.io can be simplified quite a bit. In Spring Boot 1.2 we have:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;@SpringBootApplication&#xD;
+@RestController&#xD;
+@EnableResourceServer&#xD;
+public class AuthserverApplication {&#xD;
+       &#xD;
+  @Configuration&#xD;
+  @EnableAuthorizationServer&#xD;
+  protected static class OAuth2Config extends AuthorizationServerConfigurerAdapter {&#xD;
+&#xD;
+    @Autowired&#xD;
+    private AuthenticationManager authenticationManager;&#xD;
+         &#xD;
+    @Override&#xD;
+    public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Excep&#xD;
+      endpoints.authenticationManager(authenticationManager);&#xD;
+    }&#xD;
+&#xD;
+    @Override&#xD;
+    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {&#xD;
+      clients.inMemory()&#xD;
+        .withClient(&amp;quot;acme&amp;quot;)&#xD;
+          .secret(&amp;quot;acmesecret&amp;quot;)&#xD;
+          .authorizedGrantTypes(&amp;quot;authorization_code&amp;quot;, &amp;quot;refresh_token&amp;quot;,&#xD;
+              &amp;quot;password&amp;quot;)&#xD;
+          .scopes(&amp;quot;openid&amp;quot;).autoApprove(true);&#xD;
+    }&#xD;
+&#xD;
+  }&#xD;
+&#xD;
+  ...&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In Spring Boot 1.3 we have just:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;@SpringBootApplication&#xD;
+@RestController&#xD;
+@EnableResourceServer&#xD;
+@EnableAuthorizationServer&#xD;
+public class AuthserverApplication {&#xD;
+  ...&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;and in &lt;code&gt;application.properties&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;security.oauth2.client.clientId: acme&#xD;
+security.oauth2.client.clientSecret: acmesecret&#xD;
+security.oauth2.client.authorized-grant-types: authorization_code,refresh_token,password&#xD;
+security.oauth2.client.scope: openid
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is a general purpose Authorization Server, great for demos, but not very realistic in practice because it only has one client (&amp;ldquo;acme&amp;rdquo;). Nevertheless, as a way to get started quickly with OAuth2 it&amp;rsquo;s nice to be able to do so much with so little.&lt;/p&gt;
+&lt;p&gt;To extend the basic sample and take control of the Authorization Server features you only have to go back to the old Spring Boot 1.2 version (any app with its own &lt;code&gt;AuthorizationServerConfigurer&lt;/code&gt; switches off the autoconfigured features).&lt;/p&gt;&lt;h2&gt;&lt;a href="#resource-server" class="anchor" name="resource-server"&gt;&lt;/a&gt;Resource Server&lt;/h2&gt;
+&lt;p&gt;A Resource Server protects its endpoints by requiring a valid access token (as created by the Authorization Server).&lt;/p&gt;
+&lt;p&gt;Similarly to the Authorization Server, a Resource Server can be implemented by convention and some configuration properties in Spring Boot 1.3, and also with Spring Boot 1.2 in conjunction with Spring Cloud Security. As an example consider the vanilla resource server &lt;a href="https://spring.io/guides/tutorials/spring-security-and-angular-js/#_sso_with_oauth2_angular_js_and_spring_security_part_v"&gt;Angular JS Spring Security Tutorial&lt;/a&gt; from spring.io.&lt;/p&gt;
+&lt;p&gt;With Spring Boot 1.2 we had to use Spring Cloud Security for the &lt;code&gt;@EnableOAuth2Resource&lt;/code&gt; annotation:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint groovy"&gt;@SpringBootApplication&#xD;
+@RestController&#xD;
+@EnableOAuth2Resource&#xD;
+class ResourceApplication {&#xD;
+  ...&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;and some configuration to help decode the access tokens in &lt;code&gt;application.properties&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;spring.oauth2.resource.userInfoUri: http://localhost:9999/uaa/user
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With Spring Boot 1.3 the Spring Cloud dependency can be removed and the annotation replaced with a vanilla &lt;code&gt;@EnableResourceServer&lt;/code&gt; annotation from Spring Security OAuth2:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint groovy"&gt;@SpringBootApplication&#xD;
+@RestController&#xD;
+@EnableResourceServer&#xD;
+class ResourceApplication {&#xD;
+  ...&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To finish the app there is a slightly different configuration (note the key prefix change from &lt;code&gt;spring.oauth2&lt;/code&gt; to &lt;code&gt;security.oauth2&lt;/code&gt;):&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;security.oauth2.resource.userInfoUri: http://localhost:9999/uaa/user
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a href="#client-application" class="anchor" name="client-application"&gt;&lt;/a&gt;Client Application&lt;/h2&gt;
+&lt;p&gt;In OAuth2 a client is an agent (usually an application) that acquires a token, often on behalf of a user. Single Sign On can be implemented by having a single Authorization Server and dependent authenticating apps that are OAuth2 clients.&lt;/p&gt;&lt;h3&gt;&lt;a href="#vanilla-single-sign-on" class="anchor" name="vanilla-single-sign-on"&gt;&lt;/a&gt;Vanilla Single Sign On&lt;/h3&gt;
+&lt;p&gt;On the client side in Spring Boot 1.3 you can implement the Single Sign On pattern with an annotation and some configuration properties. You can do the same with Spring Boot 1.2 is you use Spring Cloud Security as well.&lt;/p&gt;
+&lt;p&gt;A really generic example with Spring Boot 1.2 and Spring Cloud Angel would use a single &lt;code&gt;@EnableOAuth2Sso&lt;/code&gt; annotation:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;@SpringBootApplication&#xD;
+@EnableOAuth2Sso&#xD;
+public class SsoApplication {&#xD;
+  ...&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;and some configuration for the client in &lt;code&gt;application.yml&lt;/code&gt; (or equivalently &lt;code&gt;application.properties&lt;/code&gt;). Here&amp;rsquo;s an example for authentication with Facebook for an app running on localhost:8080:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint yaml"&gt;spring:&#xD;
+  oauth2:&#xD;
+    client:&#xD;
+      clientId: 233668646673605&#xD;
+      clientSecret: 33b17e044ee6a4fa383f46ec6e28ea1d&#xD;
+      accessTokenUri: https://graph.facebook.com/oauth/access_token&#xD;
+      userAuthorizationUri: https://www.facebook.com/dialog/oauth&#xD;
+      tokenName: oauth_token&#xD;
+      authenticationScheme: query&#xD;
+      clientAuthenticationScheme: form&#xD;
+    resource:&#xD;
+      userInfoUri: https://graph.facebook.com/me
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The same app looks almost identical in Spring Boot 1.3 but there is no need for Spring Cloud Security. Also the annotation moved to a different package, and the configuration prefix changed. So removing the Cloud dependency, changing the import for the annotation and switching the prefix in &lt;code&gt;application.yml&lt;/code&gt; from &lt;code&gt;spring&lt;/code&gt; to &lt;code&gt;security&lt;/code&gt; is all that is needed to migrate this app.&lt;/p&gt;&lt;h3&gt;&lt;a href="#single-sign-on-and-custom-access-rules" class="anchor" name="single-sign-on-and-custom-access-rules"&gt;&lt;/a&gt;Single Sign On and Custom Access Rules&lt;/h3&gt;
+&lt;p&gt;In Spring Cloud Security 1.0 (from the Angel release train) users can customize the request matching and access rules using a combination of a special callback &lt;code&gt;OAuth2ClientConfigurer&lt;/code&gt; and some configuration properties in &lt;code&gt;spring.oauth2.sso.*&lt;/code&gt;. So for example, the vanilla client app in the &lt;a href="https://spring.io/guides/tutorials/spring-security-and-angular-js/#_sso_with_oauth2_angular_js_and_spring_security_part_v"&gt;Angular JS Spring Security Tutorial&lt;/a&gt; from spring.io has this general pattern of implementation in Spring Boot 1.2:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;@SpringBootApplication&#xD;
+@EnableOAuth2Sso&#xD;
+public class UiApplication {&#xD;
+&#xD;
+  @Configuration&#xD;
+  protected static class SecurityConfiguration extends OAuth2SsoConfigurerAdapter {&#xD;
+&#xD;
+    @Override&#xD;
+    public void match(RequestMatchers matchers) {&#xD;
+      matchers.anyRequest();&#xD;
+    }&#xD;
+&#xD;
+    @Override&#xD;
+    public void configure(HttpSecurity http) throws Exception {&#xD;
+      http&#xD;
+        .authorizeRequests()&#xD;
+          .antMatchers(&amp;quot;/index.html&amp;quot;, &amp;quot;/home.html&amp;quot;, &amp;quot;/&amp;quot;).permitAll()&#xD;
+          .anyRequest().authenticated()&#xD;
+        .and().csrf()&#xD;
+          .csrfTokenRepository(csrfTokenRepository())&#xD;
+        .and()&#xD;
+          .addFilterAfter(csrfHeaderFilter(), CsrfFilter.class);&#xD;
+    }&#xD;
+&#xD;
+  }&#xD;
+&#xD;
+  ...&#xD;
+  &#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;and a similar &lt;code&gt;application.yml&lt;/code&gt; to the vanilla sample:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint yaml"&gt;spring:&#xD;
+   oauth2:&#xD;
+    sso:&#xD;
+      home:&#xD;
+        secure: false&#xD;
+        path: /,/**/*.html&#xD;
+     client:&#xD;
+       accessTokenUri: http://localhost:9999/uaa/oauth/token&#xD;
+       userAuthorizationUri: http://localhost:9999/uaa/oauth/authorize&#xD;
+     resource:&#xD;
+       userInfoUri: http://localhost:9999/uaa/user
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With Spring Boot 1.3 there is no need for Spring Cloud Security, and the customizations don&amp;rsquo;t need the obsolete &lt;code&gt;OAuth2SsoConfigurerAdapter&lt;/code&gt;. Instead they just need all of the same code, plus a request matcher, in a regular &lt;code&gt;WebSecurityConfigurerAdapter&lt;/code&gt; carrying the &lt;code&gt;@EnableOAuth2Sso&lt;/code&gt; annotation:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;@SpringBootApplication&#xD;
+@EnableZuulProxy&#xD;
+@EnableOAuth2Sso&#xD;
+public class UiApplication extends WebSecurityConfigurerAdapter {&#xD;
+&#xD;
+  @Override&#xD;
+  public void configure(HttpSecurity http) throws Exception {&#xD;
+    http.antMatcher(&amp;quot;/**&amp;quot;)&#xD;
+      .authorizeRequests()&#xD;
+        .antMatchers(&amp;quot;/index.html&amp;quot;, &amp;quot;/home.html&amp;quot;, &amp;quot;/&amp;quot;).permitAll()&#xD;
+        .anyRequest().authenticated()&#xD;
+      .and().csrf()&#xD;
+        .csrfTokenRepository(csrfTokenRepository())&#xD;
+      .and()&#xD;
+        .addFilterAfter(csrfHeaderFilter(), CsrfFilter.class);&#xD;
+  }&#xD;
+  &#xD;
+  ...&#xD;
+&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The configuration properties in the updated version are mostly the same: there is a prefix change from &lt;code&gt;spring.oauth2&lt;/code&gt; to &lt;code&gt;security.oauth2&lt;/code&gt; and there is no need for the &lt;code&gt;*.oauth2.sso.*&lt;/code&gt; properties because they are explicitly configured by the user in the &lt;code&gt;WebSecurityConfigurerAdapter&lt;/code&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#single-sign-on-and-zuul-proxy" class="anchor" name="single-sign-on-and-zuul-proxy"&gt;&lt;/a&gt;Single Sign On and Zuul Proxy&lt;/h3&gt;
+&lt;p&gt;The actual client app in the &lt;a href="https://spring.io/guides/tutorials/spring-security-and-angular-js/#_sso_with_oauth2_angular_js_and_spring_security_part_v"&gt;Angular JS Spring Security Tutorial&lt;/a&gt; from spring.io is similar to the customized one above, but it is also a Zuul proxy, responsible for forwarding requests from the browser client to back-end services. In Spring Boot 1.3, this app still needs Spring Cloud Security for the token relay (it wants to send the access tokens used for authentication to the back end resources), but it doesn&amp;rsquo;t need it for the basic SSO features, so the implementation is identical to the previous sample with the addition of an &lt;code&gt;@EnableZuulProxy&lt;/code&gt; annotation.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;NOTE: a bug in Spring Boot 1.3.0 leads to a workaround in the current implementation (at time of writing) of the client app in the &lt;a href="https://spring.io/guides/tutorials/spring-security-and-angular-js/#_sso_with_oauth2_angular_js_and_spring_security_part_v"&gt;Angular JS Spring Security Tutorial&lt;/a&gt;. The workaround is only needed because it is using Spring Cloud Security, and will also be redundant in Spring Boot 1.3.1:&lt;/p&gt;
+  &lt;pre&gt;&lt;code class="prettyprint"&gt;@Component
+@Order(Ordered.HIGHEST_PRECEDENCE)
+class WorkaroundRestTemplateCustomizer implements UserInfoRestTemplateCustomizer {
+
+  public void customize(OAuth2RestTemplate template) {
+    template.setInterceptors(new ArrayList&amp;lt;&amp;gt;(template.getInterceptors()));
+  }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;&lt;h2&gt;&lt;a href="#single-sign-one-in-cloud-foundry" class="anchor" name="single-sign-one-in-cloud-foundry"&gt;&lt;/a&gt;Single Sign One in Cloud Foundry&lt;/h2&gt;
+&lt;p&gt;With Spring Boot 1.2 and Spring Cloud Security in the Angel release train, an app is able to configire itself for OAuth2 SSO if you bind to a service with the right credentials. E.g. you can create a User Provided Service like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;cf create-user-provided-service sso -p &amp;#39;{&amp;quot;userInfoUri&amp;quot;:&amp;quot;https://uaa.run.pivotal.io/userinfo&amp;quot;, &amp;quot;tokenUri&amp;quot;:&amp;quot;login.run.pivotal.io/oauth/token&amp;quot;, &amp;quot;authorizationUri&amp;quot;:&amp;quot;login.run.pivotal.io/oauth/authorize&amp;quot;, &amp;quot;clientId&amp;quot;:&amp;quot;[client]&amp;quot;, &amp;quot;clientSecret&amp;quot;:&amp;quot;[secret]&amp;quot;}&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then an app with &lt;code&gt;@EnableOAuth2Sso&lt;/code&gt; which is bound to the service will bind the configuration needed for the SSO without the user having to change any configuration.&lt;/p&gt;
+&lt;p&gt;The same feature is available in Spring Boot 1.3 and Spring Cloud Brixton, but instead of Spring Cloud Security you need to use the new &lt;code&gt;spring-cloud-cloudfoundry-web&lt;/code&gt; library to get the SSO configuration binding behaviour. You can also use the built-in SSO service in Cloud Foundry instead of a User Provided Service (available in Pivotal Web Services for selected accounts or in Pivotal Cloud Foundry).&lt;/p&gt;&lt;h2&gt;&lt;a href="#conclusion" class="anchor" name="conclusion"&gt;&lt;/a&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;If you are using Spring Boot and maybe Spring Cloud with OAuth2, hopefully you will now be able to upgrade smoothly from Spring Boot 1.2 to 1.3, or at worst you will have some tools to help you think about what is going on when you hit the bumps. Spring Boot 1.3 has nearly all the features of Spring Cloud Security 1.0, so the main thing you need to think about is the dependencies. In addition there are a few new features in Spring Boot, like autoconfiguration of an Authorization Server, for instance. As usual with Spring Boot, you can (and should) take the default bevaviour until you need to change it, at which point there should be no barriers to doing so.&lt;/p&gt;
+&lt;p&gt;The sample apps in the Spring Guides have all been updated to Spring Boot 1.3 now, even if that means they depend on a milestone of Spring Cloud (this only applies to the Zuul proxy sample). Many do not need Spring Cloud any more. If you need a GA version of Spring Cloud you need to stay with Spring Boot 1.2 right now. The samples for that combination can be lifted from git history.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>How not to hate Spring in 2016</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/11/29/how-not-to-hate-spring-in-2016" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Phil Webb</name>
+    </author>
+    <id>tag:spring.io,2015-11-29:2311</id>
+    <updated>2015-11-29T17:31:00Z</updated>
+    <content type="html">&lt;p&gt;Over the Thanksgiving weekend a 2014 article called &lt;a href="http://samatkinson.com/why-i-hate-spring/"&gt;&amp;ldquo;Why I hate Spring&amp;rdquo; by Sam Atkinson&lt;/a&gt; started doing the rounds on Twitter. It&amp;rsquo;s always interesting to listen to criticisms to see what we can do to improve Spring, much of &lt;a href="https://spring.io/projects/spring-boot"&gt;Spring Boot&lt;/a&gt; was born out of listening to &lt;a href="https://jira.spring.io/browse/SPR-9888"&gt;people talk about the problems&lt;/a&gt; that they faced with the framework. &lt;/p&gt;
+&lt;p&gt;In this blog post, I&amp;rsquo;ll try to address some of the concerns discussed in Sam&amp;rsquo;s article, and describe my personal Spring &amp;ldquo;best practices&amp;rdquo;. Before we get too much into the details though, it&amp;rsquo;s worth considering why less than optimal ways of doing things still exist in the framework.&lt;/p&gt;&lt;h2&gt;&lt;a href="#the-curse-of-backwards-compatibility" class="anchor" name="the-curse-of-backwards-compatibility"&gt;&lt;/a&gt;The curse of backwards-compatibility&lt;/h2&gt;
+&lt;p&gt;One of the more stressful aspects of working on Spring, other than people writing about how much they hate it, is that features tend to have a very long tail. Spring has a strong commitment to back-compatibility, which means once a feature gets added, it&amp;rsquo;s quite hard to fundamentally change it. Developing a framework presents unique challenges that application developers don&amp;rsquo;t generally have. Agile techniques such as YAGNI &lt;em&gt;(You ain&amp;rsquo;t gonna need it)&lt;/em&gt; and, refactor aggressively are much harder to apply. We have SMNI &lt;em&gt;(Someone might need it)&lt;/em&gt; and, refactor cautiously. Features that made sense before lambdas, generics and even annotations existed in Java are still supported. It&amp;rsquo;s easy to argue that XML isn&amp;rsquo;t such a good way to wire up beans these days, but it&amp;rsquo;s much harder to argue that it should be removed altogether. I personally value the fact that I can easily upgrade older Spring applications and gradually migrate to newer techniques.&lt;/p&gt;
+&lt;p&gt;Remember as well that, just like commercial software, open source has limited resource and pressures of time. Sometimes we just make mistakes as developers and end up needing to live with them for a while.&lt;/p&gt;&lt;h2&gt;&lt;a href="#too-big-too-fail" class="anchor" name="too-big-too-fail"&gt;&lt;/a&gt;Too Big, Too Fail?&lt;/h2&gt;
+&lt;p&gt;At its heart, Spring is an integration framework. It provides a consistent programming model over lots of different technologies. It&amp;rsquo;s fair to say that Spring can be on the large side, but it&amp;rsquo;s simply not possible to provide integration with lots of technologies without&amp;hellip; integrating with lots of technologies. Although it can seem overwhelming, once you understand the core concepts, it&amp;rsquo;s pretty easy to pick only the parts of the Spring that you need. The &lt;a href="https://spring.io/guides"&gt;guides on spring.io&lt;/a&gt; can be useful starting point if you have some specific goal that you need to achieve. The &lt;a href="http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-starter-poms"&gt;list of Spring Boot starters&lt;/a&gt; or using &lt;a href="http://start.spring.io"&gt;start.spring.io&lt;/a&gt; can also be a good way of limiting Spring to a specific area.&lt;/p&gt;&lt;h2&gt;&lt;a href="#dependencies" class="anchor" name="dependencies"&gt;&lt;/a&gt;Dependencies&lt;/h2&gt;
+&lt;p&gt;A typical Spring-based application will have dependencies on any number of third-party libraries. Historically, it&amp;rsquo;s been hard to know exactly which versions of various libraries will work well together. If you&amp;rsquo;re starting a new project today, I highly recommend using &lt;a href="http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-dependency-management"&gt;Spring Boot&amp;rsquo;s parent POM&lt;/a&gt; or the &lt;a href="https://spring.io/platform"&gt;Spring Platform&lt;/a&gt;. Both provide a curated set of dependencies that are known to work well together.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;ve even developed a &lt;a href="https://github.com/spring-gradle-plugins/dependency-management-plugin"&gt;Gradle plugin that allows you to use the managed dependencies&lt;/a&gt; section of POM when you don&amp;rsquo;t have the benefit of Maven&amp;rsquo;s parent dependency feature.&lt;/p&gt;
+&lt;p&gt;If you can&amp;rsquo;t use managed dependencies for some reason, you can still refer to the Spring Boot documentation for a &lt;a href="http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#appendix-dependency-versions"&gt;list of compatible versions&lt;/a&gt; that are known to play well together.&lt;/p&gt;&lt;h2&gt;&lt;a href="#injection" class="anchor" name="injection"&gt;&lt;/a&gt;Injection&lt;/h2&gt;
+&lt;p&gt;Always use &lt;a href="http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/htmlsingle/#beans-constructor-injection"&gt;constructor based dependency injection&lt;/a&gt; in your beans. Always use &lt;a href="http://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/util/Assert.html"&gt;assertions&lt;/a&gt; for mandatory dependencies. For more background on why field based injection is evil, you can read &lt;a href="http://olivergierke.de/2013/11/why-field-injection-is-evil/"&gt;this article by Oliver Gierke&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As always there is one exception to the rule, it&amp;rsquo;s fine to use field based injection in tests when you&amp;rsquo;re &lt;a href="http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/htmlsingle/#integration-testing"&gt;using the &lt;code&gt;SpringJUnit4ClassRunner&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#leaky-spring" class="anchor" name="leaky-spring"&gt;&lt;/a&gt;Leaky Spring&lt;/h2&gt;
+&lt;p&gt;I&amp;rsquo;ve seen a few people argue that application code should &lt;em&gt;never&lt;/em&gt; have any dependencies on frameworks. I.e. an &lt;code&gt;org.springframework&lt;/code&gt; import anywhere (other than configuration code) is bad. Whilst you can absolutely can do this (there is wide support for standard annotations such as &lt;code&gt;@Inject&lt;/code&gt;), I tend not to be so prescriptive. I prefer to apply the 80/20 rule here. I think it&amp;rsquo;s fine to have dependencies on framework classes and annotations, but I don&amp;rsquo;t want to rewrite more than 20% of the class if I were to move off Spring.&lt;/p&gt;
+&lt;p&gt;What I do want is application code that is easy to test. It should be possible for me to manually create an instance of my business service and test it without needing a full &lt;code&gt;ApplicationContext&lt;/code&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#configuration" class="anchor" name="configuration"&gt;&lt;/a&gt;Configuration&lt;/h2&gt;
+&lt;p&gt;I personally like to keep my Spring configuration fairly light. I like to use component-scanning to find application beans and I like to keep my &lt;code&gt;@Configuration&lt;/code&gt; for framework specific configuration that deviates from Spring Boot&amp;rsquo;s default auto-configuration. I don&amp;rsquo;t tend to use XML-configuration at all these days.&lt;/p&gt;
+&lt;p&gt;Some people argue that it&amp;rsquo;s better to have explicit configuration for all defined beans but in practice I tend to find this a hindrance. Applications that follow this approach tend to have a single &lt;code&gt;@Configuration&lt;/code&gt; class that ends up knowing about everything in the system, and contains a whole bunch of small &lt;code&gt;@Bean&lt;/code&gt; methods. I also find the self-documentation nature of annotations really useful. I can easily search for &lt;code&gt;@Service&lt;/code&gt; and find all my service beans.&lt;/p&gt;
+&lt;p&gt;Sam&amp;rsquo;s article states &lt;em&gt;&amp;ldquo;&amp;hellip;annotations are still magic. Until you run your app you¡¯ve no idea if it¡¯s wired up correctly&amp;rdquo;&lt;/em&gt; but I don&amp;rsquo;t really see how this is much different to having a class that &lt;a href="https://sites.google.com/site/unclebobconsultingllc/blogs-by-robert-martin/dependency-injection-inversion"&gt;manually wires everything up&lt;/a&gt;. You still need to run the entire app at some point to be sure that it works.&lt;/p&gt;&lt;h2&gt;&lt;a href="#layering" class="anchor" name="layering"&gt;&lt;/a&gt;Layering&lt;/h2&gt;
+&lt;p&gt;Any system of significant size needs to think about architectural layers. Almost all my Spring applications end up with a &amp;ldquo;domain&amp;rdquo; layer at the bottom and a &amp;ldquo;web&amp;rdquo; layer at the top. I find it best to enforce strict separation between layers and keep dependencies in a single direction. It&amp;rsquo;s pretty easy to annotate domain service exceptions with &lt;code&gt;@ResponseStatus&lt;/code&gt; but I&amp;rsquo;ve rarely found this to be a good idea in practice. Likewise, it&amp;rsquo;s easy to throw some Jackson annotations on an &lt;code&gt;@Entity&lt;/code&gt; so that it can be marshalled as JSON but this often causes problems in the long run.&lt;/p&gt;
+&lt;p&gt;I recommend tools such as &lt;a href="https://structure101.com/"&gt;Structure 101&lt;/a&gt; and &lt;a href="http://www.sonarqube.org/"&gt;SonarQube&lt;/a&gt; which can check your code for package tangles and design problems.&lt;/p&gt;&lt;h2&gt;&lt;a href="#spring-mvc" class="anchor" name="spring-mvc"&gt;&lt;/a&gt;Spring MVC&lt;/h2&gt;
+&lt;p&gt;I generally find it best to keep business logic outside of Spring MVC &lt;code&gt;@Controller&lt;/code&gt; beans. I like to think of Spring MVC as a little adapter layer. It&amp;rsquo;s responsible for taking HTTP input, validating it, passing it to a service then returning a response. I&amp;rsquo;ll often add mediator &lt;code&gt;@Service&lt;/code&gt; beans at the web layer to take care coordinating calls to business services. This generally makes it much easier to test things, especially when using the &lt;a href="http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/htmlsingle/#spring-mvc-test-framework"&gt;MVC Test framework&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#logging" class="anchor" name="logging"&gt;&lt;/a&gt;Logging&lt;/h2&gt;
+&lt;p&gt;Logging in Java really shouldn&amp;rsquo;t be as difficult as it is. There are so many logging libraries to choose from, and so many different combinations that it&amp;rsquo;s easy to get bogged down. Luckily, for a typical Spring Boot application you don&amp;rsquo;t really need to worry too much. My advice is always:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Use &lt;a href="http://www.slf4j.org/"&gt;SLF4J&lt;/a&gt; in your code to log things.&lt;/li&gt;
+  &lt;li&gt;Stick with Spring Boot&amp;rsquo;s default choice of &lt;a href="http://logback.qos.ch/"&gt;logback&lt;/a&gt; if possible.&lt;/li&gt;
+  &lt;li&gt;Log to the console only and use a tool such as &lt;a href="http://www.splunk.com"&gt;Splunk&lt;/a&gt; to capture and store.&lt;/li&gt;
+&lt;/ul&gt;&lt;h2&gt;&lt;a href="#testing" class="anchor" name="testing"&gt;&lt;/a&gt;Testing&lt;/h2&gt;
+&lt;p&gt;The golden rule for unit testing in Spring is keep Spring out of your unit testing! It should be possible to unit test the majority of your beans without needing to spin up an application context. There&amp;rsquo;s a lot of debate in the testing world about mocks, but I generally find judicious use of &lt;a href="http://mockito.org/"&gt;Mockito&lt;/a&gt; (I like &lt;a href="http://mockito.github.io/mockito/docs/current/org/mockito/BDDMockito.html"&gt;BDD Mockito&lt;/a&gt;) pretty helpful.&lt;/p&gt;
+&lt;p&gt;You will often need to involve Spring when it comes to integration testing. I tend to find my integration tests often configure a &amp;ldquo;layer&amp;rdquo; of the application. For example, domain tests might startup Hibernate + Spring Data + In-memory Database. For Spring MVC tests, I tend to leave the database alone and inject mock services. The layered architecture discussed above really starts to pay dividends here since it&amp;rsquo;s easy to mock or stub the things that your &amp;ldquo;web layer&amp;rdquo; needs.&lt;/p&gt;&lt;h2&gt;&lt;a href="#startup-times" class="anchor" name="startup-times"&gt;&lt;/a&gt;Startup times&lt;/h2&gt;
+&lt;p&gt;A typical Spring Boot REST application starts in about 2.5 seconds and things get slower once you start to throw technologies such as Hibernate in the mix. Spring is designed to &amp;ldquo;fail fast &amp;amp; fail early&amp;rdquo; and unfortunately that does have an impact on startup time. On the plus side, once an application has started, it&amp;rsquo;s likely that it&amp;rsquo;s in a functioning state.&lt;/p&gt;
+&lt;p&gt;If you do have issues with slow startup, consider looking at &lt;a href="https://spring.io/blog/2015/06/17/devtools-in-spring-boot-1-3"&gt;Spring Boot Devtools&lt;/a&gt; which should make re-starts much quicker. You should also look at using &lt;code&gt;@Lazy&lt;/code&gt; initialization if you have any of your own beans that are slow to create.&lt;/p&gt;&lt;h2&gt;&lt;a href="#spring-boot" class="anchor" name="spring-boot"&gt;&lt;/a&gt;Spring Boot&lt;/h2&gt;
+&lt;p&gt;Spring Boot was launched at the end of 2013 to specifically address some of the common problems faced by users of Spring. Unfortunately I&amp;rsquo;ve seen the &lt;em&gt;&amp;ldquo;Spring is now so complex that it has its own framework.&amp;rdquo;&lt;/em&gt; quote paraphrased quite often. Spring Boot is intentionally distinct from the Spring Framework, it has different goals, different dependencies and a different release schedule. I prefer to think of Spring Framework as the raw ingredients, and Spring Boot as fully baked cake. You&amp;rsquo;re free to mix the ingredients in anyway you see fit, but who doesn&amp;rsquo;t like cake?&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/philwebb/media/master/hownottohate/spring-ingredients.jpg" alt="Ingredients" /&gt; &lt;img src="https://raw.githubusercontent.com/philwebb/media/master/hownottohate/boot-cake.jpg" alt="Cake" /&gt;&lt;/p&gt;&lt;h2&gt;&lt;a href="#choice-amp-open-source" class="anchor" name="choice-amp-open-source"&gt;&lt;/a&gt;Choice &amp;amp; Open Source&lt;/h2&gt;
+&lt;p&gt;One of the greatest things about Open Source is that it gives you tremendous freedom. If you want Dependency Injection, but you&amp;rsquo;re not a fan of Spring, take a look at &lt;a href="https://github.com/google/guice"&gt;Guice&lt;/a&gt;. If you want to build a REST service, but you don&amp;rsquo;t like Spring MVC, try &lt;a href="http://ratpack.io/"&gt;Ratpack&lt;/a&gt;. If you want a well integrated, well tested, documented framework with a proven track record, try &lt;a href="http://start.spring.io"&gt;Spring&lt;/a&gt; with &lt;a href="http://start.spring.io"&gt;Spring Boot&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you want to change the way that your Open Source works, try &lt;a href="https://spring.io/blog/2013/09/20/contributing-to-spring-boot-with-a-pull-request"&gt;contributing&lt;/a&gt;!&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Tool Suite 3.7.2 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/11/27/spring-tool-suite-3-7-2-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Martin Lippert</name>
+    </author>
+    <id>tag:spring.io,2015-11-27:2310</id>
+    <updated>2015-11-27T12:37:50Z</updated>
+    <content type="html">&lt;p&gt;Dear Spring Community,&lt;/p&gt;
+&lt;p&gt;I am happy to announce the 3.7.2 release of the Spring Tool Suite, our Eclipse-based tooling.&lt;/p&gt;
+&lt;p&gt;STS 3.7.2 focuses on fixing existing issues and updating STS to work with the latest updates on Cloud Foundry, Spring, and the various Spring projects.&lt;/p&gt;
+&lt;p&gt;The list of fixed issues include:&lt;/p&gt;
+&lt;ul&gt;&#xD;
+&lt;li&gt;Spring Boot Dashboard now works with the new Diego runtime on Cloud Foundry&lt;/li&gt;&#xD;
+&lt;li&gt;Spring Boot 1.3.0 compatibility (due to updated spring components inside)&lt;/li&gt;&#xD;
+&lt;li&gt;quick text search can now search for escaped * and ? characters&lt;/li&gt;&#xD;
+&lt;li&gt;preliminary support for Eclipse Buildship (the new Gradle integration for Eclipse from Gradleware)&lt;/li&gt;&#xD;
+&lt;/ul&gt;
+&lt;p&gt;To download the distributions, please go visit:&lt;/p&gt;
+&lt;ul&gt;&#xD;
+&lt;li&gt;Spring Tool Suite: &lt;a href="https://spring.io/tools/sts/all"&gt;https://spring.io/tools/sts/all&lt;/a&gt;&lt;/li&gt;&#xD;
+&lt;/ul&gt;
+&lt;p&gt;Detailed new and noteworthy notes can be found here: &lt;a href="http://docs.spring.io/sts/nan/v372/NewAndNoteworthy.html"&gt;STS 3.7.2 New &amp;amp; Noteworthy&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;STS 3.7.3 is scheduled to ship in early March 2016.&lt;/p&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;</content>
+  </entry>
+</feed>
