@@ -59,7 +59,7 @@
 						console.log(formObj);
 
 						$(".btn-warning").on("click", function() {
-							self.location = "/rootContext/sboard/list?page=${cri.page}&perPageNum=${cri.perPageNum}"
+							self.location = "/springBoard/sboard/list?page=${cri.page}&perPageNum=${cri.perPageNum}"
 							+"&searchType=${cri.searchType}&keyword=${cri.keyword}";
 						});
 

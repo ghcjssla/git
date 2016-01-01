@@ -7,7 +7,6 @@
 <%@include file="../include/header.jsp"%>
 <Script>
 	function test(url) {
-		alert("Test : " + url);
 		location.href = url;
 	}
 </Script>
@@ -69,7 +68,7 @@
 							<tr>
 								<td>${boardVO.bno}</td>
 								<td><a
-									href='/rootContext/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page) }&bno=${boardVO.bno}'>
+									href='/springBoard/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page) }&bno=${boardVO.bno}'>
 										${boardVO.title} <strong>[${boardVO.replycnt}]</strong></a></td>
 								<td>${boardVO.writer}</td>
 								<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
@@ -131,7 +130,7 @@
 	var result = '${msg}';
 
 	if (result == 'SUCCESS') {
-		alert("처리가 완료되었습니다.");
+		//alert("처리가 완료되었습니다.");
 	}
 	/*
 	$(".pagination li a").on("click", function(event){

@@ -75,17 +75,17 @@
 
 
 	<!-- jQuery 2.1.4 -->
-	<script src="/rootContext/resources/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+	<script src="/springBoard/resources/plugins/jQuery/jQuery-2.1.4.min.js"></script>
 
 	<script>
-	var rootContext = "/rootContext";
+	var springBoard = "/springBoard";
 		var bno = 548;
 
 		getPageList(1);
 
 		function getAllList() {
 
-	    $.getJSON(rootContext+"/replies/all/" + bno, function(data) {
+	    $.getJSON(springBoard+"/replies/all/" + bno, function(data) {
 	
 				console.log(data.length);
 	
@@ -110,7 +110,7 @@
 
 			$.ajax({
 				type : 'post',
-				url : rootContext+'/replies',
+				url : springBoard+'/replies',
 				headers : {
 					"Content-Type" : "application/json",
 					"X-HTTP-Method-Override" : "POST"
@@ -155,7 +155,7 @@
 
 			$.ajax({
 				type : 'delete',
-				url : rootContext+'/replies/' + rno,
+				url : springBoard+'/replies/' + rno,
 				headers : {
 					"Content-Type" : "application/json",
 					"X-HTTP-Method-Override" : "DELETE"
@@ -180,7 +180,7 @@
 
 			$.ajax({
 				type : 'put',
-				url : rootContext+'/replies/' + rno,
+				url : springBoard+'/replies/' + rno,
 				headers : {
 					"Content-Type" : "application/json",
 					"X-HTTP-Method-Override" : "PUT"
@@ -201,7 +201,7 @@
 		
 		function getPageList(page) {
 
-			$.getJSON(rootContext+"/replies/" + bno + "/" + page,
+			$.getJSON(springBoard+"/replies/" + bno + "/" + page,
 							function(data) {
 
 								console.log("getPageList 호출 : "+data.list.length);

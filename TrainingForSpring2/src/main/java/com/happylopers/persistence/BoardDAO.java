@@ -22,4 +22,11 @@ public interface BoardDAO {
     public List<BoardVO> listSearch(SearchCriteria cri) throws Exception;
     public int listSearchCount(SearchCriteria cri) throws Exception;
     //public List<BoardVO> listALL()throws Exception;
+    
+    //파일처리
+    public void addAttach(String fullName)throws Exception;
+    public List<String> getAttach(Integer bno)throws Exception;
+    public void deleteAttach(Integer bno)throws Exception;
+    public void replaceAttach(String fullname, Integer bno)throws Exception;
+    
 }

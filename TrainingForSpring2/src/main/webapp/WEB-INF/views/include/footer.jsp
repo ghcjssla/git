@@ -6,7 +6,6 @@
         </div>
         <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved.
       </footer>
-      
       <!-- Control Sidebar -->      
       <aside class="control-sidebar control-sidebar-dark">                
         <!-- Create the tabs -->
@@ -44,7 +43,7 @@
                   <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
                   <div class="menu-info">
                     <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
-                    <p>nora@example.com</p>
+                    <p>mantto2@naver.com</p>
                   </div>
                 </a>
               </li>
@@ -177,12 +176,12 @@
 
 
     <!-- Bootstrap 3.3.2 JS -->
-    <script src="/rootContext/resources/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/springBoard/resources/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <!-- FastClick -->
-    <script src='/rootContext/resources/plugins/fastclick/fastclick.min.js'></script>
+    <script src='/springBoard/resources/plugins/fastclick/fastclick.min.js'></script>
     <!-- AdminLTE App -->
-    <script src="/rootContext/resources/dist/js/app.min.js" type="text/javascript"></script>
+    <script src="/springBoard/resources/dist/js/app.min.js" type="text/javascript"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="/rootContext/resources/dist/js/demo.js" type="text/javascript"></script>
+    <script src="/springBoard/resources/dist/js/demo.js" type="text/javascript"></script>
   </body>
 </html>

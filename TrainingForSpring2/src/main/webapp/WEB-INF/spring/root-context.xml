@@ -15,10 +15,16 @@
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
+		<!-- 
 		<property name="url"
 			value="jdbc:log4jdbc:mysql://teatime.pe.kr:3306/book_ex?zeroDateTimeBehavior=convertToNull"></property>
 		<property name="username" value="book_ex"></property>
 		<property name="password" value="book_ex"></property>
+		 -->
+		 <property name="url"
+            value="jdbc:log4jdbc:mysql://www.happylopers.com:3306/book_ex?zeroDateTimeBehavior=convertToNull"></property>
+        <property name="username" value="book_ex"></property>
+        <property name="password" value="book_ex"></property>
 	</bean>
 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
