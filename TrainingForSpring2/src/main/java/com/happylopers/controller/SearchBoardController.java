@@ -3,6 +3,7 @@ package com.happylopers.controller;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,7 +31,7 @@ public class SearchBoardController {
     private BoardService service;
     
     @RequestMapping(value = "/list",  method = RequestMethod.GET)
-    public void ListPage(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+    public void ListPage(@ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req) throws Exception{
         logger.info("검색 리스트 호출 GET "+cri.toString());
         
         //model.addAttribute("list",service.listCriteria(cri));
@@ -45,6 +46,9 @@ public class SearchBoardController {
         pageMaker.setTotalCount(service.listSearchCount(cri));
         
         model.addAttribute("pageMaker", pageMaker);
+        
+        logger.info("리스트에서 쿼리스트링 테스트 : "+req.getQueryString());
+        
     }
     
     @RequestMapping(value = "/readPage", method = RequestMethod.GET)

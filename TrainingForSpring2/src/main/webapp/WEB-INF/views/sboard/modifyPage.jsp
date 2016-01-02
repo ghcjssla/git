@@ -11,7 +11,7 @@
 			<!-- general form elements -->
 			<div class="box box-primary">
 				<div class="box-header">
-					<h3 class="box-title">READ BOARD</h3>
+					<h3 class="box-title">게시물 수정</h3>
 				</div>
 				<!-- /.box-header -->
 

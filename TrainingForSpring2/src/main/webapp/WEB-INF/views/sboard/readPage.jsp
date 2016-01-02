@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@include file="../include/header.jsp"%>
 <script type="text/javascript" src="/springBoard/resources/js/upload.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
@@ -32,7 +32,7 @@
 			<!-- general form elements -->
 			<div class="box box-primary">
 				<div class="box-header">
-					<h3 class="box-title">READ BOARD</h3>
+					<h3 class="box-title">게시물 읽기</h3>
 				</div>
 				<!-- /.box-header -->
 
@@ -66,8 +66,10 @@
 				<ul class="mailbox-attachments clearfix uploadedList"></ul>
 
 				<div class="box-footer">
+				<c:if test="${login.uid == boardVO.writer}">
 				  <button type="submit" class="btn btn-warning" id="modifyBtn">Modify</button>
 				  <button type="submit" class="btn btn-danger" id="removeBtn">REMOVE</button>
+				</c:if>
 				  <button type="submit" class="btn btn-primary" id="goListBtn">GO LIST </button>
 				</div>
 				
@@ -85,11 +87,12 @@
 	
 	<div class="row">
 	    <div class="col-md-12">
-	
+	        
 		    <div class="box box-success">
 		        <div class="box-header">
-		            <h3 class="box-title">ADD NEW REPLY</h3>
+		            <h3 class="box-title">새로운 댓글 추가</h3>
 		        </div>
+		        <c:if test="${not empty login}">
 		        <div class="box-body">
 		            <label for="exampleInputEmail1">Writer</label> <input
 		                class="form-control" type="text" placeholder="USER ID"
@@ -99,10 +102,17 @@
 		
 		        </div>
 		        <!-- /.box-body -->
-		        <div class="box-footer">
+		        <div clㄴass="box-footer">
 		            <button type="button" class="btn btn-primary" id="replyAddBtn">댓글 추가</button>
 		        </div>
+		        </c:if>
+		        <c:if test="${empty login }">
+		        <div class="box-body">
+		          <div><a href="javascript:goLogin();">로그인하기</div>
+		        </div>
+		        </c:if>
 		    </div>
+		    
 		    
 		    <!-- The time line -->
 		    <ul class="timeline">
@@ -156,27 +166,43 @@
 </div>
 <!-- /.content-wrapper -->
 
+
+
 <script id="template" type="text/x-handlebars-template">
 {{#each .}}
-<li class="replyLi" data-rno={{rno}}>
-<i class="fa fa-comments bg-blue"></i>
- <div class="timeline-item" >
-  <span class="time">
-    <i class="fa fa-clock-o"></i>{{prettifyDate regdate}}
-  </span>
-  <h3 class="timeline-header"><strong>{{rno}}</strong> -{{replyer}}</h3>
-  <div class="timeline-body">{{replytext}} </div>
-    <div class="timeline-footer">
-     <a class="btn btn-primary btn-xs" 
-        data-toggle="modal" data-target="#modifyModal">Modify</a>
-    </div>
-  </div>            
-</li>
+     <li class="replyLi" data-rno={{rno}}>
+     <i class="fa fa-comments bg-blue"></i>
+     <div class="timeline-item" >
+        <span class="time">
+          <i class="fa fa-clock-o"></i>{{prettifyDate regdate}}
+        </span>
+        <h3 class="timeline-header"><strong>{{rno}}</strong> -{{replyer}}</h3>
+        <div class="timeline-body">{{replytext}} </div>
+                        <div class="timeline-footer">
+                        {{#eqReplyer replyer }}
+          <a class="btn btn-primary btn-xs" 
+                            data-toggle="modal" data-target="#modifyModal">Modify</a>
+                        {{/eqReplyer}}
+                      </div>
+        </div>          
+   </li>
 {{/each}}
-</script>
-
+</script>  
 
 <script>
+    function goLogin(){
+    	//이 부분  preURI 처리 필요
+        location.href = "/springBoard/user/login";
+    }
+
+    Handlebars.registerHelper("eqReplyer", function(replyer, block) {
+        var accum = '';
+        if (replyer == '${login.uid}') {
+            accum += block.fn();
+        }
+        return accum;
+    });
+
     Handlebars.registerHelper("prettifyDate", function(timeValue) {
         var dateObj = new Date(timeValue);
         var year = dateObj.getFullYear();

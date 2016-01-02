@@ -26,9 +26,25 @@
     </beans:bean>
     
     <beans:bean id="uploadPath" class="java.lang.String">
-       <!--<beans:constructor-arg value="D:\\upload"></beans:constructor-arg> -->
-       <beans:constructor-arg value="/var/www/upload/"></beans:constructor-arg>
+       <beans:constructor-arg value="D:\\upload"></beans:constructor-arg>
+       <!--<beans:constructor-arg value="/var/www/upload/"></beans:constructor-arg>-->
     </beans:bean>
+    
+    <beans:bean id="loginInterceptor" class="com.happylopers.interceptor.LoginInterceptor"></beans:bean>
+    <beans:bean id="authInterceptor" class="com.happylopers.interceptor.AuthInterceptor"></beans:bean>
+    
+    <interceptors>
+        <interceptor>
+            <mapping path="/user/loginPost"/>
+            <beans:ref bean="loginInterceptor"/>
+        </interceptor>
+        <interceptor>
+            <mapping path="/sboard/register"/>
+            <mapping path="/sboard/modifyPage"/>
+            <mapping path="/sboard/removePage"/>
+            <beans:ref bean="authInterceptor"/>
+        </interceptor>
+    </interceptors>
     
 	<context:component-scan base-package="com.happylopers.controller" />
 	
