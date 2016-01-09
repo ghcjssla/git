@@ -1,7 +1,5 @@
 package com.happylopers.test;
 
-import java.util.List;
-
 import javax.inject.Inject;
 
 import org.junit.Test;
@@ -10,12 +8,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.web.util.UriComponents;
-import org.springframework.web.util.UriComponentsBuilder;
 
-import com.happylopers.domain.BoardVO;
-import com.happylopers.domain.SearchCriteria;
-import com.happylopers.persistence.BoardDAO;
+import com.happylopers.board.persistence.BoardDAO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"file:src/main/webapp/WEB-INF/spring/**/*.xml"})
@@ -33,13 +27,13 @@ public class BoardDAOTest {
         boardVO.setWriter("테스트계정");
         dao.create(boardVO);
     }
-    
+    */
     @Test
     public void testRead() throws Exception{
         dao.read(983057);
     }
     
-    
+    /*
     @Test
     public void testUpdate() throws Exception{
         BoardVO boardVO = new BoardVO();
@@ -53,7 +47,7 @@ public class BoardDAOTest {
     @Test
     public void testDelete() throws Exception {
         dao.delete(983057);
-    }*/
+    }
     
     /*
     @Test
@@ -84,7 +78,7 @@ public class BoardDAOTest {
         logger.info("/board/read?bno=12&perPageNum=20");
         logger.info(uriComponents.toString());
     }
-    */
+    
     
     @Test
     public void testDynamic1() throws Exception{
@@ -100,15 +94,16 @@ public class BoardDAOTest {
         
         
         logger.info("------------------------------");
-        /*
-        List<BoardVO> list = dao.listSearch(cri);
         
-        for (BoardVO boardVO : list) {
-            logger.info(boardVO.getBno()+" : "+boardVO.getTitle());
-        }
-        */
+//        List<BoardVO> list = dao.listSearch(cri);
+//        
+//        for (BoardVO boardVO : list) {
+//            logger.info(boardVO.getBno()+" : "+boardVO.getTitle());
+//        }
+        
         logger.info("------------------------------");
         logger.info("COUNT : "+dao.listSearchCount(cri));
         
     }
+    */
 }

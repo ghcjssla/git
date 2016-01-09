@@ -4,6 +4,7 @@
     "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 <typeAliases>
-    <package name="com.happylopers.domain"/>
+    <package name="com.happylopers.board.domain"/>
+    <package name="com.happylopers.wakeup.domain"/>
 </typeAliases>
 </configuration>

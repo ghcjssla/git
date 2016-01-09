@@ -8,12 +8,12 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import org.springframework.web.util.WebUtils;
 
-import com.happylopers.domain.UserVO;
-import com.happylopers.service.UserService;
+import com.happylopers.board.domain.UserVO;
+import com.happylopers.common.service.UserService;
+
 
 public class AuthInterceptor extends HandlerInterceptorAdapter{
 	@Inject
