@@ -1,0 +1,42 @@
+* { 
+ margin: 0; 
+ padding: 0; 
+ -webkit-text-size-adjust:none; }
+body { 
+ color:#666; 
+ font-size:14px; 
+ font-family:Helvetica, AppleGothic, 돋움, Dotum; }
+img, fieldset { border:0 }
+ul, ol, li, dl { list-style:none; }
+h1, h2, h3, h4, h5, h6 { 
+ font-size:100%; 
+ font-weight:normal; }
+hr { display:none; }
+a { color:inherit; }
+a, a:link { 
+ color:#333; 
+ text-decoration:none; }
+a:visited { color:#333; }
+a:hover, a:active { 
+ color:#333; 
+ text-decoration:none; }
+em, i, address { 
+ font-style:normal; 
+ font-weight:normal; }
+legend, caption { 
+ display:none; 
+ clear:both; }
+input, textarea, select, button, table { 
+ font-size:inherit; 
+ font-family:inherit; 
+ line-height:inherit; }
+section, nav, article, aside, hgroup, header, footer { display:block }
+textarea, input { 
+ background:url(none); 
+ -webkit-border-radius:1px; 
+ -webkit-apprearance:none; }
+textarea { resize:none; }
+label { cursor:pointer; }
+.helv { font-family:돋움, HelveticaNeue, Dotum, 굴림, Gulim, Apple-Gothic; }
+.verd { font-family:verdana, 돋움, HelveticaNeue, Dotum, 굴림, Gulim, Apple-Gothic; }
+.bold { font-weight:bold; }
