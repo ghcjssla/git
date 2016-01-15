@@ -1,8 +1,11 @@
 package com.happylopers.wakeup.service;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 import javax.inject.Inject;
 
@@ -37,6 +40,39 @@ public class WakeUpServiceImpl implements WakeUpService{
 	@Override
 	public void remove(WakeUpVO vo) throws Exception {
 		dao.delete(vo);
+	}
+
+	@Override
+	public void modify(String modal_date, String modal_comment, int modal_seq) throws Exception {
+		WakeUpVO vo = new WakeUpVO();
+		String[] hourAndMinute =  modal_date.split(":");
+		
+		int hour = Integer.parseInt(hourAndMinute[0]) ; 
+		int minute = Integer.parseInt(hourAndMinute[1]) ;
+		
+		System.out.println("modal_date : "+modal_date);
+		System.out.println("hour : "+hour);
+		System.out.println("minute : "+minute);
+		System.out.println("modal_seq : "+modal_seq);
+		
+		Calendar cal = Calendar.getInstance();
+        cal.add(cal.HOUR, + hour);
+        cal.add(cal.MINUTE, + minute);
+        
+        System.out.println("시"+cal.getTime());
+        
+        Date makeDate = new Date(cal.getTimeInMillis());
+        
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd HH:mm:ss", Locale.KOREA);
+        System.out.println(format.format(makeDate)); // Fri May 29 11:06:29
+        
+        System.out.println("마지막에 들어가는 date 값 "+makeDate);
+        
+		
+		vo.setDate(makeDate);
+		vo.setComment(modal_comment);
+		vo.setSeq(modal_seq);
+		//dao.update(vo);
 	}
 
 

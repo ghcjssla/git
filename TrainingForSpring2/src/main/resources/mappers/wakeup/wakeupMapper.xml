@@ -39,4 +39,12 @@
     <delete id="delete">
         delete from daily_log where seq = #{seq}
     </delete>
+    
+    <update id="update">
+        update daily_log 
+        set 
+        date = #{date}, 
+        comment = #{comment}
+        where seq = #{seq}
+    </update>
 </mapper>

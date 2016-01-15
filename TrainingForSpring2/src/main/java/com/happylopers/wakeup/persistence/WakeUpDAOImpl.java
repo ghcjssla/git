@@ -30,5 +30,10 @@ public class WakeUpDAOImpl implements WakeUpDAO{
 	public void delete(WakeUpVO vo) throws Exception {
 		session.delete(namespace+".delete", vo);
 	}
+
+	@Override
+	public void update(WakeUpVO vo) throws Exception {
+		session.update(namespace+".update", vo);
+	}
 	
 } 
