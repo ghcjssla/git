@@ -62,6 +62,9 @@
     <context:component-scan base-package="com.happylopers.mobile.persistence"></context:component-scan>
     <context:component-scan base-package="com.happylopers.mobile.service"></context:component-scan>
     
+    <context:component-scan base-package="com.happylopers.booklog.persistence"></context:component-scan>
+    <context:component-scan base-package="com.happylopers.booklog.service"></context:component-scan>
+    
     
 	<context:component-scan base-package="com.happylopers.aop"></context:component-scan>
 	

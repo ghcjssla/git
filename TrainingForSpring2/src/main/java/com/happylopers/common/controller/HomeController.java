@@ -29,4 +29,10 @@ public class HomeController {
 	    logger.info("Ajax 테스트 호출");
 	}
 	
+	@RequestMapping(value ="/adminLTE", method = RequestMethod.GET)
+	public String starter(){
+	    logger.info("adminLTE 테스트 호출");
+	    return "AdminLTE/starter";
+	}
+	
 }

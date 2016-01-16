@@ -1,14 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
 <%@include file="../include/header.jsp"%>
-<Script>
-	function test(url) {
-		location.href = url;
-	}
-</Script>
 <!-- Main content -->
 <section class="content">
 	<div class="row">
@@ -118,7 +110,7 @@
 	<!-- /.row -->
 </section>
 <!-- /.content -->
-
+</div>
 <form id="jobForm">
 	<input type='hidden' name="page" value=${pageMaker.cri.perPageNum}>
 	<input type='hidden' name="perPageNum" value=${pageMaker.cri.perPageNum}>
@@ -147,6 +139,9 @@
 </script>
 
 <script>
+	function test(url) {
+	    location.href = url;
+	}
 	$(document).ready(
 			function() {
 
