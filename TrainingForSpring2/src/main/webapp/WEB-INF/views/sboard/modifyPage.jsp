@@ -82,7 +82,6 @@
 	<!-- /.row -->
 </section>
 <!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
+
 
 <%@include file="../include/footer.jsp"%>

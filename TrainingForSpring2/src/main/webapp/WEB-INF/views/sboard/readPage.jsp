@@ -163,8 +163,6 @@
   </div>
 </li>                
 </script>  
-</div>
-<!-- /.content-wrapper -->
 
 
 

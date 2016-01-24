@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.happylopers.board.domain.BoardVO;
-import com.happylopers.board.domain.SearchCriteria;
 import com.happylopers.wakeup.domain.WakeUpVO;
 import com.happylopers.wakeup.service.WakeUpService;
 

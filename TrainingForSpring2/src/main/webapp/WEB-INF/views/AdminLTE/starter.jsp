@@ -22,12 +22,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="/springBoard/resources/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/springBoard/resources/AdminLTE/css/AdminLTE.min.css" rel="stylesheet" type="text/css">
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect.
     -->
-    <link rel="stylesheet" href="/springBoard/resources/dist/css/skins/skin-blue.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/springBoard/resources/AdminLTE/css/skins/skin-blue.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -97,7 +97,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <a href="#">
                           <div class="pull-left">
                             <!-- User Image -->
-                            <img src="/springBoard/resources/dist/img/myImg_160X160.jpg" class="img-circle" alt="User Image">
+                            <img src="/springBoard/resources/AdminLTE/img/myImg_160X160.jpg" class="img-circle" alt="User Image">
                           </div>
                           <!-- Message title and timestamp -->
                           <h4>
@@ -177,14 +177,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Menu Toggle Button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <!-- The user image in the navbar-->
-                  <img src="/springBoard/resources/dist/img/myImg_160X160.jpg" class="user-image" alt="User Image">
+                  <img src="/springBoard/resources/AdminLTE/img/myImg_160X160.jpg" class="user-image" alt="User Image">
                   <!-- hidden-xs hides the username on small devices so only the image appears. -->
                   <span class="hidden-xs">HAPPYLOPER 김호성</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- The user image in the menu -->
                   <li class="user-header">
-                    <img src="/springBoard/resources/dist/img/myImg_160X160.jpg" class="img-circle" alt="User Image">
+                    <img src="/springBoard/resources/AdminLTE/img/myImg_160X160.jpg" class="img-circle" alt="User Image">
                     <p>HAPPYLOPER 김호성<br />웹서비스 개발자
                       <small>가입일 2016-01-16</small>
                     </p>
@@ -231,7 +231,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Sidebar user panel (optional) -->
           <div class="user-panel">
             <div class="pull-left image">
-              <img src="/springBoard/resources/dist/img/myImg_160X160.jpg" class="img-circle" alt="User Image">
+              <img src="/springBoard/resources/AdminLTE/img/myImg_160X160.jpg" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
               <p>HAPPYLOPERS 김호성</p>
@@ -379,7 +379,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Bootstrap 3.3.5 -->
     <script src="/springBoard/resources/bootstrap/js/bootstrap.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="/springBoard/resources/dist/js/app.min.js"></script>
+    <script src="/springBoard/resources/AdminLTE/js/app.min.js"></script>
 
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
          Both of these plugins are recommended to enhance the

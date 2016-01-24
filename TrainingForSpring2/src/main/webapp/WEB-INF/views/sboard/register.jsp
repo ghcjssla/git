@@ -9,7 +9,6 @@
   border: 1px dotted gray;
   background-color: lightslategrey;
   margin: auto;
-  
 }
 </style>
 
@@ -67,8 +66,6 @@
 	<!-- /.row -->
 </section>
 <!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
 
 <script type="text/javascript" src="/springBoard/resources/js/upload.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>

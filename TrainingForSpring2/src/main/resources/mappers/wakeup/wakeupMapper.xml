@@ -2,26 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.happylopers.mapper.wakeup.wakeupMapper">
-<!-- 
-    <select id="read" resultType="BoardVO">
-        select
-        bno, title, content, writer,
-        regdate, viewcnt, replycnt
-        from
-        tbl_board
-        where bno = #{bno}
-    </select>
-
-    <update id="update">
-        update tbl_board set title = #{title}, content =
-        #{content}, writer = #{writer}
-        where bno = #{bno}
-    </update>
-
-    <delete id="delete">
-        delete from tbl_board where bno = #{bno}
-    </delete>
-     -->
     <select id="list" resultType="WakeUpVO">
     <![CDATA[
     select

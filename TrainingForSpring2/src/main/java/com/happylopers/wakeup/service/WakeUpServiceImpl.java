@@ -1,7 +1,6 @@
 package com.happylopers.wakeup.service;
 
 import java.sql.Date;
-import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
@@ -9,7 +8,6 @@ import java.util.Locale;
 
 import javax.inject.Inject;
 
-import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
 
 import com.happylopers.wakeup.domain.WakeUpVO;

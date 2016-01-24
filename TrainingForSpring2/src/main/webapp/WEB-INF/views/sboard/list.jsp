@@ -54,10 +54,11 @@
 							<th style="width: 40px">VIEWCNT</th>
 						</tr>
 
-						<c:forEach items="${list}" var="boardVO">
+						<c:forEach items="${list}" var="boardVO" varStatus="status">
+						<c:set var="reversI" value="${fn:length(list) - status.index }" scope="page" />
 
 							<tr>
-								<td>${boardVO.bno}</td>
+								<td>${boardVO.bno}<%--/${reversI} 나중에 처리하자 --%></td>
 								<td><a
 									href='/springBoard/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page) }&bno=${boardVO.bno}'>
 										${boardVO.title} <strong>[${boardVO.replycnt}]</strong></a></td>
@@ -110,7 +111,7 @@
 	<!-- /.row -->
 </section>
 <!-- /.content -->
-</div>
+
 <form id="jobForm">
 	<input type='hidden' name="page" value=${pageMaker.cri.perPageNum}>
 	<input type='hidden' name="perPageNum" value=${pageMaker.cri.perPageNum}>

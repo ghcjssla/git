@@ -18,7 +18,7 @@ function getFileInfo(fullName){
 		getLink = "/springBoard/displayFile?fileName="+front + end;
 		
 	}else{
-		imgsrc ="/springBoard/resources/dist/img/file.png";
+		imgsrc ="/springBoard/resources/AdminLTE/img/file.png";
 		fileLink = fullName.substr(12);
 		getLink = "/springBoard/displayFile?fileName="+fullName;
 	}

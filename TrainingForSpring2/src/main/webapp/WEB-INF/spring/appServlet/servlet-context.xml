@@ -39,12 +39,23 @@
             <beans:ref bean="loginInterceptor"/>
         </interceptor>
         <interceptor>
+            <!-- 게시판 권한 처리 -->
             <mapping path="/sboard/register"/>
             <mapping path="/sboard/modifyPage"/>
             <mapping path="/sboard/removePage"/>
             
+            <!-- 기상일지 권한 처리 -->
             <mapping path="/wakeup/delete"/>
             <mapping path="/wakeup/register"/>
+            
+            <!-- 책 일지 권한 처리 -->
+            <mapping path="/bookLog/registerBook"/>
+			<mapping path="/bookLog/registerBookLog"/>
+			<mapping path="/bookLog/updateBookLog"/>
+			<mapping path="/bookLog/insertBookLog"/>
+			<mapping path="/bookLog/updateBook"/>
+			<mapping path="/bookLog/deleteBookLog"/>
+            
             <beans:ref bean="authInterceptor"/>
         </interceptor>
     </interceptors>

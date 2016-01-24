@@ -6,5 +6,6 @@
 <typeAliases>
     <package name="com.happylopers.board.domain"/>
     <package name="com.happylopers.wakeup.domain"/>
+    <package name="com.happylopers.booklog.domain"/>
 </typeAliases>
 </configuration>
