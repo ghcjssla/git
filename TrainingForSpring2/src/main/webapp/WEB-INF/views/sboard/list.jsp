@@ -51,19 +51,18 @@
 							<th>TITLE</th>
 							<th>WRITER</th>
 							<th>REGDATE</th>
-							<th style="width: 40px">VIEWCNT</th>
+							<th style="width: 40px">CNT</th>
 						</tr>
 
 						<c:forEach items="${list}" var="boardVO" varStatus="status">
 						<c:set var="reversI" value="${fn:length(list) - status.index }" scope="page" />
-
 							<tr>
-								<td>${boardVO.bno}<%--/${reversI} 나중에 처리하자 --%></td>
+								<td class="text-center">${(pageMaker.totalCount - (pageMaker.cri.perPageNum * (pageMaker.cri.page-1))) - status.index}</td>
 								<td><a
 									href='/springBoard/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page) }&bno=${boardVO.bno}'>
 										${boardVO.title} <strong>[${boardVO.replycnt}]</strong></a></td>
 								<td>${boardVO.writer}</td>
-								<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
+								<td><fmt:formatDate pattern="yyyy-MM-dd"
 										value="${boardVO.regdate}" /></td>
 								<td><span class="badge bg-red">${boardVO.viewcnt }</span></td>
 							</tr>

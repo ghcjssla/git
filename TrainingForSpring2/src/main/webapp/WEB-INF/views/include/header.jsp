@@ -273,8 +273,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li class="header">HEADER</li>
              --%>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="#"><i class="fa fa-list-alt"></i><span>임시메뉴1</span></a></li>
-            <li class="active"><a href="#"><i class="fa fa-list-alt"></i><span>임시메뉴2</span></a></li>
+            <li class="active"><a href="http://www.happylopers.com/redmine"><i class="fa fa-list-alt"></i><span>레드마인</span></a></li><!-- 이쪽짤림 -->
+            <li class="active"><a href="http://www.happylopers.com/redmine"><i class="fa fa-list-alt"></i><span>레드마인</span></a></li>
             <li class="active"><a href="#"><i class="fa fa-list-alt"></i><span>임시메뉴3</span></a></li>
             <li class="active"><a href="#"><i class="fa fa-list-alt"></i><span>임시메뉴4</span></a></li>
             <%--

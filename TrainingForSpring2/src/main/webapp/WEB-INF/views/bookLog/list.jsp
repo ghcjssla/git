@@ -23,7 +23,7 @@
       <li class="list-group-item">
       <a href="/springBoard/bookLog/detailBook?book_seq=${BookVO.seq}">${BookVO.name}</a>
       <%-- ${BookVO.total_page}/${BookVO.last_page}/${BookVO.finish} --%>
-      [<span>${BookVO.last_page}p/${BookVO.total_page}p</span>]
+      <%-- [<span>${BookVO.last_page}p/${BookVO.total_page}p</span>] --%>
       <span class="badge <c:choose><c:when test="${100 eq percent}">bg-green color-palette</c:when><c:otherwise></c:otherwise></c:choose>"><fmt:formatNumber value="${percent}" pattern="0"/>%</span>
       </li>
       </c:forEach>

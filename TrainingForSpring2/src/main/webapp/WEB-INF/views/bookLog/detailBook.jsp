@@ -15,7 +15,7 @@
 <div class="panel panel-default">
 <!-- Default panel contents -->
 <div class="panel-heading">
-<span style='margin:0.6em'>${book.name}</span><button type="button" class="btn bg-gray-active color-palette btn-xs"  data-toggle="modal" data-target="#modalBookUpdateFrm">수정</button>
+<span style='margin:0.6em'>${fn:substring(book.name, 0, 14)}..</span><button type="button" class="btn bg-gray-active color-palette btn-xs"  data-toggle="modal" data-target="#modalBookUpdateFrm">수정</button>
 <div class="btn-group btn-group-xs pull-right" role="group" aria-label="학습버튼">
     <c:choose>
 	    <c:when test="${bookLog.last_page eq book.total_page}">
