@@ -33,9 +33,11 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 		
 		ModelMap modelMap = modelAndView.getModelMap();
 		Object userVO = modelMap.get("userVO");
+		
 		logger.info("Logininterceptor.postHandle() : "+userVO);
 		if(userVO != null){
 			logger.info("새로운 로그인 성공");
+			//modelMap.addAttribute("userVO",userVO);
 			session.setAttribute(LOGIN, userVO);
 			logger.info(session.getAttribute(LOGIN).toString());
 			

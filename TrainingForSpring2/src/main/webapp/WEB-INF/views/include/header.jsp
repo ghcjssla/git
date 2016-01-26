@@ -184,7 +184,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </li>
                 </ul>
               </li>
+              --%>
               <!-- User Account Menu -->
+              <c:choose>
+              <c:when test="${empty login}">
+              <li>
+                  <a href="/springBoard/user/login"><i class="fa"></i> <span>로그인 </span></a>
+              </li>
+              </c:when>
+              <c:when test="${!empty login}">
               <li class="dropdown user user-menu">
                 <!-- Menu Toggle Button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -193,7 +201,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <!-- hidden-xs hides the username on small devices so only the image appears. -->
                   <span class="hidden-xs">HAPPYLOPER 김호성</span>
                 </a>
-                <ul class="dropdown-menu">
+                <ul style=' padgin:0px; margin:0px;' class="dropdown-menu">
                   <!-- The user image in the menu -->
                   <li class="user-header">
                     <img src="/springBoard/resources/AdminLTE/img/myImg_160X160.jpg" class="img-circle" alt="User Image">
@@ -219,20 +227,33 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                      <a href="/springBoard/user/logout" class="btn btn-default btn-flat">Sign out</a>
                     </div>
                   </li>
                 </ul>
               </li>
+              </c:when>
+              </c:choose>
+              <%--
               <!-- Control Sidebar Toggle Button -->
               <li>
                 <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-              </li>
-              --%>
+              </li>              
               <li class="active"><a href="/springBoard/wakeup/list"><i class="fa fa-calendar"></i> <span>기상 일지</span></a></li>
               <li class="active"><a href="/springBoard/bookLog/list"><i class="fa fa-book"></i> <span>책 일지</span></a></li>
               <li class="active"><a href="/springBoard/sboard/list"><i class="fa fa-list-alt"></i> <span>게시판</span></a></li>
-              <li class="active"><a href="/springBoard/user/login"><i class="fa"></i> <span>로그인</span></a></li>
+              
+              <li class="active">
+              <c:choose>
+	              <c:when test="${empty userVO}">
+	                  <a href="/springBoard/user/login"><i class="fa"></i> <span>로그인 </span></a>
+	              </c:when>
+	              <c:when test="${!empty userVO}">
+	                  <a href="/springBoard/user/logout"><i class="fa"></i> <span>로그아웃 </span></a>
+	              </c:when>
+              </c:choose>
+              </li>
+              --%>
             </ul>
           </div>
         </nav>
@@ -273,10 +294,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li class="header">HEADER</li>
              --%>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="http://www.happylopers.com/redmine"><i class="fa fa-list-alt"></i><span>레드마인</span></a></li><!-- 이쪽짤림 -->
+            <li class="active"><a href="/springBoard/wakeup/list"><i class="fa fa-calendar"></i> <span>기상 일지</span></a></li>
+            <li class="active"><a href="/springBoard/bookLog/list"><i class="fa fa-book"></i> <span>책 일지</span></a></li>
+            <li class="active"><a href="/springBoard/sboard/list"><i class="fa fa-list-alt"></i> <span>게시판</span></a></li>
             <li class="active"><a href="http://www.happylopers.com/redmine"><i class="fa fa-list-alt"></i><span>레드마인</span></a></li>
-            <li class="active"><a href="#"><i class="fa fa-list-alt"></i><span>임시메뉴3</span></a></li>
-            <li class="active"><a href="#"><i class="fa fa-list-alt"></i><span>임시메뉴4</span></a></li>
             <%--
             <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
             <li class="treeview">

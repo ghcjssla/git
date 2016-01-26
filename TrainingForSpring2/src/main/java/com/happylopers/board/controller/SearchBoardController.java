@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,6 +45,7 @@ public class SearchBoardController {
         
         logger.info("검색 리스트 호출 GET 모델 넘기기 전 검색 갯수 "+service.listSearchCount(cri));
         pageMaker.setTotalCount(service.listSearchCount(cri));
+        //model.addAttribute("userVO",req.getSession().getAttribute("login"));
         
         model.addAttribute("pageMaker", pageMaker);
         

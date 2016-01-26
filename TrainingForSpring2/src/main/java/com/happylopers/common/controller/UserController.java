@@ -31,7 +31,7 @@ public class UserController {
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public void loginGET(@ModelAttribute("dto") LoginDTO dto){
-		
+		logger.info("/login 호출");
 	}
 	
 	@RequestMapping(value="/loginPost", method = RequestMethod.POST)
@@ -43,9 +43,12 @@ public class UserController {
 		if(vo == null){
 			logger.info("잘못된 정보 로그인 실패");
 			return;
+		}else{
+			logger.info("로그인 성공 model.addAttribute(\"userVO\",\"vo\") "+vo.toString());
+			model.addAttribute("userVO",vo);
 		}
 		
-		model.addAttribute("userVO",vo);
+		
 		
 		if(dto.isUseCookie()){
 			// 이부분 공통부분 리펙토링 릴요
