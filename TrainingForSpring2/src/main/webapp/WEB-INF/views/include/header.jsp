@@ -210,15 +210,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </p>
                   </li>
                   <!-- Menu Body -->
+                  <%-- --%>
                   <li class="user-body">
                     <div class="col-xs-4 text-center">
-                      <a href="#">Followers</a>
+                      <a href="#">미정?</a>
                     </div>
                     <div class="col-xs-4 text-center">
-                      <a href="#">Sales</a>
+                      <a href="#">미정</a>
                     </div>
                     <div class="col-xs-4 text-center">
-                      <a href="#">Friends</a>
+                      <a href="#">미정</a>
                     </div>
                   </li>
                   <!-- Menu Footer-->
@@ -298,6 +299,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li class="active"><a href="/springBoard/bookLog/list"><i class="fa fa-book"></i> <span>책 일지</span></a></li>
             <li class="active"><a href="/springBoard/sboard/list"><i class="fa fa-list-alt"></i> <span>게시판</span></a></li>
             <li class="active"><a href="http://www.happylopers.com/redmine"><i class="fa fa-list-alt"></i><span>레드마인</span></a></li>
+            <li><a href="https://github.com/ghcjssla/git/issues"><i class="fa fa-github"></i><span>git issues</span></a></li>
             <%--
             <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
             <li class="treeview">

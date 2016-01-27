@@ -190,7 +190,7 @@ choose
       <div class="modal-body">
         <form name="bookLogFrom" id="bookLogFrom">
           <div class="form-group">
-            <label for="message-text" class="control-label">학습 양</label>
+            <label for="message-text" class="control-label">학습 양(전체페이지 : ${book.total_page}page)</label>
             <input name="last_page" value="${bookLog.last_page}" type="number" class="form-control" placeholder="페이지 숫자 입력">
           </div>
           <div class="form-group">
@@ -237,7 +237,7 @@ choose
 
 
 <!-- 수정 모달 -->
-<div class="modal fade modal-info" id="modalBookUpdateFrm" tabindex="-1" role="dialog" aria-labelledby="modalBookUpdateFrmLabel" aria-hidden="true">
+<div class="modal fade modal-primary" id="modalBookUpdateFrm" tabindex="-1" role="dialog" aria-labelledby="modalBookUpdateFrmLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">

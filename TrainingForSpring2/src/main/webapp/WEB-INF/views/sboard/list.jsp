@@ -42,29 +42,33 @@
 			</div>
 			<div class="box">
 				<div class="box-header with-border">
-					<h3 class="box-title">LIST PAGING</h3>
+					<h3 class="box-title">게시판</h3>
 				</div>
 				<div class="box-body">
 					<table class="table table-bordered">
 						<tr>
-							<th style="width: 10px">BNO</th>
-							<th>TITLE</th>
-							<th>WRITER</th>
-							<th>REGDATE</th>
-							<th style="width: 40px">CNT</th>
+							<%-- <th class="text-center" style="width: 10px">NO</th>--%>
+							<th class="text-center">TITLE</th>
+							<th class="text-center">WRITER</th>
+							<th class="text-center">REGDATE</th>
+							<%-- <th class="text-center" style="width: 40px">CNT</th> --%>
 						</tr>
-
+						<%-- 
+						<jsp:useBean id="now" class="java.util.Date" />
+						<fmt:formatDate value="${now}" pattern="yyyy-MM-dd a hh:mm" var="nowValue"/>
+                        --%>
 						<c:forEach items="${list}" var="boardVO" varStatus="status">
 						<c:set var="reversI" value="${fn:length(list) - status.index }" scope="page" />
 							<tr>
-								<td class="text-center">${(pageMaker.totalCount - (pageMaker.cri.perPageNum * (pageMaker.cri.page-1))) - status.index}</td>
-								<td><a
-									href='/springBoard/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page) }&bno=${boardVO.bno}'>
-										${boardVO.title} <strong>[${boardVO.replycnt}]</strong></a></td>
+								<%-- <td class="text-center">${(pageMaker.totalCount - (pageMaker.cri.perPageNum * (pageMaker.cri.page-1))) - status.index}</td>--%>
+								<td><a href='/springBoard/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page) }&bno=${boardVO.bno}'>
+								${fn:substring(boardVO.title, 0, 20)}<strong>[${boardVO.replycnt}]</strong>..
+									</a>
+								</td>
 								<td>${boardVO.writer}</td>
-								<td><fmt:formatDate pattern="yyyy-MM-dd"
+								<td><fmt:formatDate pattern="yy-MM-dd"
 										value="${boardVO.regdate}" /></td>
-								<td><span class="badge bg-red">${boardVO.viewcnt }</span></td>
+								<%-- <td><span class="badge bg-red">${boardVO.viewcnt }</span></td>--%>
 							</tr>
 
 						</c:forEach>
