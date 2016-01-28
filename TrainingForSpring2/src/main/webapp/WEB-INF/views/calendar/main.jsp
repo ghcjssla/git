@@ -117,6 +117,7 @@
         var d = date.getDate(),
                 m = date.getMonth(),
                 y = date.getFullYear();
+        console.log("d : "+d+" / m : "+m+" / y : "+y);
         $('#calendar').fullCalendar({
           header: {
             left: 'prev,next today',
@@ -136,7 +137,9 @@
               start: new Date(y, m, 1),
               backgroundColor: "#f56954", //red
               borderColor: "#f56954" //red
-            },
+            }
+            /*
+            ,
             {
               title: 'Long Event',
               start: new Date(y, m, d - 5),
@@ -174,7 +177,17 @@
               url: 'http://google.com/',
               backgroundColor: "#3c8dbc", //Primary (light-blue)
               borderColor: "#3c8dbc" //Primary (light-blue)
+            }*/
+            <c:forEach varStatus="status" items="${wakeUplist}" var="WakeUpVO">
+            ,
+            {
+            title: '기상',
+            start: new Date(<fmt:formatDate pattern="yyyy" value="${WakeUpVO.date}" />, m, <fmt:formatDate pattern="dd" value="${WakeUpVO.date}" />, <fmt:formatDate pattern="HH" value="${WakeUpVO.date}" />, <fmt:formatDate pattern="mm" value="${WakeUpVO.date}" />),
+            allDay: false,
+            backgroundColor: "#00a65a", //Blue
+            borderColor: "#00a65a" //Blue
             }
+            </c:forEach>
           ],
           editable: true,
           droppable: true, // this allows things to be dropped onto the calendar !!!

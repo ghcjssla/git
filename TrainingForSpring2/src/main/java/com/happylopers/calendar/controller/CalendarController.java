@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-//import com.happylopers.wakeup.domain.WakeUpVO;
-//import com.happylopers.wakeup.service.WakeUpService;
+import com.happylopers.wakeup.domain.WakeUpVO;
+import com.happylopers.wakeup.service.WakeUpService;
 
 @Controller
 @RequestMapping("/calendar/*")
 public class CalendarController {
 	private static final Logger logger = LoggerFactory.getLogger(CalendarController.class);
-	//@Inject
-	//private WakeUpService service;
+	@Inject
+	private WakeUpService wakeUpservice;
 
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String root(Model model, RedirectAttributes rttr) throws Exception {
@@ -29,7 +29,7 @@ public class CalendarController {
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public void main(Model model) throws Exception {
 		logger.info("캘린더 ");
-		//model.addAttribute("list",service.list());
+		model.addAttribute("wakeUplist",wakeUpservice.list());
 	}
 	/*
     @RequestMapping(value="/register", method = RequestMethod.POST)
