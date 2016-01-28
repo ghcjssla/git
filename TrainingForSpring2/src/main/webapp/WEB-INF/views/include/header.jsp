@@ -296,6 +296,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
              --%>
             <!-- Optionally, you can add icons to the links -->
             <li class="active"><a href="/springBoard/wakeup/list"><i class="fa fa-calendar"></i> <span>기상 일지</span></a></li>
+            <li class="active"><a href="/springBoard/calendar/main"><i class="fa fa-calendar"></i> <span>일정</span></a></li>
             <li class="active"><a href="/springBoard/bookLog/list"><i class="fa fa-book"></i> <span>책 일지</span></a></li>
             <li class="active"><a href="/springBoard/sboard/list"><i class="fa fa-list-alt"></i> <span>게시판</span></a></li>
             <li class="active"><a href="http://www.happylopers.com/redmine"><i class="fa fa-list-alt"></i><span>레드마인</span></a></li>
