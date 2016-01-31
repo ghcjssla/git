@@ -5,13 +5,13 @@
     <select id="list" resultType="WakeUpVO">
     <![CDATA[
 	select
-	seq, date, comment
-	from daily_log
-	where  
-	DATE_FORMAT(date,'%Y%m%d') <= DATE_FORMAT(CONCAT(DATE_FORMAT(date_add(now(), interval 0 month),'%Y-%m'),'-31'), '%Y%m%d')
-	AND 
-	DATE_FORMAT(date,'%Y%m%d') >= DATE_FORMAT(CONCAT(DATE_FORMAT(NOW(),'%Y%m'),'01'), '%Y%m%d')
-	order by date
+    seq, date, comment
+    from daily_log
+    where  
+    DATE_FORMAT(date,'%Y%m%d') < DATE_FORMAT(date_add(now(), interval 1 month), '%Y%m%d')
+    AND 
+    DATE_FORMAT(date,'%Y%m%d') >= DATE_FORMAT(CONCAT(DATE_FORMAT(NOW(),'%Y%m'),'01'), '%Y%m%d')
+    order by date
     ]]>
     </select>
     
