@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.happylopers.mapper.booklog.bookLogMapper">
+    <select id="selectBook" parameterType="int" resultType="BookVO">
+    <![CDATA[
+    select
+    seq, name, regdate, total_page
+    from book
+    where seq = #{book_seq}
+    ]]>
+    </select>
+    
+    <select id="selectBookLog" parameterType="int" resultType="BookLogVO">
+    <![CDATA[
+    SELECT seq, 
+           book_seq, 
+           start_date, 
+           end_date, 
+		   (
+		 	SELECT MAX(last_page)
+		    FROM book_log
+			WHERE book_seq = #{book_seq}
+		    ) AS last_page,
+	       COMMENT,
+	       finish
+	FROM book_log
+	WHERE book_seq	= #{book_seq}
+	ORDER BY start_date DESC
+	LIMIT 1
+    ]]>
+    </select>
+
+    <select id="bookList" resultType="BookVO">
+    <![CDATA[
+	SELECT A.seq,
+	         A.name, 
+	         A.regdate, 
+	         A.total_page,
+	         (select max(last_page)
+	          from 
+	            book_log
+	            where book_seq = A.seq
+	            order by start_date desc
+	         ) AS LAST_PAGE,
+	         (
+	         select finish 
+	          from 
+	          book_log
+	          where book_seq = A.seq
+	          order by start_date desc
+	          limit 1
+	         ) AS FINISH
+	FROM book A
+	ORDER BY regdate
+    ]]>
+    </select>
+    
+    <select id="bookLogList" parameterType="int" resultType="BookLogVO">
+    <![CDATA[
+    select
+    seq, book_seq, start_date, end_date, last_page, comment, finish
+    from book_log
+    where book_seq = #{book_seq}
+    order by start_date desc
+    ]]>
+    </select>
+    
+    <insert id="createBook">
+        insert into book (name, total_page)
+        values(#{name},#{total_page})
+    </insert>
+    
+    <insert id="createBookLog">
+        insert into book_log (book_seq, end_date)
+        values(#{book_seq}, now())
+    </insert>
+    
+    <delete id="deleteBook">
+        delete from book where seq = #{seq}
+    </delete>
+    
+    <delete id="deleteBookLog">
+        delete from book_log where seq = #{seq}
+    </delete>
+    
+    <update id="updateBook">
+        update book 
+        set 
+        name = #{name},
+        total_page = #{total_page}
+        where seq = #{seq}
+    </update>
+    
+    <update id="updateBookLog">
+        update book_log 
+        set
+        finish = #{finish}, 
+        end_date = now(),
+        last_page = #{last_page},
+        comment = #{comment} 
+        where seq = #{book_seq}
+    </update>
+</mapper>
