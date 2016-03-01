@@ -52,7 +52,7 @@
 	          limit 1
 	         ) AS FINISH
 	FROM book A
-	ORDER BY regdate
+	ORDER BY regdate DESC
     ]]>
     </select>
     
