@@ -226,5 +226,6 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>springBoard</finalName>
 	</build>
 </project>
