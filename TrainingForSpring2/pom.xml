@@ -3,8 +3,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.happylopers</groupId>
-	<artifactId>controller</artifactId>
-	<name>TrainingForSpring2</name>
+	<artifactId>springBoard</artifactId>
+	<name>springBoard</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
@@ -56,16 +56,15 @@
 
 		<!-- AspectJ -->
 		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjrt</artifactId>
-			<version>${org.aspectj-version}</version>
-		</dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>${org.aspectj-version}</version>
+        </dependency> 
 		<dependency>
         <groupId>aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>1.5.4</version>
         </dependency>
-		
 
 		<!-- Logging -->
 		<dependency>
@@ -189,6 +188,16 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 	</dependencies>
+	
+	<!-- pluginRepositories -->
+	<!-- 
+	<pluginRepositories>
+        <pluginRepository>
+            <id>undercover</id>
+            <url>http://undercover.googlecode.com/svn/maven/repository</url>
+        </pluginRepository>
+    </pluginRepositories>
+     -->
 	<build>
 		<plugins>
 			<plugin>
@@ -220,7 +229,9 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
+				<!-- 
 				<version>1.2.1</version>
+				 -->
 				<configuration>
 					<mainClass>org.test.int1.Main</mainClass>
 				</configuration>
@@ -228,4 +239,36 @@
 		</plugins>
 		<finalName>springBoard</finalName>
 	</build>
+	
+	<!-- Report -->
+	<reporting>
+        <plugins>
+        <!-- 
+            <plugin>
+                <groupId>undercover</groupId>
+                <artifactId>undercover-maven-plugin</artifactId>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jdepend-maven-plugin</artifactId>
+            </plugin>
+             -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <configuration>
+                    <minimumTokens>50</minimumTokens>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <configuration>
+                    <excludeFilterFile>findbugs-exclude.xml</excludeFilterFile>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
+    
 </project>
