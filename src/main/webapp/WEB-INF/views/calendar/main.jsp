@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@include file="../include/header.jsp"%>
-<!-- fullCalendar 2.2.5-->
+<!-- fullCalendar 2.6.1-->
     <link rel="stylesheet" href="/springBoard/resources/plugins/fullcalendar/fullcalendar.min.css">
     <link rel="stylesheet" href="/springBoard/resources/plugins/fullcalendar/fullcalendar.print.css" media="print">
 
@@ -78,7 +78,7 @@
 
     <!-- jQuery UI 1.11.4 -->
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-    <!-- fullCalendar 2.2.5 -->
+    <!-- fullCalendar 2.6.1 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
     <script src="/springBoard/resources/plugins/fullcalendar/fullcalendar.min.js"></script>
     <!-- Page specific script -->
@@ -119,7 +119,23 @@
                 y = date.getFullYear();
         console.log("d : "+d+" / m : "+m+" / y : "+y);
         $('#calendar').fullCalendar({
+      	customButtons: {
+              wakeup: {
+                  text: '기상',
+                  click: function() {
+                      alert('일어났다!');
+                     console.log(this);
+                  }
+              },
+              sleep: {
+                  text: '취침',
+                  click: function() {
+                      alert('잠자자!');
+                  }
+              }
+          },
           header: {
+            //left: 'prev,next today wakeup sleep',
             left: 'prev,next today',
             center: 'title',
             right: 'month,agendaWeek,agendaDay'
