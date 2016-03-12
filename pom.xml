@@ -190,14 +190,12 @@
 	</dependencies>
 	
 	<!-- pluginRepositories -->
-	<!-- 
 	<pluginRepositories>
         <pluginRepository>
             <id>undercover</id>
             <url>http://undercover.googlecode.com/svn/maven/repository</url>
         </pluginRepository>
     </pluginRepositories>
-     -->
 	<build>
 		<plugins>
 			<plugin>
@@ -248,12 +246,12 @@
                 <groupId>undercover</groupId>
                 <artifactId>undercover-maven-plugin</artifactId>
             </plugin>
-            
+             -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jdepend-maven-plugin</artifactId>
             </plugin>
-             -->
+             
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
@@ -261,14 +259,23 @@
                     <minimumTokens>50</minimumTokens>
                 </configuration>
             </plugin>
+            <!-- 
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
+                <version>3.0.4-SNAPSHOT</version>
                 <configuration>
                     <excludeFilterFile>findbugs-exclude.xml</excludeFilterFile>
                 </configuration>
             </plugin>
+             -->
         </plugins>
     </reporting>
+    <distributionManagement>
+    <site>
+      <id>www.happylopers.com</id>
+      <url>http://www.www.happylopers.com.com/site</url>
+    </site>
+    </distributionManagement>
     
 </project>
