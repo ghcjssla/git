@@ -4,20 +4,28 @@ import java.util.Date;
 
 public class WakeUpVO {
 	private int seq;
-	private Date date;
+	private Date time_wakeup;
+	private Date time_sleep;
 	private String comment;
 	
+	public Date getTime_sleep() {
+		return time_sleep;
+	}
+	public void setTime_sleep(Date time_sleep) {
+		this.time_sleep = time_sleep;
+	}
+	
+	public Date getTime_wakeup() {
+		return time_wakeup;
+	}
+	public void setTime_wakeup(Date time_wakeup) {
+		this.time_wakeup = time_wakeup;
+	}
 	public int getSeq() {
 		return seq;
 	}
 	public void setSeq(int seq) {
 		this.seq = seq;
-	}
-	public Date getDate() {
-		return date;
-	}
-	public void setDate(Date date) {
-		this.date = date;
 	}
 	public String getComment() {
 		return comment;
@@ -27,12 +35,9 @@ public class WakeUpVO {
 	}
 	@Override
 	public String toString() {
-		return "WakeUpVO [seq=" + seq + ", date=" + date + ", comment=" + comment + ", getSeq()=" + getSeq()
-				+ ", getDate()=" + getDate() + ", getComment()=" + getComment() + ", getClass()=" + getClass()
-				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+		return "WakeUpVO [seq=" + seq + ", time_wakeup=" + time_wakeup + ", time_sleep=" + time_sleep + ", comment="
+				+ comment + "]";
 	}
-	
-	
 	
 	
 }

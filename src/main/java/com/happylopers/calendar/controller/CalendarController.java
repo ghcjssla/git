@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.happylopers.wakeup.domain.WakeUpVO;
 import com.happylopers.wakeup.service.WakeUpService;
 
 @Controller
@@ -17,7 +18,7 @@ import com.happylopers.wakeup.service.WakeUpService;
 public class CalendarController {
 	private static final Logger logger = LoggerFactory.getLogger(CalendarController.class);
 	@Inject
-	private WakeUpService wakeUpservice;
+	private WakeUpService service;
 
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String root(Model model, RedirectAttributes rttr) throws Exception {
@@ -27,7 +28,9 @@ public class CalendarController {
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public void main(Model model) throws Exception {
 		logger.info("캘린더 ");
-		model.addAttribute("wakeUplist",wakeUpservice.list());
+		
+		model.addAttribute("latestDateInfo",service.selectLatestDateInfo());
+		model.addAttribute("wakeUplist",service.list());
 	}
 	/*
     @RequestMapping(value="/register", method = RequestMethod.POST)
@@ -60,4 +63,25 @@ public class CalendarController {
         return "redirect:/calendar/list";
     }
     */
+	@RequestMapping(value="/goSleep", method = RequestMethod.POST)
+    public String goSleepPOST(WakeUpVO vo, RedirectAttributes rttr) throws Exception{
+        logger.info("취침 데이터 등록");
+        logger.info(vo.toString());
+        
+        service.insertGoSleep(vo);
+        return "redirect:/calendar/main";
+    }
+    
+    @RequestMapping(value="/wakeUp", method = RequestMethod.POST)
+    public String wakeUpPOST(WakeUpVO vo, RedirectAttributes rttr) throws Exception{
+        logger.info("기상 데이터 등록");
+        logger.info(vo.toString());
+        
+        service.updateWakeUp(vo);
+        return "redirect:/calendar/main";
+    }
+    
+    
+    
+    
 }

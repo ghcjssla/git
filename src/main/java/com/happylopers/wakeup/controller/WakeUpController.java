@@ -37,7 +37,7 @@ public class WakeUpController {
         logger.info("기상 데이터 등록");
         logger.info(vo.toString());
         
-        service.regist(vo);
+        service.updateWakeUp(vo);
         return "redirect:/wakeup/list";
     }
     

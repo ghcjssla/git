@@ -47,6 +47,8 @@
             <!-- 기상일지 권한 처리 -->
             <mapping path="/wakeup/delete"/>
             <mapping path="/wakeup/register"/>
+            <mapping path="/calendar/wakeUp"/>
+            <mapping path="/calendar/goSleep"/>
             
             <!-- 책 일지 권한 처리 -->
             <mapping path="/bookLog/registerBook"/>

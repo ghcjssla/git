@@ -83,6 +83,19 @@
     <script src="/springBoard/resources/plugins/fullcalendar/fullcalendar.min.js"></script>
     <!-- Page specific script -->
     <script>
+    function goSleep(){
+    	$("[name=goSleepForm]").attr("action","/springBoard/calendar/goSleep");
+        $("[name=goSleepForm]").submit();
+    }
+    
+    function wakeUp(){
+    	$("[name=wakeUpForm]").attr("action","/springBoard/calendar/wakeUp");
+    	$("[name=seq]").val("${latestDateInfo.seq}");
+    	//alert($("[name=seq]").val());
+        $("[name=wakeUpForm]").submit();
+    }
+    
+    
       $(function () {
 
         /* initialize the external events
@@ -120,23 +133,31 @@
         console.log("d : "+d+" / m : "+m+" / y : "+y);
         $('#calendar').fullCalendar({
       	customButtons: {
-              wakeup: {
-                  text: '기상',
-                  click: function() {
-                      alert('일어났다!');
-                     console.log(this);
+   		<c:choose>
+            <c:when test="${null != latestDateInfo}">
+            wakeup: {
+                      text: '기상',
+                      click: function() {
+                         //alert('일어났다!');
+                         console.log(this);
+                         wakeUp();
+                      }
                   }
-              },
-              sleep: {
-                  text: '취침',
-                  click: function() {
-                      alert('잠자자!');
-                  }
-              }
-          },
+            </c:when>
+            <c:otherwise>
+            sleep: {
+                    text: '취침',
+                    click: function() {
+                        //alert('잠자자! /goSleep');
+                        goSleep();
+                    }
+                }
+            </c:otherwise>
+        </c:choose>
+        },
           header: {
-            //left: 'prev,next today wakeup sleep',
-            left: 'prev,next today',
+            left: 'prev,next today wakeup sleep',
+            //left: 'prev,next today',
             center: 'title',
             right: 'month,agendaWeek,agendaDay'
           },
@@ -197,8 +218,17 @@
             <c:forEach varStatus="status" items="${wakeUplist}" var="WakeUpVO">
             <c:if test="${!status.first}">,</c:if>
             {
-            title: '기상',
-            start: new Date(<fmt:formatDate pattern="yyyy" value="${WakeUpVO.date}" />, m, <fmt:formatDate pattern="dd" value="${WakeUpVO.date}" />, <fmt:formatDate pattern="HH" value="${WakeUpVO.date}" />, <fmt:formatDate pattern="mm" value="${WakeUpVO.date}" />),
+            <c:choose>
+            <c:when test='${null != WakeUpVO.time_sleep}'>
+            title: '취침&기상',
+            start: new Date(<fmt:formatDate pattern="yyyy" value="${WakeUpVO.time_sleep}" />, m, <fmt:formatDate pattern="dd" value="${WakeUpVO.time_sleep}" />, <fmt:formatDate pattern="HH" value="${WakeUpVO.time_sleep}" />, <fmt:formatDate pattern="mm" value="${WakeUpVO.time_sleep}" />),
+            end: new Date(<fmt:formatDate pattern="yyyy" value="${WakeUpVO.time_wakeup}" />, m, <fmt:formatDate pattern="dd" value="${WakeUpVO.time_wakeup}" />, <fmt:formatDate pattern="HH" value="${WakeUpVO.time_wakeup}" />, <fmt:formatDate pattern="mm" value="${WakeUpVO.time_wakeup}" />),
+            </c:when>
+            <c:otherwise>
+            title: '기상시간',
+            start: new Date(<fmt:formatDate pattern="yyyy" value="${WakeUpVO.time_wakeup}" />, m, <fmt:formatDate pattern="dd" value="${WakeUpVO.time_wakeup}" />, <fmt:formatDate pattern="HH" value="${WakeUpVO.time_wakeup}" />, <fmt:formatDate pattern="mm" value="${WakeUpVO.time_wakeup}" />),
+            </c:otherwise>
+            </c:choose>
             allDay: false,
             backgroundColor: "#00a65a", //Blue
             borderColor: "#00a65a" //Blue
@@ -267,4 +297,9 @@
         });
       });
     </script>
+    <form name="goSleepForm" method="post"></form>
+    <form name="wakeUpForm" method="post">
+    <input type="hidden" name="seq" value="">
+    </form>
+    
 <%@include file="../include/footer.jsp"%>

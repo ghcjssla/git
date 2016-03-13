@@ -10,6 +10,7 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
+import com.happylopers.board.domain.BoardVO;
 import com.happylopers.wakeup.domain.WakeUpVO;
 import com.happylopers.wakeup.persistence.WakeUpDAO;
 
@@ -23,16 +24,32 @@ public class WakeUpServiceImpl implements WakeUpService{
 	public List<WakeUpVO> list() throws Exception {
 		return dao.list();
 	}
+	
+	@Override
+	public WakeUpVO selectLatestDateInfo() throws Exception {
+		return dao.selectLatestDateInfo();
+	}
 
 	@Override
-	public void regist(WakeUpVO vo) throws Exception {
-		System.out.println("date값 출력하면 어케 되나 "+vo.getDate());
+	public void updateWakeUp(WakeUpVO vo) throws Exception {
+		System.out.println("seq : "+vo.getSeq()+" wakeup_time값 출력하면 어케 되나 "+vo.getTime_wakeup());
 		/*
 		Calendar cal = Calendar.getInstance();
 		cal.set(1987, 11, 25);
 		Date date = cal.getTime();
 		 */
-		dao.create(vo);
+		dao.updateWakeUp(vo);
+	}
+
+	@Override
+	public void insertGoSleep(WakeUpVO vo) throws Exception {
+		System.out.println("wakeup_sleep값 출력하면 어케 되나 "+vo.getTime_sleep());
+		/*
+		Calendar cal = Calendar.getInstance();
+		cal.set(1987, 11, 25);
+		Date date = cal.getTime();
+		 */
+		dao.insertGoSleep(vo);
 	}
 
 	@Override
@@ -54,8 +71,8 @@ public class WakeUpServiceImpl implements WakeUpService{
 		System.out.println("modal_seq : "+modal_seq);
 		
 		Calendar cal = Calendar.getInstance();
-        cal.add(cal.HOUR, + hour);
-        cal.add(cal.MINUTE, + minute);
+        cal.add(Calendar.HOUR, + hour);
+        cal.add(Calendar.MINUTE, + minute);
         
         System.out.println("시"+cal.getTime());
         
@@ -66,8 +83,7 @@ public class WakeUpServiceImpl implements WakeUpService{
         
         System.out.println("마지막에 들어가는 date 값 "+makeDate);
         
-		
-		vo.setDate(makeDate);
+		vo.setTime_wakeup(makeDate);
 		vo.setComment(modal_comment);
 		vo.setSeq(modal_seq);
 		//dao.update(vo);

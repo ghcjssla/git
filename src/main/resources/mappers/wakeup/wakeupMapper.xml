@@ -3,32 +3,52 @@
 
 <mapper namespace="com.happylopers.mapper.wakeup.wakeupMapper">
     <select id="list" resultType="WakeUpVO">
+    <!-- AND time_wakeup <> time_sleep 절이 들어간 이유
+    처음에 의도는 취침과 기상시간이 전부 입력된 데이터만 나와야한다.
+    하지만 처음 입력될 당시 timestamp값이 전부 현시간으로 초기화 되어버린다.
+    결국 기상시간과 취침시간이 같이 동일한 시간으로 들어가 버린다는 것이다.
+    이럴 경우 취침시간과 기상시간이 같은경우를 제외하면 해결되는 일이다. 
+     -->
     <![CDATA[
 	select
-    seq, date, comment
+    seq, time_wakeup,time_sleep, comment
     from daily_log
     where  
-    DATE_FORMAT(date,'%Y%m%d') < DATE_FORMAT(date_add(now(), interval 1 month), '%Y%m%d')
+    DATE_FORMAT(time_wakeup,'%Y%m%d') < DATE_FORMAT(date_add(now(), interval 1 month), '%Y%m%d')
     AND 
-    DATE_FORMAT(date,'%Y%m%d') >= DATE_FORMAT(CONCAT(DATE_FORMAT(NOW(),'%Y%m'),'01'), '%Y%m%d')
-    order by date
+    DATE_FORMAT(time_wakeup,'%Y%m%d') >= DATE_FORMAT(CONCAT(DATE_FORMAT(NOW(),'%Y%m'),'01'), '%Y%m%d')
+    AND time_wakeup <> time_sleep
+    order by time_wakeup
     ]]>
     </select>
     
+    <select id="latestDateInfo" resultType="WakeUpVO">
+    SELECT seq, time_wakeup,time_sleep, COMMENT
+	FROM daily_log
+	WHERE time_wakeup = time_sleep
+	</select>
+    
     <insert id="create">
-        insert into daily_log (date, comment)
+        insert into daily_log (time_wakeup, comment)
         values(now(),#{comment})
+    </insert>
+    
+    <insert id="insertGoSleep">
+        insert into daily_log (time_sleep)
+        values(now())
     </insert>
     
     <delete id="delete">
         delete from daily_log where seq = #{seq}
     </delete>
     
-    <update id="update">
+    <update id="updateWakeUp">
         update daily_log 
         set 
-        date = #{date}, 
+        time_wakeup = now(), 
         comment = #{comment}
         where seq = #{seq}
     </update>
+    
+    
 </mapper>

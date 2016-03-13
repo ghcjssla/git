@@ -102,10 +102,10 @@ html {
 							<tr>
 								<td class="text-center">${status.index+1}일</td>
 								<%-- 
-								<td class="text-center dailyLog" data-target="#layerpop" data-toggle="modal" time='<fmt:formatDate pattern="HH:mm:ss" value="${WakeUpVO.date}" />' comment='${WakeUpVO.comment}' seq='${WakeUpVO.seq}'>
+								<td class="text-center dailyLog" data-target="#layerpop" data-toggle="modal" time='<fmt:formatDate pattern="HH:mm:ss" value="${WakeUpVO.time_wakeup}" />' comment='${WakeUpVO.comment}' seq='${WakeUpVO.seq}'>
 								--%>
-								<td class="text-center" time='<fmt:formatDate pattern="HH:mm:ss" value="${WakeUpVO.date}" />' comment='${WakeUpVO.comment}' seq='${WakeUpVO.seq}'>
-								<fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${WakeUpVO.date}" />
+								<td class="text-center" time='<fmt:formatDate pattern="HH:mm:ss" value="${WakeUpVO.time_wakeup}" />' comment='${WakeUpVO.comment}' seq='${WakeUpVO.seq}'>
+								<fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${WakeUpVO.time_wakeup}" />
 								<td class="text-center">
 								<c:choose>
 								    <c:when test="${fn:length(WakeUpVO.comment) > 9}">
@@ -152,7 +152,7 @@ html {
 	      <!-- body -->
 	      <div class="modal-body">
 	      <!-- 이쪽 디자인좀 수정해야할 듯 -->
-	      <input name="modal_date" id="modal_date" type="time"/><br />
+	      <input name="modal_time_wakeup" id="modal_time_wakeup" type="time_wakeup"/><br />
 	      <input name="modal_comment" id="modal_comment" type="text"/>
 	      </div>
 	      <!-- Footer -->
@@ -181,7 +181,7 @@ html {
 	    $("#submitBtn").click(function(){
 	        //alert("클릭했나");
 	        //alert("날짜 값 : "+$("#date").val());
-	        //$("#date").val($.now());
+	        //$("#ss").val($.now());
 	        $("[name=dailyLogForm]").attr("action","/springBoard/wakeup/register");
 	        //alert("액션 값 : "+$("[name=dailyLogForm]").attr("action"));
 	        $("[name=dailyLogForm]").submit();
