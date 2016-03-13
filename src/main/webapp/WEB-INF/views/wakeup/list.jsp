@@ -105,6 +105,9 @@ html {
 								<td class="text-center dailyLog" data-target="#layerpop" data-toggle="modal" time='<fmt:formatDate pattern="HH:mm:ss" value="${WakeUpVO.time_wakeup}" />' comment='${WakeUpVO.comment}' seq='${WakeUpVO.seq}'>
 								--%>
 								<td class="text-center" time='<fmt:formatDate pattern="HH:mm:ss" value="${WakeUpVO.time_wakeup}" />' comment='${WakeUpVO.comment}' seq='${WakeUpVO.seq}'>
+								<c:if test="${null != WakeUpVO.time_sleep}">
+								<fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${WakeUpVO.time_sleep}" /> ~ 
+								</c:if>
 								<fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${WakeUpVO.time_wakeup}" />
 								<td class="text-center">
 								<c:choose>
