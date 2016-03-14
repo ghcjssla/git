@@ -20,4 +20,5 @@ public interface BookLogService {
 	public void insertBookLog(BookLogVO vo) throws Exception;
 	public void updateBook(BookVO vo);
 	public void deleteBookLog(BookLogVO vo);
+	public int ReadPagePerDayList(int book_seq) throws Exception;
 }

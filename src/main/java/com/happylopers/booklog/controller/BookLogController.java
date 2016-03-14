@@ -1,5 +1,8 @@
 package com.happylopers.booklog.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.slf4j.Logger;
@@ -34,6 +37,7 @@ public class BookLogController {
 	    model.addAttribute("bookLog",service.getBookLog(book_seq));
 	    model.addAttribute("book",service.getBook(book_seq));
 	    model.addAttribute("list",service.bookLogList(book_seq));
+	    model.addAttribute("progressRate",service.ReadPagePerDayList(book_seq));
 	}
 	
 	@RequestMapping(value="/registerBook", method = RequestMethod.POST)

@@ -25,6 +25,13 @@ public class BookLogDAOImpl implements BookLogDAO{
 	public List<BookLogVO> BookLoglist(int book_seq) throws Exception {
 		return session.selectList(namespace+".bookLogList", book_seq);
 	}
+	
+	@Override
+	public List<BookLogVO> ReadPagePerDayList(int book_seq) throws Exception {
+		return session.selectList(namespace+".selectReadPagePerDay", book_seq);
+	}
+	
+	
 
 	@Override
 	public void create(BookVO vo) throws Exception {

@@ -30,6 +30,16 @@
 	LIMIT 1
     ]]>
     </select>
+    
+    <select id="selectReadPagePerDay" parameterType="int" resultType="BookLogVO">
+    <![CDATA[
+    select DATE_FORMAT(start_date,'%Y%m%d') start_date, max(last_page) last_page from book_log
+    WHERE 1=1
+    AND book_seq = #{book_seq}
+    AND finish = 'Y'
+    GROUP BY DATE_FORMAT(start_date,'%Y%m%d')
+    ]]>
+    </select>
 
     <select id="bookList" resultType="BookVO">
     <![CDATA[

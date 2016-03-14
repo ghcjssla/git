@@ -19,4 +19,5 @@ public interface BookLogDAO {
 	public void updateBookLog(BookLogVO vo);
 	public void updateBook(BookVO vo);
 	public void deleteBooklog(BookLogVO vo);
+	List<BookLogVO> ReadPagePerDayList(int book_seq) throws Exception;
 }

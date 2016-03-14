@@ -15,8 +15,18 @@
 <div class="panel panel-default">
 <!-- Default panel contents -->
 <div class="panel-heading">
-<span style='margin:0.6em'>${fn:substring(book.name, 0, 14)}..</span><button type="button" class="btn bg-gray-active color-palette btn-xs"  data-toggle="modal" data-target="#modalBookUpdateFrm">수정</button>
+<span style='margin:0.6em'>${fn:substring(book.name, 0, 14)}</span><button type="button" class="btn bg-gray-active color-palette btn-xs"  data-toggle="modal" data-target="#modalBookUpdateFrm">수정</button>
+<c:choose>
+        <c:when test="${bookLog.last_page eq book.total_page}">
+        소요일수[<fmt:formatNumber value="${book.total_page/progressRate}" pattern=".0" type="NUMBER"/>]</span>
+        </c:when>
+        <c:otherwise>
+        예정소요일수[<fmt:formatNumber value="${book.total_page/progressRate}" pattern=".0" type="NUMBER"/>]</span>
+        </c:otherwise>
+</c:choose>
+
 <div class="btn-group btn-group-xs pull-right" role="group" aria-label="학습버튼">
+<span>
     <c:choose>
 	    <c:when test="${bookLog.last_page eq book.total_page}">
 	    <button type="button" class="btn btn-success btn-xs" style='cursor:default'>완료</button>
