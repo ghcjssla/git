@@ -27,21 +27,14 @@ public class BookLogServiceImpl implements BookLogService{
 	public int ReadPagePerDayList(int book_seq) throws Exception {
 		
 		List<BookLogVO> list = dao.ReadPagePerDayList(book_seq);
-System.out.println("1--------"+list);
-System.out.println("1-1-------"+list.size());
 	    int average = 0;
-if(list.size() > 0 ){
-System.out.println("2--------"+list);	
-System.out.println("2-1-------"+list.size());
-
-    average = list.get(0).getLast_page();
-	    for (int i = 0; i < list.size()-1 ; i++) {
-			//System.out.println("=========== day Page:"+ (list.get(i+1).getLast_page()+" - "+ list.get(i).getLast_page() +" : "+(list.get(i+1).getLast_page() - list.get(i).getLast_page())));
-			average += (list.get(i+1).getLast_page() - list.get(i).getLast_page());
-		}
-	    //System.out.println("-------"+average);
-	    average/=list.size();
-}
+	    if(list.size() > 0 ){
+	    	average = list.get(0).getLast_page();
+		    for (int i = 0; i < list.size()-1 ; i++) {
+				average += (list.get(i+1).getLast_page() - list.get(i).getLast_page());
+			}
+		    average/=list.size();
+	    }
 		return average;
 	}
 
