@@ -30,7 +30,7 @@ public class BookLogServiceImpl implements BookLogService{
 System.out.println("1--------"+list);
 System.out.println("1-1-------"+list.size());
 	    int average = 0;
-if(null != list ){
+if(list.size() > 0 ){
 System.out.println("2--------"+list);	
 System.out.println("2-1-------"+list.size());
 
