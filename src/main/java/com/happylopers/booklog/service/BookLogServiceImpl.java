@@ -35,7 +35,7 @@ if(null != list){
 			average += (list.get(i+1).getLast_page() - list.get(i).getLast_page());
 		}
 	    //System.out.println("-------"+average);
-	    average/=list.size()
+	    average/=list.size();
 }
 		return average;
 	}
