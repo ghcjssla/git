@@ -28,7 +28,7 @@ public class BookLogServiceImpl implements BookLogService{
 		
 		List<BookLogVO> list = dao.ReadPagePerDayList(book_seq);
 	    int average = 0;
-if(null != list){
+if(list.size()>0 || null != list){
 	    average = list.get(0).getLast_page();
 	    for (int i = 0; i < list.size()-1 ; i++) {
 			//System.out.println("=========== day Page:"+ (list.get(i+1).getLast_page()+" - "+ list.get(i).getLast_page() +" : "+(list.get(i+1).getLast_page() - list.get(i).getLast_page())));
