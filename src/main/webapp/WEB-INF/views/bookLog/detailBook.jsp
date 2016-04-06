@@ -9,19 +9,36 @@
 
 
  -->
+ <section class="content-header">
+	<ol class="breadcrumb">
+		<li>
+			<span style='margin:0.6em'>
+			<c:choose>
+			     <c:when test="${fn:length(book.name) > 25}">
+			      <c:out value="${fn:substring(book.name,0,24)}"/>…
+			     </c:when>
+			     <c:otherwise>
+			      <c:out value="${book.name}"/>
+			     </c:otherwise>
+			</c:choose>
+			</span>
+			<button type="button" class="btn bg-gray-active color-palette btn-xs"  data-toggle="modal" data-target="#modalBookUpdateFrm">수정</button>
+		</li>
+	</ol>
+</section>
+ 
  
 <!-- Main content -->
 <section class="content">
 <div class="panel panel-default">
 <!-- Default panel contents -->
 <div class="panel-heading">
-<span style='margin:0.6em'>${fn:substring(book.name, 0, 14)}</span><button type="button" class="btn bg-gray-active color-palette btn-xs"  data-toggle="modal" data-target="#modalBookUpdateFrm">수정</button>
 <c:choose>
         <c:when test="${bookLog.last_page eq book.total_page}">
         소요일수[<fmt:formatNumber value="${book.total_page/progressRate}" pattern=".0" type="NUMBER"/>]</span>
         </c:when>
         <c:otherwise>
-        예정소요일수[<fmt:formatNumber value="${book.total_page/progressRate}" pattern=".0" type="NUMBER"/>]</span>
+        소요예정[<fmt:formatNumber value="${book.total_page/progressRate}" pattern=".0" type="NUMBER"/>]day</span>
         </c:otherwise>
 </c:choose>
 

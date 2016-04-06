@@ -213,7 +213,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <%-- --%>
                   <li class="user-body">
                     <div class="col-xs-4 text-center">
-                      <a href="#">미정?</a>
+                      <a href="http://www.happylopers.com/redmine">레드<br/ >마인</a>
                     </div>
                     <div class="col-xs-4 text-center">
                       <a href="#">미정</a>
@@ -295,11 +295,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li class="header">HEADER</li>
              --%>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="/springBoard/wakeup/list"><i class="fa fa-calendar"></i> <span>기상 일지</span></a></li>
+            <!-- <li class="active"><a href="/springBoard/wakeup/list"><i class="fa fa-calendar"></i> <span>기상 일지</span></a></li> -->
             <li class="active"><a href="/springBoard/calendar/main"><i class="fa fa-calendar"></i> <span>일정</span></a></li>
             <li class="active"><a href="/springBoard/bookLog/list"><i class="fa fa-book"></i> <span>책 일지</span></a></li>
             <li class="active"><a href="/springBoard/sboard/list"><i class="fa fa-list-alt"></i> <span>게시판</span></a></li>
-            <li class="active"><a href="http://www.happylopers.com/redmine"><i class="fa fa-list-alt"></i><span>레드마인</span></a></li>
+            <!-- <li class="active"><a href="http://www.happylopers.com/redmine"><i class="fa fa-list-alt"></i><span>레드마인</span></a></li> -->
             <li><a href="https://github.com/ghcjssla/git/issues"><i class="fa fa-github"></i><span>git issues</span></a></li>
             <%--
             <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
@@ -319,6 +319,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
+        <!-- 
         <section class="content-header">
           <h1>
                                 페이지명
@@ -329,3 +330,4 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li class="active">페이지명</li>
           </ol>
         </section>
+         -->

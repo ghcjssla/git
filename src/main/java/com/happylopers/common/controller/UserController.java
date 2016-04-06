@@ -57,6 +57,7 @@ public class UserController {
 			Date sessionLimit = new Date(System.currentTimeMillis()+(1000*amount));
 			service.keepLogin(vo.getUid(), session.getId(), sessionLimit);
 		}
+		
 	}
 	
 	@RequestMapping(value ="/logout", method = RequestMethod.GET)

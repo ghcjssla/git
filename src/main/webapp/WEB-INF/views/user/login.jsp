@@ -25,10 +25,10 @@
   <body class="login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href="/springBoard/resources/index2.html"><b>Zerock</b>Project</a>
+        <a href="/springBoard/resources/index2.html"><b>HAPPY</b>LOPERS</a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
-        <p class="login-box-msg">Sign in to start your session</p>
+        <p class="login-box-msg">계정과 비밀번호를 입력하세요</p>
 
 <form action="/springBoard/user/loginPost" method="post">
   <div class="form-group has-feedback">
@@ -54,8 +54,8 @@
 </form>
 
 
-        <a href="#">I forgot my password</a><br>
-        <a href="register.html" class="text-center">Register a new membership</a>
+        <a href="#">I forgot my password</a><span style="font-size:0.1em">(미구현)</span><br>
+        <a href="register.html" class="text-center">Register a new membership</a><span style="font-size:0.1em">(미구현)</span>
 
       </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->
