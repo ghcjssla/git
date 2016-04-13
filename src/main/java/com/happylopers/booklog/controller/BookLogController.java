@@ -1,9 +1,7 @@
 package com.happylopers.booklog.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.happylopers.booklog.domain.BookLogVO;
@@ -84,5 +83,12 @@ public class BookLogController {
 		logger.info("책 로그 삭제");
 		service.deleteBookLog(vo);
     return "redirect:/bookLog/detailBook?book_seq="+vo.getBook_seq();
+    }
+	
+	@RequestMapping(value="/searchNaverBook", method = RequestMethod.GET)
+    public void searchNaverBookGET(HttpServletResponse response, @RequestParam("keyWord")String keyWord, @RequestParam("display")String display, @RequestParam("start")String start) throws Exception{
+		logger.info("네이버 책 검색 : "+keyWord);
+		response.setCharacterEncoding("UTF-8");
+		response.getWriter().print(service.searchNaverBook(keyWord, display, start));
     }
 }

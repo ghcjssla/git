@@ -10,11 +10,6 @@
 <div style='clear:both'></div>
 
 
-
-
-
-
-
 <div id="bookList">
 <!-- 퍼센트 수치에 따라 색상이 바뀌면 좋을듯 -->
     <ul class="list-group">
@@ -52,13 +47,14 @@
         <form name="bookFrom" id="bookFrom">
           <div class="form-group">
             <label for="recipient-name" class="control-label">책 제목</label>
-            <input name="name" type="text" class="form-control" id="recipient-name">
+            <input id="searchBook" name="name" type="text" class="form-control" id="recipient-name">
           </div>
           <div class="form-group">
             <label for="message-text" class="control-label">전체 페이지</label>
             <input name="total_page" type="number" class="form-control" placeholder="전체 페이지">
           </div>
         </form>
+        <div id="naverBoookList"></div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
@@ -111,8 +107,59 @@ $().ready(function() {
             }
         }
     });
+    
+    
+    $("#searchBook").on("keyup",function(){
+    	//alert($(this).val());
+    	$("#naverBoookList").empty();
+    	goBookSearch($(this).val());
+    });
+    
 });
 </script>
+
+
+<script>
+function setKeyWord(searchKeyWord){
+	var regExp = /<\/?[^>]+>/gi;
+	searchKeyWord = searchKeyWord.replace(regExp,"");
+	$("#searchBook").val(searchKeyWord);
+}
+
+function goBookSearch(searchKeyWord,page){
+	var nowPage = 1;
+	if(page > 0){
+		nowPage = page;
+	}
+	var perPage = 5;
+	var totalPage = 0;
+	
+	$.ajax({
+        type: "GET"
+        ,dataType: "xml"
+        ,url: "/springBoard/bookLog/searchNaverBook/"
+        ,data:{keyWord:searchKeyWord,start:nowPage,display:perPage}
+        ,success: function(xml){
+        	var xmlDataTotal = $(xml).find("total").text();
+        	var xmlDataStart = $(xml).find("start").text();
+             var xmlData = $(xml).find("item");
+             var listLength = xmlData.length;
+             if (listLength) {
+            	 totalPage = Math.round(xmlDataTotal/perPage);
+                 var contentStr = "<span style='float:right'>총"+xmlDataTotal+"건"+" "+xmlDataStart+"/"+totalPage+"page</span><br /><hr style='both:clear' />";
+                 $(xmlData).each(function(){
+                     contentStr += "<img src='"+$(this).find("image").text()+"' /><a href='javascript:setKeyWord(\""+$(this).find("title").text()+"\")'>["+ $(this).find("title").text() +"]</a><hr /></br>";
+                 });
+                 $("#naverBoookList").append(contentStr);
+             }
+             //페이징 영역
+             //$("#naverBoookList").append("<a href='javascript:goBookSearch(param1,param2)'>페이지번호</a>");
+         }
+      });
+}
+	             
+</script>
+
 
 <%@include file="../include/footer.jsp"%>
 

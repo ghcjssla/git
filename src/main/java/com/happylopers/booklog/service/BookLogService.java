@@ -21,4 +21,5 @@ public interface BookLogService {
 	public void updateBook(BookVO vo);
 	public void deleteBookLog(BookLogVO vo);
 	public int ReadPagePerDayList(int book_seq) throws Exception;
+	public String searchNaverBook(String keyWord, String display, String start) throws Exception;
 }
