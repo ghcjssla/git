@@ -5,7 +5,7 @@
 <section class="content">
 <div class="panel panel-default text-right">
 <span style='float:left; margin:0.6em;'>학습할 책을 등록합니다.</span>
-<span class="btn btn-primary glyphicon glyphicon-plus pull-rights" data-toggle="modal" data-target="#modalBookFrm">등록</span>
+<span id="insertBootBtn" class="btn btn-primary glyphicon glyphicon-plus pull-rights" data-toggle="modal" data-target="#modalBookFrm">등록</span>
 </div>
 <div style='clear:both'></div>
 
@@ -39,12 +39,12 @@
 <div class="modal fade" id="modalBookFrm" tabindex="-1" role="dialog" aria-labelledby="modalBookFrmLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="modalBookFrmLabel">학습 정보 입력</h4>
+      <div class="modal-header"><a name="top"></a><input type="hidden" id="isModal" value="false"/>
+        <button id="modalCloseBtn" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="modalBookFrmLabel">책 정보 입력</h4>
       </div>
       <div class="modal-body">
-        <form name="bookFrom" id="bookFrom">
+        <form autocomplete="off"  name="bookFrom" id="bookFrom">
           <div class="form-group">
             <label for="recipient-name" class="control-label">책 제목</label>
             <input id="searchBook" name="name" type="text" class="form-control" id="recipient-name">
@@ -54,12 +54,12 @@
             <input name="total_page" type="number" class="form-control" placeholder="전체 페이지">
           </div>
         </form>
-        <div id="naverBoookList"></div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
         <button id="modalBookFrmSubmitBtn" type="button" class="btn btn-primary">저장</button>
       </div>
+      <div id="naverBoookList"></div>
     </div>
   </div>
 </div>
@@ -89,7 +89,7 @@ $().ready(function() {
         rules: {
         	name:{
                 required : true,
-                maxlength : 30
+                maxlength : 100
             },
             total_page: {
             	required : true,
@@ -99,7 +99,7 @@ $().ready(function() {
         messages : {
         	name :{
                 required : "책 제목을 입력해 주세요",
-                maxlength : "책 제목이 너무 깁니다. 30자 제한"
+                maxlength : "책 제목이 너무 깁니다. 100자 제한"
             },
             total_page : {
             	required : "전체 페이지를 입력해 주세요",
@@ -108,11 +108,28 @@ $().ready(function() {
         }
     });
     
-    
     $("#searchBook").on("keyup",function(){
-    	//alert($(this).val());
-    	$("#naverBoookList").empty();
-    	goBookSearch($(this).val());
+    	goBookSearch($(this).val().replace(/(\s*)/g,""));
+    });
+    
+    $(document).bind('touchstart',function (e) {
+    	//alert(document.activeElement.name+" "+$("#isModal").val());
+    	if(document.activeElement.name=="name" && $("#isModal").val() == true){
+    		goBookSearch($(this).val().replace(/(\s*)/g,""));
+    	}
+    });
+  
+    
+    //검색 초기화 작업
+    $("#modalCloseBtn").on("click",function(){
+    	$("#searchBook").val("");
+    	$("#naverBoookList").text("");
+    	$("#isModal").val(false);
+    });
+    $("#insertBootBtn").on("click",function(){
+        $("#searchBook").val("");
+        $("#naverBoookList").text("");
+        $("#isModal").val(true);
     });
     
 });
@@ -140,24 +157,81 @@ function goBookSearch(searchKeyWord,page){
         ,url: "/springBoard/bookLog/searchNaverBook/"
         ,data:{keyWord:searchKeyWord,start:nowPage,display:perPage}
         ,success: function(xml){
+        	$("#naverBoookList").text("");
         	var xmlDataTotal = $(xml).find("total").text();
         	var xmlDataStart = $(xml).find("start").text();
              var xmlData = $(xml).find("item");
              var listLength = xmlData.length;
              if (listLength) {
             	 totalPage = Math.round(xmlDataTotal/perPage);
-                 var contentStr = "<span style='float:right'>총"+xmlDataTotal+"건"+" "+xmlDataStart+"/"+totalPage+"page</span><br /><hr style='both:clear' />";
+                 //var contentStr = "<span style='float:right'>총"+xmlDataTotal+"건"+" <span id='nowPage'>"+xmlDataStart+"</span>/"+totalPage+"page</span><br /><hr style='both:clear' />";
+                 var contentStr = "<span style='float:right'>총"+xmlDataTotal+"건"+" <span style='display:none' id='nowPage'>"+xmlDataStart+"</span></span><br /><hr style='both:clear' />";
                  $(xmlData).each(function(){
-                     contentStr += "<img src='"+$(this).find("image").text()+"' /><a href='javascript:setKeyWord(\""+$(this).find("title").text()+"\")'>["+ $(this).find("title").text() +"]</a><hr /></br>";
+                     contentStr += "<a href='#top'><span onclick='javascript:setKeyWord(\""+$(this).find("title").text()+"\")'><img src='"+$(this).find("image").text()+"' />["+ $(this).find("title").text() +"]</span></a><hr /></br>";
                  });
                  $("#naverBoookList").append(contentStr);
+                 /*
+               //페이징 영역
+                 $("#naverBoookList").append(
+                     "<hr />"+
+                     "<div>"+
+                     "<nav>"+
+                      "<ul class='pagination'>"+
+                        "<li><a href='#' aria-label='Previous'><span aria-hidden='true'>&laquo;</span></a></li>"+
+                        "<li class='active'><a href='javascript:goBookSearch(\"자바\",1)'>1</a></li>"+
+                        "<li><a href='javascript:goBookSearch(\"자바\",2)'>2</a></li>"+
+                        "<li><a href='javascript:goBookSearch(\"자바\",3)'>3</a></li>"+
+                        "<li><a href='javascript:goBookSearch(\"자바\",4)'>4</a></li>"+
+                        "<li><a href='javascript:goBookSearch(\"자바\",5)'>5</a></li>"+
+                        "<li><a href='javascript:goBookSearch(\"자바\",6)'>6</a></li>"+
+                        "<li><a href='javascript:goBookSearch(\"자바\",7)'>7</a></li>"+
+                        "<li><a href='#' aria-label='Next'><span aria-hidden='true'>&raquo;</span></a></li>"+
+                        "</ul>"+
+                     "</nav>"+
+                     "</div>"
+                );
+                 */
+                 $("#naverBoookList").append("<button style='margin:0 auto;' id=\"searchMoreBtn\" type=\"button\" class=\"btn btn-default btn-lg btn-block\" onclick=\"javascript:addBookSearch('"+searchKeyWord+"')\">더보기</button>");
              }
-             //페이징 영역
-             //$("#naverBoookList").append("<a href='javascript:goBookSearch(param1,param2)'>페이지번호</a>");
          }
       });
 }
-	             
+
+
+function addBookSearch(searchKeyWord){
+	$("#searchMoreBtn").remove();
+	//alert($("#nowPage").text());
+    var nowPage = $("#nowPage").text();
+    nowPage++;
+    $("#nowPage").text(nowPage);
+    //alert(nowPage);
+    var perPage = 5;
+    var totalPage = 0;
+    
+    $.ajax({
+        type: "GET"
+        ,dataType: "xml"
+        ,url: "/springBoard/bookLog/searchNaverBook/"
+        ,data:{keyWord:searchKeyWord,start:nowPage,display:perPage}
+        ,success: function(xml){
+            var xmlDataTotal = $(xml).find("total").text();
+            var xmlDataStart = $(xml).find("start").text();
+             var xmlData = $(xml).find("item");
+             var listLength = xmlData.length;
+             if (listLength) {
+                 totalPage = Math.round(xmlDataTotal/perPage);
+                 var contentStr = "";
+                 $(xmlData).each(function(){
+                	 contentStr += "<a href='#top'><span onclick='javascript:setKeyWord(\""+$(this).find("title").text()+"\")'><img src='"+$(this).find("image").text()+"' />["+ $(this).find("title").text() +"]</span></a><hr /></br>";
+                 });
+                 $("#naverBoookList").append(contentStr);
+                 //$("#naverBoookList").append("<button type=\"button\" class=\"btn btn-default\">더보기</button>");
+                 $("#naverBoookList").append("<button style='margin:0 auto;' id=\"searchMoreBtn\" type=\"button\" class=\"btn btn-default btn-lg btn-block\" onclick=\"javascript:addBookSearch('"+searchKeyWord+"')\">더보기</button>");
+             }
+         }
+      });
+}
+
 </script>
 
 
