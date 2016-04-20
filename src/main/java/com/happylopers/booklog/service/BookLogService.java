@@ -8,7 +8,7 @@ import com.happylopers.booklog.domain.BookVO;
 public interface BookLogService {
 	public BookVO getBook(int book_seq) throws Exception;
 	public BookLogVO getBookLog(int book_seq) throws Exception;
-	public List<BookVO> bookList() throws Exception;
+	public List<BookVO> bookList(String mode) throws Exception;
 	public List<BookLogVO> bookLogList(int book_seq) throws Exception;
 	public void registBook(BookVO vo) throws Exception;
 	public void registBookLog(BookLogVO vo) throws Exception;

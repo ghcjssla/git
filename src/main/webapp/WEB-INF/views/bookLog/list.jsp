@@ -8,7 +8,13 @@
 <span id="insertBootBtn" class="btn btn-primary glyphicon glyphicon-plus pull-rights" data-toggle="modal" data-target="#modalBookFrm">등록</span>
 </div>
 <div style='clear:both'></div>
-
+<nav>
+    <ul class="nav nav-tabs nav-justified">
+      <li role="presentation" id="learning" <c:if test="${'L' eq mode}">class="active"</c:if>><a href="/springBoard/bookLog/list?mode=L">학습중</a></li>
+      <li role="presentation" id="waiting" <c:if test="${'W' eq mode}">class="active"</c:if>><a href="/springBoard/bookLog/list?mode=W">대기중</a></li>
+      <li role="presentation" id="studied" <c:if test="${'S' eq mode}">class="active"</c:if>><a href="/springBoard/bookLog/list?mode=S">완료</a></li>
+    </ul>
+</nav>
 
 <div id="bookList">
 <!-- 퍼센트 수치에 따라 색상이 바뀌면 좋을듯 -->
@@ -109,8 +115,36 @@ $().ready(function() {
     });
     
     $("#searchBook").on("keyup",function(){
-    	goBookSearch($(this).val().replace(/(\s*)/g,""));
+        goBookSearch($(this).val().replace(/(\s*)/g,""));
     });
+    
+    $("#learning").on("click",function(){
+    	goBookList(this);
+    });
+    
+    $("#waiting").on("click",function(){
+        goBookList(this);
+    });
+    
+    $("#studied").on("click",function(){
+        goBookList(this);
+    });
+    
+    function goBookList(obj){
+    	if("learning"==$(obj).attr("id")){
+    		$("#learning").attr("class","active");
+    		$("#waiting").attr("class","");
+    		$("#studied").attr("class","");
+    	}else if("waiting"==$(obj).attr("id")){
+    		$("#learning").attr("class","");
+            $("#waiting").attr("class","active");
+            $("#studied").attr("class","");
+    	}else if("studied"==$(obj).attr("id")){
+    		$("#learning").attr("class","");
+            $("#waiting").attr("class","");
+            $("#studied").attr("class","active");
+        }
+    }
     
     $(document).bind('touchstart',function (e) {
     	//alert(document.activeElement.name+" "+$("#isModal").val());
@@ -118,7 +152,7 @@ $().ready(function() {
     		goBookSearch($(this).val().replace(/(\s*)/g,""));
     	}
     });
-  
+    
     
     //검색 초기화 작업
     $("#modalCloseBtn").on("click",function(){
@@ -148,72 +182,38 @@ function goBookSearch(searchKeyWord,page){
 	if(page > 0){
 		nowPage = page;
 	}
+	var searchMode = "goBookSearch";
+	commonSearchBook(searchKeyWord, nowPage, searchMode);
+}
+
+function addBookSearch(searchKeyWord){
+	$("#searchMoreBtn").remove();
+    var nowPage = $("#nowPage").text();
+    var maxPage = $("#totalPage").text();
+    nowPage++;
+    if(maxPage < nowPage){
+    	nowPage = maxPage;
+    }
+    $("#nowPage").text(nowPage);
+    var searchMode = "addBookSearch";
+    commonSearchBook(searchKeyWord, nowPage, searchMode);
+}
+
+function commonSearchBook(searchKeyWord, nowPage, searchMode){
 	var perPage = 5;
-	var totalPage = 0;
-	
+    var totalPage = 0;
+    
 	$.ajax({
         type: "GET"
         ,dataType: "xml"
         ,url: "/springBoard/bookLog/searchNaverBook/"
         ,data:{keyWord:searchKeyWord,start:nowPage,display:perPage}
         ,success: function(xml){
-        	$("#naverBoookList").text("");
-        	var xmlDataTotal = $(xml).find("total").text();
-        	var xmlDataStart = $(xml).find("start").text();
-             var xmlData = $(xml).find("item");
-             var listLength = xmlData.length;
-             if (listLength) {
-            	 totalPage = Math.round(xmlDataTotal/perPage);
-                 //var contentStr = "<span style='float:right'>총"+xmlDataTotal+"건"+" <span id='nowPage'>"+xmlDataStart+"</span>/"+totalPage+"page</span><br /><hr style='both:clear' />";
-                 var contentStr = "<span style='float:right'>총"+xmlDataTotal+"건"+" <span style='display:none' id='nowPage'>"+xmlDataStart+"</span></span><br /><hr style='both:clear' />";
-                 $(xmlData).each(function(){
-                     contentStr += "<a href='#top'><span onclick='javascript:setKeyWord(\""+$(this).find("title").text()+"\")'><img src='"+$(this).find("image").text()+"' />["+ $(this).find("title").text() +"]</span></a><hr /></br>";
-                 });
-                 $("#naverBoookList").append(contentStr);
-                 /*
-               //페이징 영역
-                 $("#naverBoookList").append(
-                     "<hr />"+
-                     "<div>"+
-                     "<nav>"+
-                      "<ul class='pagination'>"+
-                        "<li><a href='#' aria-label='Previous'><span aria-hidden='true'>&laquo;</span></a></li>"+
-                        "<li class='active'><a href='javascript:goBookSearch(\"자바\",1)'>1</a></li>"+
-                        "<li><a href='javascript:goBookSearch(\"자바\",2)'>2</a></li>"+
-                        "<li><a href='javascript:goBookSearch(\"자바\",3)'>3</a></li>"+
-                        "<li><a href='javascript:goBookSearch(\"자바\",4)'>4</a></li>"+
-                        "<li><a href='javascript:goBookSearch(\"자바\",5)'>5</a></li>"+
-                        "<li><a href='javascript:goBookSearch(\"자바\",6)'>6</a></li>"+
-                        "<li><a href='javascript:goBookSearch(\"자바\",7)'>7</a></li>"+
-                        "<li><a href='#' aria-label='Next'><span aria-hidden='true'>&raquo;</span></a></li>"+
-                        "</ul>"+
-                     "</nav>"+
-                     "</div>"
-                );
-                 */
-                 $("#naverBoookList").append("<button style='margin:0 auto;' id=\"searchMoreBtn\" type=\"button\" class=\"btn btn-default btn-lg btn-block\" onclick=\"javascript:addBookSearch('"+searchKeyWord+"')\">더보기</button>");
-             }
-         }
-      });
-}
-
-
-function addBookSearch(searchKeyWord){
-	$("#searchMoreBtn").remove();
-	//alert($("#nowPage").text());
-    var nowPage = $("#nowPage").text();
-    nowPage++;
-    $("#nowPage").text(nowPage);
-    //alert(nowPage);
-    var perPage = 5;
-    var totalPage = 0;
-    
-    $.ajax({
-        type: "GET"
-        ,dataType: "xml"
-        ,url: "/springBoard/bookLog/searchNaverBook/"
-        ,data:{keyWord:searchKeyWord,start:nowPage,display:perPage}
-        ,success: function(xml){
+        	if("goBookSearch"==searchMode){
+        	    $("#naverBoookList").text("");
+        	}else if("addBookSearch"==searchMode){
+                
+            }
             var xmlDataTotal = $(xml).find("total").text();
             var xmlDataStart = $(xml).find("start").text();
              var xmlData = $(xml).find("item");
@@ -221,17 +221,20 @@ function addBookSearch(searchKeyWord){
              if (listLength) {
                  totalPage = Math.round(xmlDataTotal/perPage);
                  var contentStr = "";
+                 if("goBookSearch"==searchMode){
+                	 contentStr = "<span style='float:right'>총"+xmlDataTotal+"건"+" <span id='nowPage'>"+xmlDataStart+"</span>/<span id='totalPage'>"+totalPage+"</span>page</span><br /><hr style='both:clear' />";	 
+                 }else if("addBookSearch"==searchMode){
+                	 
+                 }
                  $(xmlData).each(function(){
-                	 contentStr += "<a href='#top'><span onclick='javascript:setKeyWord(\""+$(this).find("title").text()+"\")'><img src='"+$(this).find("image").text()+"' />["+ $(this).find("title").text() +"]</span></a><hr /></br>";
+                     contentStr += "<a href='#top'><span onclick='javascript:setKeyWord(\""+$(this).find("title").text()+"\")'><img src='"+$(this).find("image").text()+"' />["+ $(this).find("title").text() +"]</span></a><hr /></br>";
                  });
                  $("#naverBoookList").append(contentStr);
-                 //$("#naverBoookList").append("<button type=\"button\" class=\"btn btn-default\">더보기</button>");
-                 $("#naverBoookList").append("<button style='margin:0 auto;' id=\"searchMoreBtn\" type=\"button\" class=\"btn btn-default btn-lg btn-block\" onclick=\"javascript:addBookSearch('"+searchKeyWord+"')\">더보기</button>");
+                 $("#naverBoookList").append("<button onClick=\"javascript:addBookSearch('"+searchKeyWord+"')\" style='margin:0 auto;' id=\"searchMoreBtn\" type=\"button\" class=\"btn btn-default btn-lg btn-block\" >더보기</button>");
              }
          }
       });
 }
-
 </script>
 
 

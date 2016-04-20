@@ -9,24 +9,20 @@
 
 
  -->
- <section class="content-header">
-	<ol class="breadcrumb">
-		<li>
-			<span style='margin:0.6em'>
-			<c:choose>
-			     <c:when test="${fn:length(book.name) > 25}">
-			      <c:out value="${fn:substring(book.name,0,24)}"/>…
-			     </c:when>
-			     <c:otherwise>
-			      <c:out value="${book.name}"/>
-			     </c:otherwise>
-			</c:choose>
-			</span>
-			<button type="button" class="btn bg-gray-active color-palette btn-xs"  data-toggle="modal" data-target="#modalBookUpdateFrm">수정</button>
-		</li>
-	</ol>
-</section>
- 
+<div class="panel panel-default">
+  <div class="panel-body">
+    <c:choose>
+         <c:when test="${fn:length(book.name) > 25}">
+          <c:out value="${fn:substring(book.name,0,24)}"/>…
+         </c:when>
+         <c:otherwise>
+          <c:out value="${book.name}"/>
+         </c:otherwise>
+    </c:choose>
+    <button type="button" class="btn bg-gray-active color-palette btn-xs"  data-toggle="modal" data-target="#modalBookUpdateFrm">수정</button>
+  </div>
+  <%-- <div class="panel-footer"></div>--%>
+</div>
  
 <!-- Main content -->
 <section class="content">

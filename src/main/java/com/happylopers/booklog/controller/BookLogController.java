@@ -25,9 +25,10 @@ public class BookLogController {
 	private BookLogService service;
 	
 	@RequestMapping(value ="/list", method = RequestMethod.GET)
-	public void list(Model model) throws Exception{
-	    logger.info("/BookLog/list 호출");
-	    model.addAttribute("list",service.bookList());
+	public void list(Model model, @RequestParam(value="mode", defaultValue = "L", required=false)String mode) throws Exception{
+	    logger.info("/BookLog/list 호출 mode:"+mode);
+	    model.addAttribute("mode", mode);
+	    model.addAttribute("list",service.bookList(mode));
 	}
 	
 	@RequestMapping(value ="/detailBook", method = RequestMethod.GET)

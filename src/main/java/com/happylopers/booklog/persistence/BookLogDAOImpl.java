@@ -1,6 +1,8 @@
 package com.happylopers.booklog.persistence;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -17,8 +19,11 @@ public class BookLogDAOImpl implements BookLogDAO{
 	private static String namespace = "com.happylopers.mapper.booklog.bookLogMapper";
 
 	@Override
-	public List<BookVO> Booklist() throws Exception {
-		return session.selectList(namespace+".bookList");
+	public List<BookVO> Booklist(String mode) throws Exception {
+		Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("mode", mode);
+        
+		return session.selectList(namespace+".bookList", paramMap);
 	}
 
 	@Override

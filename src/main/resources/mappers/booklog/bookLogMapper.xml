@@ -43,27 +43,43 @@
 
     <select id="bookList" resultType="BookVO">
     <![CDATA[
-	SELECT A.seq,
-	         A.name, 
-	         A.regdate, 
-	         A.total_page,
-	         (select max(last_page)
-	          from 
-	            book_log
-	            where book_seq = A.seq
-	            order by start_date desc
-	         ) AS LAST_PAGE,
-	         (
-	         select finish 
-	          from 
-	          book_log
-	          where book_seq = A.seq
-	          order by start_date desc
-	          limit 1
-	         ) AS FINISH
-	FROM book A
-	ORDER BY regdate DESC
+	SELECT * FROM (
+		SELECT A .seq,
+					A.name ,
+					A.regdate ,
+					A.total_page ,
+					(
+						SELECT MAX(last_page)
+						FROM book_log
+						WHERE book_seq = A .seq
+						ORDER BY start_date DESC
+					) AS LAST_PAGE ,
+					(
+						SELECT finish
+						FROM book_log
+						WHERE book_seq = A .seq
+						ORDER BY start_date DESC
+						LIMIT 1
+					) AS FINISH
+		FROM book A
+		ORDER BY regdate DESC
+	) AS booklist
     ]]>
+    <choose>
+        <when test="mode == 'L'.toString()">
+        WHERE LAST_PAGE > 0
+        <![CDATA[ 
+        AND TOTAL_PAGE <> LAST_PAGE
+        ]]>
+        </when>
+        <when test="mode == 'W'.toString()">
+        WHERE FINISH is null
+        </when>
+        <when test="mode == 'S'.toString()">
+        WHERE FINISH = 'Y' AND TOTAL_PAGE = LAST_PAGE
+        </when>
+    </choose>
+    
     </select>
     
     <select id="bookLogList" parameterType="int" resultType="BookLogVO">
