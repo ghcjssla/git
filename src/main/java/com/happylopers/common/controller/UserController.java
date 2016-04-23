@@ -35,8 +35,9 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/loginPost", method = RequestMethod.POST)
-	public void loginPOST(LoginDTO dto, HttpSession session, Model model)throws Exception{
-		logger.info("/loginPost 호출 로그인 시도");
+	public void loginPOST(HttpServletRequest request, LoginDTO dto, HttpSession session, Model model)throws Exception{
+		String Referer = request.getHeader("referer");
+		logger.info("/loginPost 호출 로그인 시도 "+Referer);
 		
 		UserVO vo = service.login(dto);
 		
@@ -48,8 +49,6 @@ public class UserController {
 			model.addAttribute("userVO",vo);
 		}
 		
-		
-		
 		if(dto.isUseCookie()){
 			// 이부분 공통부분 리펙토링 릴요
 			int amount = 60 * 60 * 24 * 7;
@@ -58,6 +57,7 @@ public class UserController {
 			service.keepLogin(vo.getUid(), session.getId(), sessionLimit);
 		}
 		
+		model.addAttribute("","");
 	}
 	
 	@RequestMapping(value ="/logout", method = RequestMethod.GET)

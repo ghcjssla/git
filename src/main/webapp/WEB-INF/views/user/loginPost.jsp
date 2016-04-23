@@ -9,7 +9,7 @@
 </head>
 <body>
   <script type="text/javascript">
-    self.location = "/springBoard/sboard/list";
+    self.location = "/springBoard/bookLog/list";
   </script>
 </body>
 </html>

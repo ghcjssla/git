@@ -60,7 +60,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 			
 			Object preURI = session.getAttribute("preURI");
 			logger.info("권한 체크하고 방급 URI로 보내주기 : "+preURI);
-			response.sendRedirect(preURI != null ? (String)preURI:"/springBoard/sboard/list");
+			response.sendRedirect(preURI != null ? (String)preURI:"/springBoard/bookLog/list");
 		}
 	}
 	
