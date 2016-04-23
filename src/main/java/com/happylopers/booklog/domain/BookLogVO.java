@@ -3,25 +3,25 @@ package com.happylopers.booklog.domain;
 import java.util.Date;
 
 public class BookLogVO {
-	private int seq;
-	private int book_seq;
+	private Integer seq;
+	private Integer book_seq;
 	private Date start_date;
 	private Date end_date;
-	private int last_page;
+	private Integer last_page;
 	private String comment;
 	private String finish;
 	
 	
-	public int getSeq() {
+	public Integer getSeq() {
 		return seq;
 	}
-	public void setSeq(int seq) {
+	public void setSeq(Integer seq) {
 		this.seq = seq;
 	}
-	public int getBook_seq() {
+	public Integer getBook_seq() {
 		return book_seq;
 	}
-	public void setBook_seq(int book_seq) {
+	public void setBook_seq(Integer book_seq) {
 		this.book_seq = book_seq;
 	}
 	public Date getStart_date() {
@@ -36,10 +36,10 @@ public class BookLogVO {
 	public void setEnd_date(Date end_date) {
 		this.end_date = end_date;
 	}
-	public int getLast_page() {
+	public Integer getLast_page() {
 		return last_page;
 	}
-	public void setLast_page(int last_page) {
+	public void setLast_page(Integer last_page) {
 		this.last_page = last_page;
 	}
 	public String getComment() {

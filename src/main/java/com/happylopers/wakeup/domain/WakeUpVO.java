@@ -3,7 +3,7 @@ package com.happylopers.wakeup.domain;
 import java.util.Date;
 
 public class WakeUpVO {
-	private int seq;
+	private Integer seq;
 	private Date time_wakeup;
 	private Date time_sleep;
 	private String comment;
@@ -21,10 +21,10 @@ public class WakeUpVO {
 	public void setTime_wakeup(Date time_wakeup) {
 		this.time_wakeup = time_wakeup;
 	}
-	public int getSeq() {
+	public Integer getSeq() {
 		return seq;
 	}
-	public void setSeq(int seq) {
+	public void setSeq(Integer seq) {
 		this.seq = seq;
 	}
 	public String getComment() {
