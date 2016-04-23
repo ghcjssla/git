@@ -5,6 +5,7 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -27,6 +28,11 @@ public class BookLogServiceImpl implements BookLogService{
 	public List<BookVO> bookList(String mode) throws Exception {
 		return dao.Booklist(mode);
 	}
+	
+	@Override
+    public Map<String,Integer> selectBookStateNum() throws Exception {
+        return dao.selectBookStateNum();
+    }
 
 	@Override
 	public List<BookLogVO> bookLogList(int book_seq) throws Exception {
@@ -106,6 +112,12 @@ public class BookLogServiceImpl implements BookLogService{
 	public void deleteBookLog(BookLogVO vo) {
 		dao.deleteBooklog(vo);
 	}
+	
+	public void deleteBookAll(BookLogVO vo) {
+		dao.deleteBookLogAll(vo);
+		dao.deleteBook(vo);
+	}
+	
 	/**
 	 * 개발자 메뉴얼 주소 : https://developers.naver.com/docs/search/blog
 	 * query	string	Y	-	검색을 원하는 문자열로서 UTF-8로 인코딩한다.

@@ -25,6 +25,12 @@ public class BookLogDAOImpl implements BookLogDAO{
         
 		return session.selectList(namespace+".bookList", paramMap);
 	}
+	
+	
+	@Override
+    public Map<String,Integer> selectBookStateNum() throws Exception {
+        return session.selectOne(namespace+".selectBookStateNum");
+    }
 
 	@Override
 	public List<BookLogVO> BookLoglist(int book_seq) throws Exception {
@@ -91,6 +97,17 @@ public class BookLogDAOImpl implements BookLogDAO{
 	@Override
 	public void deleteBooklog(BookLogVO vo) {
 		session.update(namespace + ".deleteBookLog", vo);
+	}
+	
+	@Override
+	public void deleteBookLogAll(BookLogVO vo) {
+		session.update(namespace + ".deleteBookLogAll", vo);
+	}
+	
+
+	@Override
+	public void deleteBook(BookLogVO vo) {
+		session.update(namespace + ".deleteBook", vo);
 	}
 
 }

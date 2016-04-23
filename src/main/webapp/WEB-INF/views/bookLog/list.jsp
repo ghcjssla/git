@@ -10,9 +10,9 @@
 <div style='clear:both'></div>
 <nav>
     <ul class="nav nav-tabs nav-justified">
-      <li role="presentation" id="learning" <c:if test="${'L' eq mode}">class="active"</c:if>><a href="/springBoard/bookLog/list?mode=L">학습중</a></li>
-      <li role="presentation" id="waiting" <c:if test="${'W' eq mode}">class="active"</c:if>><a href="/springBoard/bookLog/list?mode=W">대기중</a></li>
-      <li role="presentation" id="studied" <c:if test="${'S' eq mode}">class="active"</c:if>><a href="/springBoard/bookLog/list?mode=S">완료</a></li>
+      <li role="presentation" id="learning" <c:if test="${'L' eq mode}">class="active"</c:if>><a href="/springBoard/bookLog/list?mode=L">학습중&nbsp;&nbsp;<span class="badge">${bookStateNum.L}</span></a></li>
+      <li role="presentation" id="waiting" <c:if test="${'W' eq mode}">class="active"</c:if>><a href="/springBoard/bookLog/list?mode=W">대기중&nbsp;&nbsp;<span class="badge">${bookStateNum.W}</span></a></li>
+      <li role="presentation" id="studied" <c:if test="${'S' eq mode}">class="active"</c:if>><a href="/springBoard/bookLog/list?mode=S">완료&nbsp;&nbsp;<span class="badge">${bookStateNum.S}</span></a></li>
     </ul>
 </nav>
 

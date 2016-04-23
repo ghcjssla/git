@@ -1,6 +1,7 @@
 package com.happylopers.booklog.service;
 
 import java.util.List;
+import java.util.Map;
 
 import com.happylopers.booklog.domain.BookLogVO;
 import com.happylopers.booklog.domain.BookVO;
@@ -20,6 +21,8 @@ public interface BookLogService {
 	public void insertBookLog(BookLogVO vo) throws Exception;
 	public void updateBook(BookVO vo);
 	public void deleteBookLog(BookLogVO vo);
+	public void deleteBookAll(BookLogVO vo);
 	public int ReadPagePerDayList(int book_seq) throws Exception;
 	public String searchNaverBook(String keyWord, String display, String start) throws Exception;
+	public Map<String, Integer> selectBookStateNum() throws Exception;
 }

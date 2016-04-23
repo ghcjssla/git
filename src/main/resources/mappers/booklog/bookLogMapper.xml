@@ -2,6 +2,93 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.happylopers.mapper.booklog.bookLogMapper">
+    <select id="selectBookStateNum" resultType="hashmap">
+    <![CDATA[
+	SELECT (
+	SELECT count(*) C FROM (
+	SELECT A .seq,
+	A.name ,
+	A.regdate ,
+	A.total_page ,
+	(
+	SELECT MAX(last_page)
+	FROM book_log
+	WHERE book_seq
+	= A .seq
+	ORDER BY start_date DESC
+	) AS LAST_PAGE ,
+	(
+	SELECT finish
+	FROM book_log
+	WHERE book_seq
+	= A .seq
+	ORDER BY start_date DESC
+	LIMIT 1
+	) AS FINISH
+	FROM book A
+	ORDER BY regdate DESC
+	) AS booklist
+	WHERE FINISH = 'Y' AND TOTAL_PAGE = LAST_PAGE
+	) S
+	,
+	(
+	SELECT count(*) L FROM (
+	SELECT A .seq,
+	A.name ,
+	A.regdate ,
+	A.total_page ,
+	(
+	SELECT MAX(last_page)
+	FROM book_log
+	WHERE book_seq
+	= A .seq
+	ORDER BY start_date DESC
+	) AS LAST_PAGE ,
+	(
+	SELECT finish
+	FROM book_log
+	WHERE book_seq
+	= A .seq
+	ORDER BY start_date DESC
+	LIMIT 1
+	) AS FINISH
+	FROM book A
+	ORDER BY regdate DESC
+	) AS booklist
+	WHERE LAST_PAGE is not null AND TOTAL_PAGE <> LAST_PAGE
+	) L
+	,
+	(
+	SELECT count(*) W FROM (
+	SELECT A .seq,
+	A.name ,
+	A.regdate ,
+	A.total_page ,
+	(
+	SELECT MAX(last_page)
+	FROM book_log
+	WHERE book_seq
+	= A .seq
+	ORDER BY start_date DESC
+	) AS LAST_PAGE ,
+	(
+	SELECT finish
+	FROM book_log
+	WHERE book_seq
+	= A .seq
+	ORDER BY start_date DESC
+	LIMIT 1
+	) AS FINISH
+	FROM book A
+	ORDER BY regdate DESC
+	) AS booklist
+	WHERE FINISH is null
+	) W
+	FROM DUAL
+	]]>
+    </select>
+    
+    
     <select id="selectBook" parameterType="int" resultType="BookVO">
     <![CDATA[
     select
@@ -67,7 +154,7 @@
     ]]>
     <choose>
         <when test="mode == 'L'.toString()">
-        WHERE LAST_PAGE > 0
+        WHERE LAST_PAGE is not null
         <![CDATA[ 
         AND TOTAL_PAGE <> LAST_PAGE
         ]]>
@@ -103,11 +190,15 @@
     </insert>
     
     <delete id="deleteBook">
-        delete from book where seq = #{seq}
+        delete from book where seq = #{book_seq}
     </delete>
     
     <delete id="deleteBookLog">
         delete from book_log where seq = #{seq}
+    </delete>
+    
+    <delete id="deleteBookLogAll">
+        delete from book_log where book_seq = #{book_seq}
     </delete>
     
     <update id="updateBook">

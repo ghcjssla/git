@@ -1,6 +1,7 @@
 package com.happylopers.booklog.persistence;
 
 import java.util.List;
+import java.util.Map;
 
 import com.happylopers.booklog.domain.BookLogVO;
 import com.happylopers.booklog.domain.BookVO;
@@ -18,6 +19,9 @@ public interface BookLogDAO {
 	public void update(BookLogVO vo)throws Exception;
 	public void updateBookLog(BookLogVO vo);
 	public void updateBook(BookVO vo);
+	public void deleteBook(BookLogVO vo);
 	public void deleteBooklog(BookLogVO vo);
+	public void deleteBookLogAll(BookLogVO vo);
 	List<BookLogVO> ReadPagePerDayList(int book_seq) throws Exception;
+	public Map<String, Integer> selectBookStateNum() throws Exception;
 }

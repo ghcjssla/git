@@ -29,6 +29,7 @@ public class BookLogController {
 	    logger.info("/BookLog/list 호출 mode:"+mode);
 	    model.addAttribute("mode", mode);
 	    model.addAttribute("list",service.bookList(mode));
+	    model.addAttribute("bookStateNum",service.selectBookStateNum());
 	}
 	
 	@RequestMapping(value ="/detailBook", method = RequestMethod.GET)
@@ -85,6 +86,14 @@ public class BookLogController {
 		service.deleteBookLog(vo);
     return "redirect:/bookLog/detailBook?book_seq="+vo.getBook_seq();
     }
+	
+	@RequestMapping(value="/deleteBookAll", method = RequestMethod.POST)
+	public String deleteBookAllPOST(BookLogVO vo, RedirectAttributes rttr){
+		logger.info("책 모든 데이터 삭제");
+		service.deleteBookAll(vo);
+		return "redirect:/bookLog/list";
+	}
+	
 	
 	@RequestMapping(value="/searchNaverBook", method = RequestMethod.GET)
     public void searchNaverBookGET(HttpServletResponse response, @RequestParam("keyWord")String keyWord, @RequestParam("display")String display, @RequestParam("start")String start) throws Exception{

@@ -281,8 +281,9 @@ choose
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+        <button id="bookDeleteBtn" type="button" class="btn btn-danger" style="float:left" data-toggle="modal" data-target="#modalBookLogDelete">삭제</button>
         <button id="bookUpdateFrmSubmitBtn" type="button" class="btn btn-primary">수정</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
       </div>
     </div>
   </div>
@@ -302,6 +303,7 @@ choose
         <h4 class="modal-title">경고!!</h4>
       </div>
       <div class="modal-body">
+      <input name="deleteTarget" type="hidden" value="" />
       <input name="seq" type="hidden"/>
       <input name="book_seq" type="hidden" value="${book.seq}"/>
         <p>정말 삭제하시겠습니까?</p>
@@ -386,16 +388,28 @@ $("#bookUpdateFrmSubmitBtn").on("click",function(){
     $("#bookUpdateFrom").submit();
 });
 
-$("#bookDeleteFrmSubmitBtn").on("click",function(){
-    $("#bookDeleteFrom").attr("action","/springBoard/bookLog/deleteBookLog");
-    $("#bookDeleteFrom").attr("method","post");
-    $("#bookDeleteFrom").submit();
+$("#bookDeleteBtn").on("click",function(){
+	$("input[name=deleteTarget]").val("book");
+	$('#modalBookUpdateFrm').modal('hide');
 });
 
-
 $(".bookLogDeleteIcon").on("click",function(){
+	$("input[name=deleteTarget]").val("bookLog");
 	var seq = $(this).attr("seq");
 	$("#bookDeleteFrom input[name=seq]").val(seq);
+});
+
+$("#bookDeleteFrmSubmitBtn").on("click",function(){
+	//alert($("input[name=deleteTarget]").val());
+	//alert("seq : "+$("#bookDeleteFrom input[name=seq]").val()+"/"+"book_seq : "+$("#bookDeleteFrom input[name=book_seq]").val());
+	var deleteTarget = $("input[name=deleteTarget]").val();
+	if("book" == deleteTarget){
+		$("#bookDeleteFrom").attr("action","/springBoard/bookLog/deleteBookAll");
+	}else if("bookLog" == deleteTarget){
+		$("#bookDeleteFrom").attr("action","/springBoard/bookLog/deleteBookLog");
+	}
+    $("#bookDeleteFrom").attr("method","post");
+    $("#bookDeleteFrom").submit();
 });
 
 </script>
