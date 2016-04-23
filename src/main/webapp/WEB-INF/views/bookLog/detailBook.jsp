@@ -31,15 +31,14 @@
 <div class="panel-heading">
 <c:choose>
         <c:when test="${bookLog.last_page eq book.total_page}">
-        소요일수[<fmt:formatNumber value="${book.total_page/progressRate}" pattern=".0" type="NUMBER"/>]</span>
+        소요일수[<fmt:formatNumber value="${book.total_page/progressRate}" pattern=".0" type="NUMBER"/>]
         </c:when>
         <c:otherwise>
-        소요예정[<fmt:formatNumber value="${book.total_page/progressRate}" pattern=".0" type="NUMBER"/>]day</span>
+        소요예정[<fmt:formatNumber value="${book.total_page/progressRate}" pattern=".0" type="NUMBER"/>]day
         </c:otherwise>
 </c:choose>
 
 <div class="btn-group btn-group-xs pull-right" role="group" aria-label="학습버튼">
-<span>
     <c:choose>
 	    <c:when test="${bookLog.last_page eq book.total_page}">
 	    <button type="button" class="btn btn-success btn-xs" style='cursor:default'>완료</button>
@@ -60,11 +59,12 @@
 <div class="panel-body">
     <c:set var="percent" value="${(bookLog.last_page*100)/book.total_page}"></c:set>
     <div class="progress">
-        <div class="progress-bar <c:if test="${bookLog.last_page eq book.total_page}">progress-bar-green</c:if> <c:if test="${'N' eq bookLog.finish}">progress-bar-striped active</c:if>" role="progressbar" aria-valuenow="<fmt:formatNumber value="${percent}" pattern="0"/>" aria-valuemin="0" aria-valuemax="<fmt:formatNumber value="${percent}" pattern="0"/>" style="width:<fmt:formatNumber value="${percent}" pattern="0"/>%; min-width: 6em;">
+        <div class="progress-bar <c:choose><c:when test="${bookLog.last_page eq book.total_page}">progress-bar-green</c:when><c:when test="${'L' eq mode}">bg-orange</c:when><c:when test="${'W' eq mode}">bg-gray</c:when></c:choose> <c:if test="${'N' eq bookLog.finish}">progress-bar-striped active</c:if>" role="progressbar" aria-valuenow="<fmt:formatNumber value="${percent}" pattern="0"/>" aria-valuemin="0" aria-valuemax="<fmt:formatNumber value="${percent}" pattern="0"/>" style="width:<fmt:formatNumber value="${percent}" pattern="0"/>%; min-width: 6em;">
             <span id="percent"><fmt:formatNumber value="${percent}" pattern="0"/>%</span>[<span>${bookLog.last_page}/${book.total_page}</span>]
         </div>
     </div>
 </div>
+
 <!--
 일, 시, 분, 초는 각각 따로 논다.
 따라서 각각 독립적인 choose를 통해 구현한다.

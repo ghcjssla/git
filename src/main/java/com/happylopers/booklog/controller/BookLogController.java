@@ -33,8 +33,9 @@ public class BookLogController {
 	}
 	
 	@RequestMapping(value ="/detailBook", method = RequestMethod.GET)
-	public void detailBook(Model model, int book_seq) throws Exception{
+	public void detailBook(Model model, int book_seq, @RequestParam(value="mode", defaultValue = "L", required=false)String mode) throws Exception{
 	    logger.info("/BookLog/detailBook 호출");
+	    model.addAttribute("mode", mode);
 	    model.addAttribute("bookLog",service.getBookLog(book_seq));
 	    model.addAttribute("book",service.getBook(book_seq));
 	    model.addAttribute("list",service.bookLogList(book_seq));

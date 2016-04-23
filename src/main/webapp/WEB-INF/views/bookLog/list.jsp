@@ -8,6 +8,7 @@
 <span id="insertBootBtn" class="btn btn-primary glyphicon glyphicon-plus pull-rights" data-toggle="modal" data-target="#modalBookFrm">등록</span>
 </div>
 <div style='clear:both'></div>
+<%--
 <nav>
     <ul class="nav nav-tabs nav-justified">
       <li role="presentation" id="learning" <c:if test="${'L' eq mode}">class="active"</c:if>><a href="/springBoard/bookLog/list?mode=L">학습중&nbsp;&nbsp;<span class="badge">${bookStateNum.L}</span></a></li>
@@ -15,31 +16,40 @@
       <li role="presentation" id="studied" <c:if test="${'S' eq mode}">class="active"</c:if>><a href="/springBoard/bookLog/list?mode=S">완료&nbsp;&nbsp;<span class="badge">${bookStateNum.S}</span></a></li>
     </ul>
 </nav>
+ --%>
 
-<div id="bookList">
-<!-- 퍼센트 수치에 따라 색상이 바뀌면 좋을듯 -->
-    <ul class="list-group">
-	  <c:forEach items="${list}" var="BookVO">
-	  <c:set var="percent" value="${(BookVO.last_page*100)/BookVO.total_page}"></c:set>
-      <li class="list-group-item">
-      <a href="/springBoard/bookLog/detailBook?book_seq=${BookVO.seq}">
-      <c:choose>
-           <c:when test="${fn:length(BookVO.name) > 19}">
-            <c:out value="${fn:substring(BookVO.name,0,19)}"/>…
-           </c:when>
-           <c:otherwise>
-            <c:out value="${BookVO.name}"/>
-           </c:otherwise>
-      </c:choose>
-      </a>
-      <%-- ${BookVO.total_page}/${BookVO.last_page}/${BookVO.finish} --%>
-      <%-- [<span>${BookVO.last_page}p/${BookVO.total_page}p</span>] --%>
-      <span class="badge <c:choose><c:when test="${100 eq percent}">bg-green color-palette</c:when><c:otherwise></c:otherwise></c:choose>"><fmt:formatNumber value="${percent}" pattern="0"/>%</span>
-      </li>
-      </c:forEach>
-	</ul>
-</div>
-
+<!-- Custom Tabs -->
+<div class="nav-tabs-custom">
+    <ul class="nav nav-tabs">
+	    <li id="learning" <c:if test="${'L' eq mode}">class="active"</c:if>><a <%-- href="#tab_1" data-toggle="tab" --%>>학습중&nbsp;&nbsp;<span class="badge bg-orange">${bookStateNum.L}</span></a></li>
+	    <li id="waiting" <c:if test="${'W' eq mode}">class="active"</c:if>><a <%--href="#tab_2" data-toggle="tab" --%>>대기중&nbsp;&nbsp;<span class="badge">${bookStateNum.W}</span></a></li>
+	    <li id="studied" <c:if test="${'S' eq mode}">class="active"</c:if>><a <%--href="#tab_3" data-toggle="tab" --%>>완료&nbsp;&nbsp;<span class="badge bg-green">${bookStateNum.S}</span></a></li>
+    </ul>
+    
+	<div id="bookList">
+		<!-- 퍼센트 수치에 따라 색상이 바뀌면 좋을듯 -->
+		<ul class="list-group">
+		<c:forEach items="${list}" var="BookVO">
+		<c:set var="percent" value="${(BookVO.last_page*100)/BookVO.total_page}"></c:set>
+			<li class="list-group-item">
+				<a href="/springBoard/bookLog/detailBook?book_seq=${BookVO.seq}&mode=${mode}">
+				<c:choose>
+				     <c:when test="${fn:length(BookVO.name) > 19}">
+				      <c:out value="${fn:substring(BookVO.name,0,19)}"/>…
+				     </c:when>
+				     <c:otherwise>
+				      <c:out value="${BookVO.name}"/>
+				     </c:otherwise>
+				</c:choose>
+				</a>
+			<%-- ${BookVO.total_page}/${BookVO.last_page}/${BookVO.finish} --%>
+			<%-- [<span>${BookVO.last_page}p/${BookVO.total_page}p</span>] --%>
+			<span class="badge <c:choose><c:when test="${100 eq percent}">bg-green</c:when><c:when test="${'L' eq mode}">bg-orange</c:when></c:choose>"><fmt:formatNumber value="${percent}" pattern="0"/>%</span>
+			</li>
+		</c:forEach>
+		</ul>
+	</div>
+</div><!-- nav-tabs-custom -->
 
 
 <div class="modal fade" id="modalBookFrm" tabindex="-1" role="dialog" aria-labelledby="modalBookFrmLabel" aria-hidden="true">
@@ -131,18 +141,26 @@ $().ready(function() {
     });
     
     function goBookList(obj){
+    	var goURL = "/springBoard/bookLog/list";
+    	
     	if("learning"==$(obj).attr("id")){
     		$("#learning").attr("class","active");
     		$("#waiting").attr("class","");
     		$("#studied").attr("class","");
+    		goURL+="?mode=L";
+    		$(location).attr('href',goURL);
     	}else if("waiting"==$(obj).attr("id")){
     		$("#learning").attr("class","");
             $("#waiting").attr("class","active");
             $("#studied").attr("class","");
+            goURL+="?mode=W";
+            $(location).attr('href',goURL);
     	}else if("studied"==$(obj).attr("id")){
     		$("#learning").attr("class","");
             $("#waiting").attr("class","");
             $("#studied").attr("class","active");
+            goURL+="?mode=S";
+            $(location).attr('href',goURL);
         }
     }
     
