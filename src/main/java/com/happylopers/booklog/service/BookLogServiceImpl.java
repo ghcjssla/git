@@ -25,23 +25,23 @@ public class BookLogServiceImpl implements BookLogService{
 	@Inject BookLogDAO dao;
 
 	@Override
-	public List<BookVO> bookList(String mode) throws Exception {
-		return dao.Booklist(mode);
+	public List<BookVO> bookList(BookVO bookVO) throws Exception {
+		return dao.Booklist(bookVO);
 	}
 	
 	@Override
-    public Map<String,Integer> selectBookStateNum() throws Exception {
-        return dao.selectBookStateNum();
+    public Map<String,Integer> selectBookStateNum(BookVO vo) throws Exception {
+        return dao.selectBookStateNum(vo);
     }
 
 	@Override
-	public List<BookLogVO> bookLogList(int book_seq) throws Exception {
-		return dao.BookLoglist(book_seq);
+	public List<BookLogVO> bookLogList(BookLogVO vo) throws Exception {
+		return dao.BookLoglist(vo);
 	}
 	
-	public int ReadPagePerDayList(int book_seq) throws Exception {
+	public int ReadPagePerDayList(BookVO vo) throws Exception {
 		
-		List<BookLogVO> list = dao.ReadPagePerDayList(book_seq);
+		List<BookLogVO> list = dao.ReadPagePerDayList(vo);
 	    int average = 0;
 	    if(list.size() > 0 ){
 	    	average = list.get(0).getLast_page();
@@ -84,13 +84,13 @@ public class BookLogServiceImpl implements BookLogService{
 	}
 
 	@Override
-	public BookVO getBook(int book_seq) throws Exception {
-		return dao.getBook(book_seq);
+	public BookVO getBook(BookVO vo) throws Exception {
+		return dao.getBook(vo);
 	}
 
 	@Override
-	public BookLogVO getBookLog(int book_seq) throws Exception {
-		return dao.getBookLog(book_seq);
+	public BookLogVO getBookLog(BookLogVO vo) throws Exception {
+		return dao.getBookLog(vo);
 	}
 
 	@Override

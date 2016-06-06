@@ -7,7 +7,15 @@ public class WakeUpVO {
 	private Date time_wakeup;
 	private Date time_sleep;
 	private String comment;
+	private String uid;
 	
+	
+	public String getUid() {
+		return uid;
+	}
+	public void setUid(String uid) {
+		this.uid = uid;
+	}
 	public Date getTime_sleep() {
 		return time_sleep;
 	}
@@ -33,11 +41,10 @@ public class WakeUpVO {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
+	
 	@Override
 	public String toString() {
 		return "WakeUpVO [seq=" + seq + ", time_wakeup=" + time_wakeup + ", time_sleep=" + time_sleep + ", comment="
-				+ comment + "]";
+				+ comment + ", uid=" + uid + "]";
 	}
-	
-	
 }

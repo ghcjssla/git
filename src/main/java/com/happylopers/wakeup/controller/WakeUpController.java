@@ -1,6 +1,7 @@
 package com.happylopers.wakeup.controller;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.happylopers.board.domain.UserVO;
 import com.happylopers.wakeup.domain.WakeUpVO;
 import com.happylopers.wakeup.service.WakeUpService;
 
@@ -27,9 +29,18 @@ public class WakeUpController {
 	}
 	
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public void list(Model model) throws Exception {
+	public void list(Model model,  HttpSession session) throws Exception {
 		logger.info("기상일지 리스트 호출 ");
-		model.addAttribute("list",service.list());
+		Object obj = session.getAttribute("login");
+		UserVO vo;
+		//임시로 비로그인시 관리자 데이터 보여줌
+		if(null == obj){
+			vo = new UserVO();
+			vo.setUid("admin001");
+		}else{
+			vo = (UserVO)obj;
+		}
+		model.addAttribute("list",service.list(vo));
 	}
 	
     @RequestMapping(value="/register", method = RequestMethod.POST)

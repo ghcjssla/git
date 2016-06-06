@@ -1,5 +1,6 @@
 package com.happylopers.booklog.persistence;
 
+import java.awt.print.Book;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,6 +10,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.happylopers.board.domain.UserVO;
 import com.happylopers.booklog.domain.BookLogVO;
 import com.happylopers.booklog.domain.BookVO;
 
@@ -19,27 +21,24 @@ public class BookLogDAOImpl implements BookLogDAO{
 	private static String namespace = "com.happylopers.mapper.booklog.bookLogMapper";
 
 	@Override
-	public List<BookVO> Booklist(String mode) throws Exception {
-		Map<String, Object> paramMap = new HashMap<String, Object>();
-        paramMap.put("mode", mode);
-        
-		return session.selectList(namespace+".bookList", paramMap);
+	public List<BookVO> Booklist(BookVO vo) throws Exception {
+		return session.selectList(namespace+".bookList", vo);
 	}
 	
 	
 	@Override
-    public Map<String,Integer> selectBookStateNum() throws Exception {
-        return session.selectOne(namespace+".selectBookStateNum");
+    public Map<String,Integer> selectBookStateNum(BookVO vo) throws Exception {
+        return session.selectOne(namespace+".selectBookStateNum", vo);
     }
 
 	@Override
-	public List<BookLogVO> BookLoglist(int book_seq) throws Exception {
-		return session.selectList(namespace+".bookLogList", book_seq);
+	public List<BookLogVO> BookLoglist(BookLogVO vo) throws Exception {
+		return session.selectList(namespace+".bookLogList", vo);
 	}
 	
 	@Override
-	public List<BookLogVO> ReadPagePerDayList(int book_seq) throws Exception {
-		return session.selectList(namespace+".selectReadPagePerDay", book_seq);
+	public List<BookLogVO> ReadPagePerDayList(BookVO vo) throws Exception {
+		return session.selectList(namespace+".selectReadPagePerDay", vo);
 	}
 	
 	
@@ -75,13 +74,13 @@ public class BookLogDAOImpl implements BookLogDAO{
 	}
 
 	@Override
-	public BookVO getBook(int book_seq) throws Exception {
-		return session.selectOne(namespace+".selectBook", book_seq);
+	public BookVO getBook(BookVO vo) throws Exception {
+		return session.selectOne(namespace+".selectBook", vo);
 	}
 	
 	@Override
-	public BookLogVO getBookLog(int bookLog_seq) throws Exception {
-		return session.selectOne(namespace+".selectBookLog", bookLog_seq);
+	public BookLogVO getBookLog(BookLogVO vo) throws Exception {
+		return session.selectOne(namespace+".selectBookLog", vo);
 	}
 
 	@Override

@@ -7,10 +7,10 @@ import com.happylopers.booklog.domain.BookLogVO;
 import com.happylopers.booklog.domain.BookVO;
 
 public interface BookLogDAO {
-	public BookVO getBook(int book_seq) throws Exception;
-	public BookLogVO getBookLog(int book_seq) throws Exception;
-	public List<BookVO> Booklist(String mode) throws Exception;
-	public List<BookLogVO> BookLoglist(int book_seq) throws Exception;
+	public BookVO getBook(BookVO vo) throws Exception;
+	public BookLogVO getBookLog(BookLogVO vo) throws Exception;
+	public List<BookVO> Booklist(BookVO vo) throws Exception;
+	public List<BookLogVO> BookLoglist(BookLogVO vo) throws Exception;
 	public void create(BookVO vo)throws Exception;
 	public void create(BookLogVO vo)throws Exception;
 	public void delete(BookVO vo)throws Exception;
@@ -22,6 +22,6 @@ public interface BookLogDAO {
 	public void deleteBook(BookLogVO vo);
 	public void deleteBooklog(BookLogVO vo);
 	public void deleteBookLogAll(BookLogVO vo);
-	List<BookLogVO> ReadPagePerDayList(int book_seq) throws Exception;
-	public Map<String, Integer> selectBookStateNum() throws Exception;
+	List<BookLogVO> ReadPagePerDayList(BookVO vo) throws Exception;
+	public Map<String, Integer> selectBookStateNum(BookVO vo) throws Exception;
 }

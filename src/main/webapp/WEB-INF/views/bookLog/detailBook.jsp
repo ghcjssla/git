@@ -34,7 +34,7 @@
         소요일수[<fmt:formatNumber value="${book.total_page/progressRate}" pattern=".0" type="NUMBER"/>]
         </c:when>
         <c:otherwise>
-        소요예정[<fmt:formatNumber value="${book.total_page/progressRate}" pattern=".0" type="NUMBER"/>]day
+        소요예정[<fmt:formatNumber value="${book.total_page/progressRate}" pattern=".0" type="NUMBER"/>]일
         </c:otherwise>
 </c:choose>
 
@@ -223,6 +223,7 @@ choose
           <input type="hidden" name="seq" value="${book.seq}" />
           <input type="hidden" name="book_seq" value="${bookLog.seq}" />
           <input type="hidden" name="finish" value="Y" />
+          <input type="hidden" name="uid" value="${login.uid}">
         </form>
       </div>
       <div class="modal-footer">
@@ -278,6 +279,7 @@ choose
             <label for="message-text" class="control-label">전체 페이지</label>
             <input name="total_page" type="number" class="form-control" placeholder="전체 페이지" value="${book.total_page}">
           </div>
+          <input type="hidden" name="uid" value="${login.uid}">
         </form>
       </div>
       <div class="modal-footer">
@@ -328,6 +330,7 @@ choose
 
 <form id="startBookLogFrm" name=startBookLogFrm>
     <input type="hidden" name="book_seq" value="${book.seq}" />
+    <input type="hidden" name="uid" value="${login.uid}">
 </form>
 <!-- /.content -->
 

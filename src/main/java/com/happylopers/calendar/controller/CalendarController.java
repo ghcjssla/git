@@ -1,6 +1,7 @@
 package com.happylopers.calendar.controller;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.happylopers.board.domain.UserVO;
 import com.happylopers.wakeup.domain.WakeUpVO;
 import com.happylopers.wakeup.service.WakeUpService;
 
@@ -26,11 +28,20 @@ public class CalendarController {
 	}
 	
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
-	public void main(Model model) throws Exception {
+	public void main(Model model,  HttpSession session) throws Exception {
 		logger.info("캘린더 ");
+		Object obj = session.getAttribute("login");
+		UserVO vo;
+		//임시로 비로그인시 관리자 데이터 보여줌
+		if(null == obj){
+			vo = new UserVO();
+			vo.setUid("admin001");
+		}else{
+			vo = (UserVO)obj;
+		}
 		
-		model.addAttribute("latestDateInfo",service.selectLatestDateInfo());
-		model.addAttribute("wakeUplist",service.list());
+		model.addAttribute("latestDateInfo",service.selectLatestDateInfo(vo));
+		model.addAttribute("wakeUplist",service.list(vo));
 	}
 	/*
     @RequestMapping(value="/register", method = RequestMethod.POST)
@@ -65,8 +76,7 @@ public class CalendarController {
     */
 	@RequestMapping(value="/goSleep", method = RequestMethod.POST)
     public String goSleepPOST(WakeUpVO vo, RedirectAttributes rttr) throws Exception{
-        logger.info("취침 데이터 등록");
-        logger.info(vo.toString());
+        logger.info("취침 데이터 등록"+vo.toString());
         
         service.insertGoSleep(vo);
         return "redirect:/calendar/main";
@@ -74,8 +84,7 @@ public class CalendarController {
     
     @RequestMapping(value="/wakeUp", method = RequestMethod.POST)
     public String wakeUpPOST(WakeUpVO vo, RedirectAttributes rttr) throws Exception{
-        logger.info("기상 데이터 등록");
-        logger.info(vo.toString());
+        logger.info("기상 데이터 등록" +vo.toString());
         
         service.updateWakeUp(vo);
         return "redirect:/calendar/main";

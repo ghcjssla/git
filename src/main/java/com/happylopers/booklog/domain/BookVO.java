@@ -9,7 +9,23 @@ public class BookVO {
 	private Date regdate;
 	private Integer last_page;
 	private String finish;
+	private String uid;
+	/* 원래 여기있음 안되고 그냥 TO에 있어야 하는데 귀찮아서 그냥 놨음 많아지면 분리 필요 */
+	private String mode;
 	
+	
+	public String getMode() {
+		return mode;
+	}
+	public void setMode(String mode) {
+		this.mode = mode;
+	}
+	public String getUid() {
+		return uid;
+	}
+	public void setUid(String uid) {
+		this.uid = uid;
+	}
 	public Integer getSeq() {
 		return seq;
 	}
@@ -49,7 +65,7 @@ public class BookVO {
 	@Override
 	public String toString() {
 		return "BookVO [seq=" + seq + ", name=" + name + ", total_page=" + total_page + ", regdate=" + regdate
-				+ ", last_page=" + last_page + ", finish=" + finish + "]";
+				+ ", last_page=" + last_page + ", finish=" + finish + ", uid=" + uid + ", mode=" + mode + "]";
 	}
 	
 	

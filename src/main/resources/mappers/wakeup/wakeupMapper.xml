@@ -11,35 +11,37 @@
      -->
     <![CDATA[
 	select
-    seq, time_wakeup,time_sleep, comment
+    seq, time_wakeup,time_sleep, comment, uid
     from daily_log
     where  
     DATE_FORMAT(time_wakeup,'%Y%m%d') < DATE_FORMAT(date_add(now(), interval 1 month), '%Y%m%d')
     AND 
     DATE_FORMAT(time_wakeup,'%Y%m%d') >= DATE_FORMAT(CONCAT(DATE_FORMAT(NOW(),'%Y%m'),'01'), '%Y%m%d')
     AND time_wakeup <> time_sleep
+    AND uid = #{uid}
     order by time_wakeup
     ]]>
     </select>
     
     <select id="latestDateInfo" resultType="WakeUpVO">
-    SELECT seq, time_wakeup,time_sleep, COMMENT
+    SELECT seq, time_wakeup,time_sleep, COMMENT, uid
 	FROM daily_log
 	WHERE time_wakeup = time_sleep
+	AND uid = #{uid}
 	</select>
     
     <insert id="create">
-        insert into daily_log (time_wakeup, comment)
-        values(now(),#{comment})
+        insert into daily_log (time_wakeup, comment, uid)
+        values(now(),#{comment}, #{uid})
     </insert>
     
     <insert id="insertGoSleep">
-        insert into daily_log (time_sleep)
-        values(now())
+        insert into daily_log (time_sleep, uid)
+        values(now(),#{uid})
     </insert>
     
     <delete id="delete">
-        delete from daily_log where seq = #{seq}
+        delete from daily_log where seq = #{seq} AND uid = #{uid}
     </delete>
     
     <update id="updateWakeUp">
@@ -48,6 +50,7 @@
         time_wakeup = now(), 
         comment = #{comment}
         where seq = #{seq}
+        AND uid = #{uid}
     </update>
     
     

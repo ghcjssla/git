@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.happylopers.board.domain.UserVO;
 import com.happylopers.wakeup.domain.WakeUpVO;
 
 @Repository
@@ -16,8 +17,8 @@ public class WakeUpDAOImpl implements WakeUpDAO{
 	private static String namespace = "com.happylopers.mapper.wakeup.wakeupMapper";
 	
 	@Override
-	public List<WakeUpVO> list() throws Exception {
-		return session.selectList(namespace+".list");
+	public List<WakeUpVO> list(UserVO vo) throws Exception {
+		return session.selectList(namespace+".list", vo);
 	}
 
 	@Override
@@ -33,6 +34,7 @@ public class WakeUpDAOImpl implements WakeUpDAO{
 	@Override
 	public void insertGoSleep(WakeUpVO vo) throws Exception {
 		System.out.println("WakeUpDAOImpl에서 호출 : "+vo.getTime_sleep());
+		System.out.println("WakeUpDAOImpl에서 호출 : "+vo.getUid());
 		session.insert(namespace+".insertGoSleep", vo);
 	}
 
@@ -51,8 +53,7 @@ public class WakeUpDAOImpl implements WakeUpDAO{
 	}
 
 	@Override
-	public WakeUpVO selectLatestDateInfo() {
-		return session.selectOne(namespace+".latestDateInfo");
+	public WakeUpVO selectLatestDateInfo(UserVO vo) {
+		return session.selectOne(namespace+".latestDateInfo", vo);
 	}
-
 } 

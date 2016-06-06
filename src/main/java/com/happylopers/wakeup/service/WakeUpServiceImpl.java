@@ -10,7 +10,7 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.happylopers.board.domain.BoardVO;
+import com.happylopers.board.domain.UserVO;
 import com.happylopers.wakeup.domain.WakeUpVO;
 import com.happylopers.wakeup.persistence.WakeUpDAO;
 
@@ -21,13 +21,13 @@ public class WakeUpServiceImpl implements WakeUpService{
 	private WakeUpDAO dao;
 	
 	@Override
-	public List<WakeUpVO> list() throws Exception {
-		return dao.list();
+	public List<WakeUpVO> list(UserVO vo) throws Exception {
+		return dao.list(vo);
 	}
 	
 	@Override
-	public WakeUpVO selectLatestDateInfo() throws Exception {
-		return dao.selectLatestDateInfo();
+	public WakeUpVO selectLatestDateInfo(UserVO vo) throws Exception {
+		return dao.selectLatestDateInfo(vo);
 	}
 
 	@Override
@@ -88,6 +88,5 @@ public class WakeUpServiceImpl implements WakeUpService{
 		vo.setSeq(modal_seq);
 		//dao.update(vo);
 	}
-
 
 }

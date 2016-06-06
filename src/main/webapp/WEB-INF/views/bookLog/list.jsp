@@ -75,6 +75,7 @@
             <label for="message-text" class="control-label">전체 페이지</label>
             <input name="total_page" type="number" class="form-control" placeholder="전체 페이지">
           </div>
+          <input type="hidden" name="uid" value="${login.uid}">
         </form>
       </div>
       <div class="modal-footer">

@@ -297,9 +297,12 @@
         });
       });
     </script>
-    <form name="goSleepForm" method="post"></form>
+    <form name="goSleepForm" method="post">
+        <input type="hidden" name="uid" value="${login.uid}">
+    </form>
     <form name="wakeUpForm" method="post">
-    <input type="hidden" name="seq" value="">
+	    <input type="hidden" name="uid" value="${login.uid}">
+	    <input type="hidden" name="seq" value="">
     </form>
     
 <%@include file="../include/footer.jsp"%>

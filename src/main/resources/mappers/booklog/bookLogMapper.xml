@@ -5,100 +5,107 @@
     <select id="selectBookStateNum" resultType="hashmap">
     <![CDATA[
 	SELECT (
-	SELECT count(*) C FROM (
-	SELECT A .seq,
-	A.name ,
-	A.regdate ,
-	A.total_page ,
-	(
-	SELECT MAX(last_page)
-	FROM book_log
-	WHERE book_seq
-	= A .seq
-	ORDER BY start_date DESC
-	) AS LAST_PAGE ,
-	(
-	SELECT finish
-	FROM book_log
-	WHERE book_seq
-	= A .seq
-	ORDER BY start_date DESC
-	LIMIT 1
-	) AS FINISH
-	FROM book A
-	ORDER BY regdate DESC
-	) AS booklist
-	WHERE FINISH = 'Y' AND TOTAL_PAGE = LAST_PAGE
-	) S
-	,
-	(
-	SELECT count(*) L FROM (
-	SELECT A .seq,
-	A.name ,
-	A.regdate ,
-	A.total_page ,
-	(
-	SELECT MAX(last_page)
-	FROM book_log
-	WHERE book_seq
-	= A .seq
-	ORDER BY start_date DESC
-	) AS LAST_PAGE ,
-	(
-	SELECT finish
-	FROM book_log
-	WHERE book_seq
-	= A .seq
-	ORDER BY start_date DESC
-	LIMIT 1
-	) AS FINISH
-	FROM book A
-	ORDER BY regdate DESC
-	) AS booklist
-	WHERE LAST_PAGE is not null AND TOTAL_PAGE <> LAST_PAGE
-	) L
-	,
-	(
-	SELECT count(*) W FROM (
-	SELECT A .seq,
-	A.name ,
-	A.regdate ,
-	A.total_page ,
-	(
-	SELECT MAX(last_page)
-	FROM book_log
-	WHERE book_seq
-	= A .seq
-	ORDER BY start_date DESC
-	) AS LAST_PAGE ,
-	(
-	SELECT finish
-	FROM book_log
-	WHERE book_seq
-	= A .seq
-	ORDER BY start_date DESC
-	LIMIT 1
-	) AS FINISH
-	FROM book A
-	ORDER BY regdate DESC
-	) AS booklist
-	WHERE FINISH is null
-	) W
-	FROM DUAL
+	    SELECT count(*) C FROM 
+	    (
+	        SELECT A .seq,
+	        A.name ,
+	        A.regdate ,
+	        A.total_page ,
+	        (
+	            SELECT MAX(last_page)
+	            FROM book_log
+	            WHERE book_seq  = A .seq
+	            AND uid = #{uid}
+	            ORDER BY start_date DESC
+	        ) AS LAST_PAGE ,
+	        (
+	            SELECT finish
+	            FROM book_log
+	            WHERE book_seq = A .seq
+	            AND uid = #{uid}
+	            ORDER BY start_date DESC
+	            LIMIT 1
+	        ) AS FINISH
+	        FROM book A
+	        ORDER BY regdate DESC
+	    ) AS booklist
+	    WHERE FINISH = 'Y' 
+	    AND TOTAL_PAGE = LAST_PAGE
+	    ) S
+	    ,
+	    (
+	        SELECT count(*) L FROM 
+	        (
+	            SELECT A .seq,
+	            A.name ,
+	            A.regdate ,
+	            A.total_page ,
+	            (
+	                SELECT MAX(last_page)
+	                FROM book_log
+	                WHERE book_seq  = A .seq
+	                AND uid = #{uid}
+	                ORDER BY start_date DESC
+	            ) AS LAST_PAGE ,
+	            (
+	                SELECT finish
+	                FROM book_log
+	                WHERE book_seq  = A .seq
+	                AND uid = #{uid}
+	                ORDER BY start_date DESC
+	                LIMIT 1
+	            ) AS FINISH
+	            FROM book A
+	            ORDER BY regdate DESC
+	        ) AS booklist
+	        WHERE LAST_PAGE is not null 
+	        AND TOTAL_PAGE <> LAST_PAGE
+	    ) L
+	    ,
+	    (
+	        SELECT count(*) W FROM 
+	        (
+	            SELECT A .seq,
+	            A.name ,
+	            A.regdate ,
+	            A.total_page ,
+	        (
+	            SELECT MAX(last_page)
+	            FROM book_log
+	            WHERE book_seq  = A .seq
+	            AND uid = #{uid}
+	            ORDER BY start_date DESC
+	        ) AS LAST_PAGE ,
+	        (
+	            SELECT finish
+	            FROM book_log
+	            WHERE book_seq  = A .seq
+	            AND uid = #{uid}
+	            ORDER BY start_date DESC
+	            LIMIT 1
+	        ) AS FINISH
+	        FROM book A
+	        WHERE uid = #{uid}
+	        ORDER BY regdate DESC
+	        ) AS booklist
+	        WHERE FINISH is null
+	    ) W
+	    FROM DUAL
 	]]>
     </select>
     
     
-    <select id="selectBook" parameterType="int" resultType="BookVO">
+    <select id="selectBook" resultType="BookVO">
     <![CDATA[
     select
     seq, name, regdate, total_page
     from book
-    where seq = #{book_seq}
+    where seq = #{seq}
+    AND uid= #{uid}
     ]]>
     </select>
     
-    <select id="selectBookLog" parameterType="int" resultType="BookLogVO">
+    <select id="selectBookLog" resultType="BookLogVO">
     <![CDATA[
     SELECT seq, 
            book_seq, 
@@ -110,20 +117,23 @@
 			WHERE book_seq = #{book_seq}
 		    ) AS last_page,
 	       COMMENT,
-	       finish
+	       finish,
+	       uid
 	FROM book_log
 	WHERE book_seq	= #{book_seq}
+	AND uid= #{uid}
 	ORDER BY start_date DESC
 	LIMIT 1
     ]]>
     </select>
     
-    <select id="selectReadPagePerDay" parameterType="int" resultType="BookLogVO">
+    <select id="selectReadPagePerDay" resultType="BookLogVO">
     <![CDATA[
     select DATE_FORMAT(start_date,'%Y%m%d') start_date, max(last_page) last_page from book_log
     WHERE 1=1
-    AND book_seq = #{book_seq}
+    AND book_seq = #{seq}
     AND finish = 'Y'
+    AND uid= #{uid}
     GROUP BY DATE_FORMAT(start_date,'%Y%m%d')
     ]]>
     </select>
@@ -138,17 +148,20 @@
 					(
 						SELECT MAX(last_page)
 						FROM book_log
-						WHERE book_seq = A .seq
+						WHERE book_seq = A.seq
+						AND uid= #{uid}
 						ORDER BY start_date DESC
 					) AS LAST_PAGE ,
 					(
 						SELECT finish
 						FROM book_log
-						WHERE book_seq = A .seq
+						WHERE book_seq = A.seq
+						AND uid= #{uid}
 						ORDER BY start_date DESC
 						LIMIT 1
 					) AS FINISH
 		FROM book A
+		WHERE uid= #{uid}
 		ORDER BY regdate DESC
 	) AS booklist
     ]]>
@@ -169,36 +182,37 @@
     
     </select>
     
-    <select id="bookLogList" parameterType="int" resultType="BookLogVO">
+    <select id="bookLogList" resultType="BookLogVO">
     <![CDATA[
     select
     seq, book_seq, start_date, end_date, last_page, comment, finish
     from book_log
     where book_seq = #{book_seq}
+    AND uid= #{uid}
     order by start_date desc
     ]]>
     </select>
     
     <insert id="createBook">
-        insert into book (name, total_page)
-        values(#{name},#{total_page})
+        insert into book (name, total_page, uid)
+        values(#{name},#{total_page},#{uid})
     </insert>
     
     <insert id="createBookLog">
-        insert into book_log (book_seq, end_date)
-        values(#{book_seq}, now())
+        insert into book_log (book_seq, end_date, uid)
+        values(#{book_seq}, now(), #{uid})
     </insert>
-    
+    <!-- 책 삭제하는 부분인데 기능변경이 필요할 듯 함 책을 지울순 없다 남의 책을 지울순 없지 않은가? -->
     <delete id="deleteBook">
-        delete from book where seq = #{book_seq}
+        delete from book where seq = #{book_seq} AND uid = #{uid} 
     </delete>
     
     <delete id="deleteBookLog">
-        delete from book_log where seq = #{seq}
+        delete from book_log where seq = #{seq} AND uid = #{uid}
     </delete>
     
     <delete id="deleteBookLogAll">
-        delete from book_log where book_seq = #{book_seq}
+        delete from book_log where book_seq = #{book_seq} AND uid = #{uid}
     </delete>
     
     <update id="updateBook">
@@ -207,6 +221,7 @@
         name = #{name},
         total_page = #{total_page}
         where seq = #{seq}
+        AND uid = #{uid}
     </update>
     
     <update id="updateBookLog">
@@ -217,5 +232,6 @@
         last_page = #{last_page},
         comment = #{comment} 
         where seq = #{book_seq}
+        AND uid = #{uid}
     </update>
 </mapper>

@@ -10,8 +10,15 @@ public class BookLogVO {
 	private Integer last_page;
 	private String comment;
 	private String finish;
+	private String uid;
 	
 	
+	public String getUid() {
+		return uid;
+	}
+	public void setUid(String uid) {
+		this.uid = uid;
+	}
 	public Integer getSeq() {
 		return seq;
 	}
@@ -55,10 +62,10 @@ public class BookLogVO {
 		this.finish = finish;
 	}
 	
-	
 	@Override
 	public String toString() {
 		return "BookLogVO [seq=" + seq + ", book_seq=" + book_seq + ", start_date=" + start_date + ", end_date="
-				+ end_date + ", last_page=" + last_page + ", comment=" + comment + ", finish=" + finish + "]";
+				+ end_date + ", last_page=" + last_page + ", comment=" + comment + ", finish=" + finish + ", uid=" + uid
+				+ "]";
 	}
 }
