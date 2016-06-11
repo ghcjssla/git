@@ -30,9 +30,8 @@ public class BoardDAOTest {
     */
     @Test
     public void testRead() throws Exception{
-        dao.read(983057);
+        dao.read(983089);
     }
-    
     /*
     @Test
     public void testUpdate() throws Exception{
