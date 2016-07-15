@@ -26,8 +26,10 @@
  
 <!-- Main content -->
 <section class="content">
+
 <div class="panel panel-default">
 <!-- Default panel contents -->
+
 <div class="panel-heading">
 <c:choose>
         <c:when test="${bookLog.last_page eq book.total_page}">
@@ -38,10 +40,19 @@
         </c:otherwise>
 </c:choose>
 
+<c:if test="${book.link ne null}">
+    <a href="${book.link}"><button type="button" class="btn bg-orange margin">${book.link_name}</button></a>
+</c:if>
+
 <div class="btn-group btn-group-xs pull-right" role="group" aria-label="학습버튼">
     <c:choose>
 	    <c:when test="${bookLog.last_page eq book.total_page}">
-	    <button type="button" class="btn btn-success btn-xs" style='cursor:default'>완료</button>
+	    <button type="button" class="btn btn-success btn-xs" style='cursor:default' data-toggle="modal" data-target="#modalBookReportUpdateFrm">
+	    <c:choose>
+            <c:when test="${book.link eq null}">후기등록[${book.link}]</c:when>
+            <c:otherwise>후기수정</c:otherwise>
+        </c:choose>
+	    </button>
 	    </c:when>
 	    
 	    <c:when test="${'Y' eq bookLog.finish || bookLog eq null}">
@@ -54,8 +65,8 @@
         </c:when>
     </c:choose>
 </div>
-
 </div>
+
 <div class="panel-body">
     <c:set var="percent" value="${(bookLog.last_page*100)/book.total_page}"></c:set>
     <div class="progress">
@@ -64,6 +75,7 @@
         </div>
     </div>
 </div>
+
 
 <!--
 일, 시, 분, 초는 각각 따로 논다.
@@ -284,8 +296,49 @@ choose
       </div>
       <div class="modal-footer">
         <button id="bookDeleteBtn" type="button" class="btn btn-danger" style="float:left" data-toggle="modal" data-target="#modalBookLogDelete">삭제</button>
-        <button id="bookUpdateFrmSubmitBtn" type="button" class="btn btn-primary">수정</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+        <button id="bookUpdateFrmSubmitBtn" type="button" class="btn btn-primary">수정</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 후기등록 모달 -->
+<div class="modal fade modal-success" id="modalBookReportUpdateFrm" tabindex="-1" role="dialog" aria-labelledby="modalBookReportFrmLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="modalBookReportUpdateFrmLabel">
+        <c:choose>
+            <c:when test="${book.link eq null}">후기 등록[${book.link}]</c:when>
+            <c:otherwise>후기 수정</c:otherwise>
+        </c:choose>
+        </h4>
+      </div>
+      <div class="modal-body">
+        <form name="bookUpdateReportFrom" id="bookUpdateReportFrom">
+        <input name="seq" type="hidden" value="${book.seq}">
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">링크 제목</label>
+            <input name="link_name" type="text" class="form-control" id="recipient-name" placeholder="링크 제목을 입력해 주세요" value="<c:choose><c:when test="${book.link_name eq null}">000님의 후기</c:when><c:otherwise>${book.link_name}</c:otherwise></c:choose>">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">링크주소</label>
+            <input name="link" type="text" class="form-control" placeholder="링크 주소를 입력해 주세요" value="${book.link}">
+          </div>
+          <input type="hidden" name="uid" value="${login.uid}">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button id="bookReportDeleteBtn" type="button" class="btn btn-danger" style="float:left" >삭제</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+        <button id="bookUpdateReportFrmSubmitBtn" type="button" class="btn btn-outline">
+        <c:choose>
+            <c:when test="${book.link eq null}">입력</c:when>
+            <c:otherwise>수정</c:otherwise>
+        </c:choose>
+        </button>
       </div>
     </div>
   </div>
@@ -396,6 +449,7 @@ $("#bookDeleteBtn").on("click",function(){
 	$('#modalBookUpdateFrm').modal('hide');
 });
 
+
 $(".bookLogDeleteIcon").on("click",function(){
 	$("input[name=deleteTarget]").val("bookLog");
 	var seq = $(this).attr("seq");
@@ -414,6 +468,25 @@ $("#bookDeleteFrmSubmitBtn").on("click",function(){
     $("#bookDeleteFrom").attr("method","post");
     $("#bookDeleteFrom").submit();
 });
+
+/**
+ * 이거 하나로 책후기 입력,수정 이용함.
+ */
+$("#bookUpdateReportFrmSubmitBtn").on("click",function(){
+	bookUpdateReportCommonAction();
+});
+
+$("#bookReportDeleteBtn").on("click",function(){
+	$("input[name=link]").val("");
+	$("input[name=link_name]").val("");
+	bookUpdateReportCommonAction();
+});
+
+function bookUpdateReportCommonAction(){
+	$("#bookUpdateReportFrom").attr("action","/springBoard/bookLog/updateBookReport");
+    $("#bookUpdateReportFrom").attr("method","post");
+    $("#bookUpdateReportFrom").submit();
+}
 
 </script>
 <%@include file="../include/footer.jsp"%>

@@ -107,6 +107,12 @@ public class BookLogServiceImpl implements BookLogService{
 	public void updateBook(BookVO vo) {
 		dao.updateBook(vo);
 	}
+	
+	@Override
+	public void updateBookReport(BookVO vo) {
+		dao.updateBookReport(vo);
+	}
+	
 
 	@Override
 	public void deleteBookLog(BookLogVO vo) {

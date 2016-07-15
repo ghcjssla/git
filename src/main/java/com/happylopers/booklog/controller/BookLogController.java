@@ -127,6 +127,13 @@ public class BookLogController {
     return "redirect:/bookLog/detailBook?book_seq="+vo.getSeq();
     }
 	
+	@RequestMapping(value="/updateBookReport", method = RequestMethod.POST)
+    public String updateBookReportPOST(BookVO vo, RedirectAttributes rttr) throws Exception{
+		logger.info("책 후기 입력,수정,삭제 : "+ vo.getLink()+" "+vo.getLink_name());
+		service.updateBookReport(vo);
+    return "redirect:/bookLog/detailBook?book_seq="+vo.getSeq();
+    }
+	
 	@RequestMapping(value="/deleteBookLog", method = RequestMethod.POST)
     public String deleteBookLogPOST(BookLogVO vo, HttpSession session, RedirectAttributes rttr){
 		logger.info("책 로그 삭제");

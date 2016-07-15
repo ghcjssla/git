@@ -19,6 +19,7 @@ public interface BookLogDAO {
 	public void update(BookLogVO vo)throws Exception;
 	public void updateBookLog(BookLogVO vo);
 	public void updateBook(BookVO vo);
+	public void updateBookReport(BookVO vo);
 	public void deleteBook(BookLogVO vo);
 	public void deleteBooklog(BookLogVO vo);
 	public void deleteBookLogAll(BookLogVO vo);

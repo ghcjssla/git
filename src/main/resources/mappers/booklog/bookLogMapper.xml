@@ -98,7 +98,7 @@
     <select id="selectBook" resultType="BookVO">
     <![CDATA[
     select
-    seq, name, regdate, total_page
+    seq, name, regdate, total_page,link, link_name
     from book
     where seq = #{seq}
     AND uid= #{uid}
@@ -223,6 +223,16 @@
         where seq = #{seq}
         AND uid = #{uid}
     </update>
+    
+    <update id="updateBookReport">
+        update book 
+        set 
+        link_name = #{link_name},
+        link = #{link}
+        where seq = #{seq}
+        AND uid = #{uid}
+    </update>
+    
     
     <update id="updateBookLog">
         update book_log 

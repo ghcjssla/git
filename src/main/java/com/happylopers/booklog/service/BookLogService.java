@@ -25,4 +25,5 @@ public interface BookLogService {
 	public int ReadPagePerDayList(BookVO vo) throws Exception;
 	public String searchNaverBook(String keyWord, String display, String start) throws Exception;
 	public Map<String, Integer> selectBookStateNum(BookVO vo) throws Exception;
+	public void updateBookReport(BookVO vo) throws Exception;
 }

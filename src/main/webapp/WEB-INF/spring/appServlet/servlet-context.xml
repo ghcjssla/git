@@ -57,6 +57,7 @@
 			<mapping path="/bookLog/insertBookLog"/>
 			<mapping path="/bookLog/updateBook"/>
 			<mapping path="/bookLog/deleteBookLog"/>
+			<mapping path="/bookLog/updateBookReport"/>
             
             <beans:ref bean="authInterceptor"/>
         </interceptor>

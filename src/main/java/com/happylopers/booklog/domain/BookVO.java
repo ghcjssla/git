@@ -13,6 +13,9 @@ public class BookVO {
 	/* 원래 여기있음 안되고 그냥 TO에 있어야 하는데 귀찮아서 그냥 놨음 많아지면 분리 필요 */
 	private String mode;
 	
+	private String link;
+	private String link_name;
+	
 	
 	public String getMode() {
 		return mode;
@@ -62,11 +65,28 @@ public class BookVO {
 	public void setFinish(String finish) {
 		this.finish = finish;
 	}
+	
+	
+	public String getLink() {
+		return link;
+	}
+	public void setLink(String link) {
+		this.link = link;
+	}
+	public String getLink_name() {
+		return link_name;
+	}
+	public void setLink_name(String link_name) {
+		this.link_name = link_name;
+	}
 	@Override
 	public String toString() {
 		return "BookVO [seq=" + seq + ", name=" + name + ", total_page=" + total_page + ", regdate=" + regdate
-				+ ", last_page=" + last_page + ", finish=" + finish + ", uid=" + uid + ", mode=" + mode + "]";
+				+ ", last_page=" + last_page + ", finish=" + finish + ", uid=" + uid + ", mode=" + mode + ", link="
+				+ link + ", link_name=" + link_name + "]";
 	}
+	
+	
 	
 	
 }

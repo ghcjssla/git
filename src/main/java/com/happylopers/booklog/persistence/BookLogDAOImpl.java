@@ -92,6 +92,12 @@ public class BookLogDAOImpl implements BookLogDAO{
 	public void updateBook(BookVO vo) {
 		session.update(namespace + ".updateBook", vo);
 	}
+	
+	
+	@Override
+	public void updateBookReport(BookVO vo) {
+		session.update(namespace + ".updateBookReport", vo);
+	}
 
 	@Override
 	public void deleteBooklog(BookLogVO vo) {
