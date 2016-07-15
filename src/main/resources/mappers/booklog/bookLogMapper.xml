@@ -145,6 +145,8 @@
 					A.name ,
 					A.regdate ,
 					A.total_page ,
+					A.link,
+                    A.link_name,
 					(
 						SELECT MAX(last_page)
 						FROM book_log

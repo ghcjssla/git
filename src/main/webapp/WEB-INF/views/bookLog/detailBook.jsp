@@ -11,6 +11,9 @@
  -->
 <div class="panel panel-default">
   <div class="panel-body">
+  <c:if test="${book.link ne null}">
+      <a href="${book.link}"><i class="fa fa-fw fa-external-link"></i></a>
+  </c:if>
     <c:choose>
          <c:when test="${fn:length(book.name) > 25}">
           <c:out value="${fn:substring(book.name,0,24)}"/>…
@@ -49,8 +52,8 @@
 	    <c:when test="${bookLog.last_page eq book.total_page}">
 	    <button type="button" class="btn btn-success btn-xs" style='cursor:default' data-toggle="modal" data-target="#modalBookReportUpdateFrm">
 	    <c:choose>
-            <c:when test="${book.link eq null}">후기등록[${book.link}]</c:when>
-            <c:otherwise>후기수정</c:otherwise>
+            <c:when test="${book.link eq null}">독후감등록</c:when>
+            <c:otherwise>독후감수정</c:otherwise>
         </c:choose>
 	    </button>
 	    </c:when>
@@ -311,8 +314,8 @@ choose
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="modalBookReportUpdateFrmLabel">
         <c:choose>
-            <c:when test="${book.link eq null}">후기 등록[${book.link}]</c:when>
-            <c:otherwise>후기 수정</c:otherwise>
+            <c:when test="${book.link eq null}">독후감 등록</c:when>
+            <c:otherwise>독후감 수정</c:otherwise>
         </c:choose>
         </h4>
       </div>
@@ -321,7 +324,7 @@ choose
         <input name="seq" type="hidden" value="${book.seq}">
           <div class="form-group">
             <label for="recipient-name" class="control-label">링크 제목</label>
-            <input name="link_name" type="text" class="form-control" id="recipient-name" placeholder="링크 제목을 입력해 주세요" value="<c:choose><c:when test="${book.link_name eq null}">000님의 후기</c:when><c:otherwise>${book.link_name}</c:otherwise></c:choose>">
+            <input name="link_name" type="text" class="form-control" id="recipient-name" placeholder="링크 제목을 입력해 주세요" value="<c:choose><c:when test="${book.link_name eq null}">독후감</c:when><c:otherwise>${book.link_name}</c:otherwise></c:choose>">
           </div>
           <div class="form-group">
             <label for="message-text" class="control-label">링크주소</label>

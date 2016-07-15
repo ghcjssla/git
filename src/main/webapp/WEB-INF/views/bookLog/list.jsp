@@ -48,6 +48,9 @@
 				     </c:otherwise>
 				</c:choose>
 				</a>
+				<c:if test="${BookVO.link ne null}">
+				    <a href="${BookVO.link}"><i class="fa fa-fw fa-external-link"></i></a>
+				</c:if>
 			<%-- ${BookVO.total_page}/${BookVO.last_page}/${BookVO.finish} --%>
 			<%-- [<span>${BookVO.last_page}p/${BookVO.total_page}p</span>] --%>
 			<span class="badge <c:choose><c:when test="${100 eq percent}">bg-green</c:when><c:when test="${'L' eq mode}">bg-orange</c:when></c:choose>"><fmt:formatNumber value="${percent}" pattern="0"/>%</span>
