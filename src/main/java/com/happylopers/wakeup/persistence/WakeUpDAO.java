@@ -9,7 +9,8 @@ public interface WakeUpDAO {
 	public List<WakeUpVO> list(UserVO vo) throws Exception;
 	public void create(WakeUpVO vo)throws Exception;
 	public void delete(WakeUpVO vo)throws Exception;
-	void insertGoSleep(WakeUpVO vo) throws Exception;
-	void updateWakeUp(WakeUpVO vo) throws Exception;
+	public void insertGoSleep(WakeUpVO vo) throws Exception;
+	public void updateWakeUp(WakeUpVO vo) throws Exception;
 	public WakeUpVO selectLatestDateInfo(UserVO vo);
+	public void insertWakeUp(WakeUpVO vo) throws Exception;
 }

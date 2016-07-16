@@ -51,6 +51,11 @@ public class WakeUpServiceImpl implements WakeUpService{
 		 */
 		dao.insertGoSleep(vo);
 	}
+	
+	@Override
+	public void insertWakeUp(WakeUpVO vo) throws Exception {
+		dao.insertWakeUp(vo);
+	}
 
 	@Override
 	public void remove(WakeUpVO vo) throws Exception {

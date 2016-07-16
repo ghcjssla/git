@@ -23,7 +23,6 @@ public class WakeUpDAOImpl implements WakeUpDAO{
 
 	@Override
 	public void create(WakeUpVO vo) throws Exception {
-		System.out.println("WakeUpDAOImpl에서 호출 : "+vo.getTime_wakeup());
 		session.insert(namespace+".create", vo);
 	}
 	
@@ -33,8 +32,6 @@ public class WakeUpDAOImpl implements WakeUpDAO{
 	 */
 	@Override
 	public void insertGoSleep(WakeUpVO vo) throws Exception {
-		System.out.println("WakeUpDAOImpl에서 호출 : "+vo.getTime_sleep());
-		System.out.println("WakeUpDAOImpl에서 호출 : "+vo.getUid());
 		session.insert(namespace+".insertGoSleep", vo);
 	}
 
@@ -46,6 +43,17 @@ public class WakeUpDAOImpl implements WakeUpDAO{
 	public void updateWakeUp(WakeUpVO vo) throws Exception {
 		session.update(namespace+".updateWakeUp", vo);
 	}
+
+	/**
+	 * 기상기능 기존에 취침누르고 기상누르는방식이 제대로 시행되지 않아서
+	 * 그냥 기상만 누르면 되게끔 변경함
+	 * 새로운 시간을 입력한다.
+	 */
+	@Override
+	public void insertWakeUp(WakeUpVO vo) throws Exception {
+		session.insert(namespace+".insertWakeUp", vo);
+	}
+
 	
 	@Override
 	public void delete(WakeUpVO vo) throws Exception {

@@ -83,14 +83,14 @@
     <script src="/springBoard/resources/plugins/fullcalendar/fullcalendar.min.js"></script>
     <!-- Page specific script -->
     <script>
-    function goSleep(){
+    /* function goSleep(){
     	$("[name=goSleepForm]").attr("action","/springBoard/calendar/goSleep");
         $("[name=goSleepForm]").submit();
-    }
+    } */
     
     function wakeUp(){
     	$("[name=wakeUpForm]").attr("action","/springBoard/calendar/wakeUp");
-    	$("[name=seq]").val("${latestDateInfo.seq}");
+    	//$("[name=seq]").val("${latestDateInfo.seq}");
     	//alert($("[name=seq]").val());
         $("[name=wakeUpForm]").submit();
     }
@@ -133,7 +133,17 @@
         console.log("d : "+d+" / m : "+m+" / y : "+y);
         $('#calendar').fullCalendar({
       	customButtons: {
-   		<c:choose>
+      		<c:if test="${null eq latestDateInfo}">
+      		wakeup: {
+                text: '기상${latestDateInfo}',
+                click: function() {
+                   //alert('일어났다!');
+                   console.log(this);
+                   wakeUp();
+                }
+            }
+      		</c:if>
+   		/* <c:choose>
             <c:when test="${null != latestDateInfo}">
             wakeup: {
                       text: '기상',
@@ -153,7 +163,8 @@
                     }
                 }
             </c:otherwise>
-        </c:choose>
+        </c:choose> */
+        
         },
           header: {
             left: 'prev,next today wakeup sleep',
@@ -220,9 +231,9 @@
             {
             <c:choose>
             <c:when test='${null != WakeUpVO.time_sleep}'>
-            title: '취침&기상',
+            title: '기상',
             start: new Date(<fmt:formatDate pattern="yyyy" value="${WakeUpVO.time_sleep}" />, m, <fmt:formatDate pattern="dd" value="${WakeUpVO.time_sleep}" />, <fmt:formatDate pattern="HH" value="${WakeUpVO.time_sleep}" />, <fmt:formatDate pattern="mm" value="${WakeUpVO.time_sleep}" />),
-            end: new Date(<fmt:formatDate pattern="yyyy" value="${WakeUpVO.time_wakeup}" />, m, <fmt:formatDate pattern="dd" value="${WakeUpVO.time_wakeup}" />, <fmt:formatDate pattern="HH" value="${WakeUpVO.time_wakeup}" />, <fmt:formatDate pattern="mm" value="${WakeUpVO.time_wakeup}" />),
+            /* end: new Date(<fmt:formatDate pattern="yyyy" value="${WakeUpVO.time_wakeup}" />, m, <fmt:formatDate pattern="dd" value="${WakeUpVO.time_wakeup}" />, <fmt:formatDate pattern="HH" value="${WakeUpVO.time_wakeup}" />, <fmt:formatDate pattern="mm" value="${WakeUpVO.time_wakeup}" />), */
             </c:when>
             <c:otherwise>
             title: '기상시간',

@@ -74,19 +74,21 @@ public class CalendarController {
         return "redirect:/calendar/list";
     }
     */
-	@RequestMapping(value="/goSleep", method = RequestMethod.POST)
+	
+	/*@RequestMapping(value="/goSleep", method = RequestMethod.POST)
     public String goSleepPOST(WakeUpVO vo, RedirectAttributes rttr) throws Exception{
         logger.info("취침 데이터 등록"+vo.toString());
         
         service.insertGoSleep(vo);
         return "redirect:/calendar/main";
-    }
+    }*/
     
     @RequestMapping(value="/wakeUp", method = RequestMethod.POST)
     public String wakeUpPOST(WakeUpVO vo, RedirectAttributes rttr) throws Exception{
         logger.info("기상 데이터 등록" +vo.toString());
         
-        service.updateWakeUp(vo);
+        //service.updateWakeUp(vo);
+        service.insertWakeUp(vo);
         return "redirect:/calendar/main";
     }
     

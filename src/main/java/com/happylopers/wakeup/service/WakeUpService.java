@@ -11,8 +11,9 @@ public interface WakeUpService {
 	public void updateWakeUp(WakeUpVO vo) throws Exception;
 	public void remove(WakeUpVO vo) throws Exception;
 	public void modify(String modal_date, String modal_comment, int modal_seq)throws Exception;
-	void insertGoSleep(WakeUpVO vo) throws Exception;
+	public void insertGoSleep(WakeUpVO vo) throws Exception;
 	public WakeUpVO selectLatestDateInfo(UserVO vo) throws Exception;
+	public void insertWakeUp(WakeUpVO vo) throws Exception;
 }
 
 

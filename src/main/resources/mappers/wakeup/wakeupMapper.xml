@@ -17,7 +17,7 @@
     DATE_FORMAT(time_wakeup,'%Y%m%d') < DATE_FORMAT(date_add(now(), interval 1 month), '%Y%m%d')
     AND 
     DATE_FORMAT(time_wakeup,'%Y%m%d') >= DATE_FORMAT(CONCAT(DATE_FORMAT(NOW(),'%Y%m'),'01'), '%Y%m%d')
-    AND time_wakeup <> time_sleep
+    
     AND uid = #{uid}
     order by time_wakeup
     ]]>
@@ -26,8 +26,9 @@
     <select id="latestDateInfo" resultType="WakeUpVO">
     SELECT seq, time_wakeup,time_sleep, COMMENT, uid
 	FROM daily_log
-	WHERE time_wakeup = time_sleep
+	WHERE 1=1
 	AND uid = #{uid}
+	AND DATE_FORMAT(time_wakeup,'%Y%m%d') = DATE_FORMAT(now(),'%Y%m%d')
 	</select>
     
     <insert id="create">
@@ -38,6 +39,11 @@
     <insert id="insertGoSleep">
         insert into daily_log (time_sleep, uid)
         values(now(),#{uid})
+    </insert>
+    
+    <insert id="insertWakeUp">
+        insert into daily_log (time_wakeup, time_sleep, uid)
+        values(now(), now(),#{uid})
     </insert>
     
     <delete id="delete">
@@ -52,6 +58,7 @@
         where seq = #{seq}
         AND uid = #{uid}
     </update>
+    
     
     
 </mapper>
