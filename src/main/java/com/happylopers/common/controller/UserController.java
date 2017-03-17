@@ -15,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.util.WebUtils;
 
 import com.happylopers.board.domain.UserVO;
@@ -39,7 +40,14 @@ public class UserController {
 		String Referer = request.getHeader("referer");
 		logger.info("/loginPost 호출 로그인 시도 "+Referer);
 		
-		UserVO vo = service.login(dto);
+		UserVO vo = new UserVO();
+		if(!dto.getFbid().isEmpty()){
+			logger.info("/loginPost 호출 페이스북 로그인 시도 userid : "+dto.getFbid());
+			vo = service.loginFB(dto);
+		}else{
+			logger.info("/loginPost 호출 로그인 시도 userid : "+dto.getFbid());
+			vo = service.login(dto);
+		}
 		
 		if(vo == null){
 			logger.info("잘못된 정보 로그인 실패");
@@ -56,8 +64,6 @@ public class UserController {
 			Date sessionLimit = new Date(System.currentTimeMillis()+(1000*amount));
 			service.keepLogin(vo.getUid(), session.getId(), sessionLimit);
 		}
-		
-		model.addAttribute("","");
 	}
 	
 	@RequestMapping(value ="/logout", method = RequestMethod.GET)
@@ -84,5 +90,37 @@ public class UserController {
 			}
 		}
 		response.sendRedirect("/springBoard/user/login");
+	}
+	
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	public void registerGET(@ModelAttribute("dto") LoginDTO dto){
+		logger.info("/register 호출");
+	}
+	
+	@RequestMapping(value = "/joinTheHappyLopers", method = RequestMethod.POST)
+	@ResponseBody
+	public boolean joinTheHappyLopers(@ModelAttribute("vo") UserVO vo) throws Exception{
+		logger.info("/joinTheHappyLopers 호출 vo.getEmail() : "+vo.getEmail());
+		boolean success = false;
+		success = service.joinTheHappyLopers(vo);
+		logger.info("/joinTheHappyLopers 호출 success: "+success);
+		return success;
+	}
+	
+	@RequestMapping(value = "/checkDuplicatedUserWithFacebook", method = RequestMethod.POST)
+	@ResponseBody
+	public boolean checkDuplicatedUserWithFacebookPOST(@ModelAttribute("dto") LoginDTO dto) throws Exception{
+		logger.info("/checkDuplicatedUserWithFacebookPOST 호출 dto  : "+dto.getFbid());
+		//유저가있으면 flase 없으면 true
+		return service.checkDuplicatedUserWithFacebook(dto.getFbid());
+	}
+	
+	
+	@RequestMapping(value = "/checkDuplicatedUserId", method = RequestMethod.POST)
+	@ResponseBody
+	public boolean checkDuplicatedUserId(@ModelAttribute("dto") LoginDTO dto) throws Exception{
+		logger.info("/checkDuplicatedUserId 호출 dto  : "+dto.getUid());
+		//유저가있으면 flase 없으면 true
+		return service.checkDuplicatedUserId(dto.getUid());
 	}
 }

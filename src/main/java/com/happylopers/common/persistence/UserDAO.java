@@ -9,4 +9,8 @@ public interface UserDAO {
 	public UserVO login(LoginDTO dto)throws Exception;
 	public void keepLogin(String uid, String sessionId, Date next);
 	public UserVO checkUserWithSessionKey(String value);
+	public UserVO loginFB(LoginDTO dto);
+	boolean joinTheHappyLopers(UserVO vo);
+	public boolean checkDuplicatedUserWithFacebook(String value);
+	public boolean checkDuplicatedUserId(String uid);
 }

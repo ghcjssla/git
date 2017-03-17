@@ -3,6 +3,21 @@ package com.happylopers.dto;
 public class LoginDTO {
 	private String uid;
 	private String upw;
+	private String email;
+	private String fbid;
+	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getFbid() {
+		return fbid;
+	}
+	public void setFbid(String fbid) {
+		this.fbid = fbid;
+	}
 	private boolean useCookie;
 	
 	public String getUid() {

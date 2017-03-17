@@ -5,7 +5,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.happylopers.mapper.common.UserMapper">
     <select id="login" resultType="UserVO">
-        select uid, upw, uname from tbl_user where uid = #{uid} and upw = #{upw}
+        select uid, upw, uname, fbid, email, userimg, regdate from tbl_user where uid = #{uid} and upw = #{upw}
+    </select>
+    
+    <select id="checkDuplicatedUserWithFacebook" resultType="UserVO">
+        select uid, upw, uname, fbid, email, userimg, regdate from tbl_user where fbid = #{fbid}
+    </select>
+    
+    <select id="checkDuplicatedUserId" resultType="UserVO">
+        select uid, upw, uname, fbid, email, userimg, regdate from tbl_user where uid = #{uid}
+    </select>
+    
+    <select id="loginFB" resultType="UserVO">
+        select uid, upw, uname, fbid, email, userimg, regdate from tbl_user where fbid=#{fbid}
     </select>
     
     <update id="keepLogin">
@@ -16,4 +28,27 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     select * from tbl_user where sessionKey = #{value}
     and sessionlimit > now()
     </select>
+    
+    <insert id="joinTheHappyLopers">
+        INSERT INTO tbl_user(
+		   uid
+		  ,upw
+		  ,uname
+		  ,upoint
+		  ,sessionkey
+		  ,sessionlimit
+		  ,fbid
+		  ,email
+		) VALUES (
+		   #{uid}
+		  ,#{upw}
+		  ,#{uname}
+		  ,0
+		  ,''
+		  ,now()
+		  ,#{fbid}
+		  ,#{email}
+		)
+    </insert>
+    
 </mapper>

@@ -27,6 +27,21 @@ public class UserDAOImpl implements UserDAO{
 	}
 
 	@Override
+	public UserVO loginFB(LoginDTO dto) {
+		return session.selectOne(namespace+".loginFB", dto);
+	}
+	
+	@Override
+	public boolean joinTheHappyLopers(UserVO vo) {
+		boolean result = false;
+		int count = session.insert(namespace+".joinTheHappyLopers", vo);
+		if(count > 0){
+			result = true;
+		}
+		return result;
+	}
+	
+	@Override
 	public void keepLogin(String uid, String sessionId, Date next) {
 		Map<String, Object> paramMap = new HashMap<String, Object>();
 		paramMap.put("uid", uid);
@@ -34,13 +49,34 @@ public class UserDAOImpl implements UserDAO{
 		paramMap.put("next", next);
 		
 		session.update(namespace+".keepLogin",paramMap);
-		
-		
 	}
 
 	@Override
 	public UserVO checkUserWithSessionKey(String value) {
 		return session.selectOne(namespace+".checkUserWithSessionKey",value);
 	}
+	
+	@Override
+	public boolean checkDuplicatedUserWithFacebook(String value) {
+		//유저가있으면 flase 없으면 true
+		boolean seccess = false;
+		UserVO userVO = session.selectOne(namespace+".checkDuplicatedUserWithFacebook",value);
+		if(null == userVO){
+			seccess = true;
+		}
+		return seccess;
+	}
+	
+	@Override
+	public boolean checkDuplicatedUserId(String uid) {
+		//유저가있으면 flase 없으면 true
+		boolean seccess = false;
+		UserVO userVO = session.selectOne(namespace+".checkDuplicatedUserId",uid);
+		if(null == userVO){
+			seccess = true;
+		}
+		return seccess;
+	}
+	
 	
 }
