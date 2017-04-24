@@ -32,7 +32,7 @@
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="configLocation" value="classpath:/mybatis-config.xml"></property>
-		<property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml"></property>
+		<property name="mapperLocations" value="classpath:/mappers/**/*Mapper.xml"></property>
 	</bean>
 
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"
@@ -69,8 +69,10 @@
     
     
 	<context:component-scan base-package="com.happylopers.aop"></context:component-scan>
+	<context:component-scan base-package="org.happylopers.util"></context:component-scan>
 	
 	<aop:config></aop:config>
+	
 	
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 

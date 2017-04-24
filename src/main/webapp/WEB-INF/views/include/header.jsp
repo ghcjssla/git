@@ -42,12 +42,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- REQUIRED JS SCRIPTS -->
 
     <!-- jQuery 2.1.4 -->
-    <script src="/springBoard/resources/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script src="/springBoard/resources/plugins/jQuery/jquery-1.11.1.js"></script>
     <!-- Bootstrap 3.3.5 -->
     <script src="/springBoard/resources/bootstrap/js/bootstrap.min.js"></script>
     <!-- AdminLTE App -->
     <script src="/springBoard/resources/AdminLTE/js/app.min.js"></script>
+    <script type="text/javascript" src="/springBoard/resources/js/facebook_init.js"></script>
+    <script>
+    function fbLogOut(){
+        FB.logout(function(response) {
+        });
+    }
     
+    function happyLopersLogOut(){
+    	fbLogOut();
+    	location.href="/springBoard/user/logout";
+    }
+    </script>
   </head>
   <!--
   BODY TAG OPTIONS:
@@ -197,17 +208,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Menu Toggle Button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <!-- The user image in the navbar-->
-                  <img src="/springBoard/resources/AdminLTE/img/myImg_160X160.jpg" class="user-image" alt="User Image">
+                  <img src="/springBoard/resources/AdminLTE/img/<c:choose><c:when test="${null eq login.userimg}">boxed-bg.jpg</c:when><c:otherwise>${login.userimg}</c:otherwise></c:choose>" class="user-image" alt="User Image">
                   <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                  <span class="hidden-xs">HAPPYLOPER 김호성</span>
+                  <span class="hidden-xs">${login.uname}</span>
                 </a>
                 <ul style=' padgin:0px; margin:0px;' class="dropdown-menu">
                   <!-- The user image in the menu -->
                   <li class="user-header">
-                    <img src="/springBoard/resources/AdminLTE/img/myImg_160X160.jpg" class="img-circle" alt="User Image">
-                    <p>HAPPYLOPER 김호성<br />웹서비스 개발자
-                      <small>가입일 2016-01-16</small>
-                    </p>
+                    <img src='/springBoard/resources/AdminLTE/img/<c:choose><c:when test="${null eq login.userimg}">boxed-bg.jpg</c:when><c:otherwise>${login.userimg}</c:otherwise></c:choose>' class="img-circle" alt="User Image">
+                    <p>${login.uname}<br />
+                      <small>가입일 <fmt:formatDate value="${login.regdate}" pattern="yyyy-MM-dd"/></small>
+	                 </p>
                   </li>
                   <!-- Menu Body -->
                   <%-- --%>
@@ -228,7 +239,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
-                      <a href="/springBoard/user/logout" class="btn btn-default btn-flat">Sign out</a>
+                      <a href="javascript:happyLopersLogOut();" class="btn btn-default btn-flat">Sign out</a>
                     </div>
                   </li>
                 </ul>
