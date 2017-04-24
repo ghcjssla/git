@@ -36,7 +36,7 @@ public class WakeUpController {
 		//임시로 비로그인시 관리자 데이터 보여줌
 		if(null == obj){
 			vo = new UserVO();
-			vo.setUid("admin001");
+			vo.setUid("ghcjssla");
 		}else{
 			vo = (UserVO)obj;
 		}

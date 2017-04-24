@@ -63,4 +63,6 @@ public class UserServiceImpl implements UserService{
 		//유저가있으면 flase 없으면 true
 		return dao.checkDuplicatedUserId(uid);
 	}
+	
+	
 }

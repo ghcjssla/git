@@ -32,7 +32,7 @@ public class BookLogController {
 	    
 	    //임시로 비로그인시 관리자 데이터 보여줌
   		if(null == session.getAttribute("login")){
-  			vo.setUid("admin001");
+  			vo.setUid("ghcjssla");
   		}else{
   			UserVO userVO = (UserVO)session.getAttribute("login");
   			vo.setUid(userVO.getUid());
@@ -51,8 +51,8 @@ public class BookLogController {
 	    bookVO.setSeq(bookLogVO.getBook_seq());
 	    //임시로 비로그인시 관리자 데이터 보여줌
   		if(null == session.getAttribute("login")){
-  			bookVO.setUid("admin001");
-  			bookLogVO.setUid("admin001");
+  			bookVO.setUid("ghcjssla");
+  			bookLogVO.setUid("ghcjssla");
   		}else{
   			UserVO userVO = (UserVO)session.getAttribute("login");
   			bookVO.setUid(userVO.getUid());
@@ -81,7 +81,7 @@ public class BookLogController {
         
 		//임시로 비로그인시 관리자 데이터 보여줌
 		if(null == session.getAttribute("login")){
-			vo.setUid("admin001");
+			vo.setUid("ghcjssla");
 		}else{
 			UserVO userVO = (UserVO)session.getAttribute("login");
 			vo.setUid(userVO.getUid());
@@ -96,7 +96,7 @@ public class BookLogController {
 		logger.info("책 로그 수정");
 		//임시로 비로그인시 관리자 데이터 보여줌
 		if(null == session.getAttribute("login")){
-			vo.setUid("admin001");
+			vo.setUid("ghcjssla");
 		}else{
 			UserVO userVO = (UserVO)session.getAttribute("login");
 			vo.setUid(userVO.getUid());
@@ -111,7 +111,7 @@ public class BookLogController {
 		logger.info("책 로그 입력");
 		//임시로 비로그인시 관리자 데이터 보여줌
 		if(null == session.getAttribute("login")){
-			vo.setUid("admin001");
+			vo.setUid("ghcjssla");
 		}else{
 			UserVO userVO = (UserVO)session.getAttribute("login");
 			vo.setUid(userVO.getUid());
@@ -139,7 +139,7 @@ public class BookLogController {
 		logger.info("책 로그 삭제");
 		//임시로 비로그인시 관리자 데이터 보여줌
 		if(null == session.getAttribute("login")){
-			vo.setUid("admin001");
+			vo.setUid("ghcjssla");
 		}else{
 			UserVO userVO = (UserVO)session.getAttribute("login");
 			vo.setUid(userVO.getUid());
@@ -153,7 +153,7 @@ public class BookLogController {
 		logger.info("책 모든 데이터 삭제");
 		//임시로 비로그인시 관리자 데이터 보여줌
 		if(null == session.getAttribute("login")){
-			vo.setUid("admin001");
+			vo.setUid("ghcjssla");
 		}else{
 			UserVO userVO = (UserVO)session.getAttribute("login");
 			vo.setUid(userVO.getUid());

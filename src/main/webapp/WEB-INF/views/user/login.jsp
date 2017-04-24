@@ -56,11 +56,15 @@
 
 
         <a href="#">I forgot my password</a><span style="font-size:0.1em">(미구현)</span><br>
-        <a href="/springBoard/user/register" class="text-center">Register a new membership</a><span style="font-size:0.1em"></span>
+        <!-- <a href="/springBoard/user/register" class="text-center">Register a new membership</a><span style="font-size:0.1em"></span> -->
+        <a href="/springBoard/user/register" class="text-center">가입하기</a><span style="font-size:0.1em"></span>
 		
-		<a href="javascript:fbLogin();" class="btn btn-block btn-social btn-facebook" style="margin-top:2em">
+		<!-- <a href="javascript:fbLogin();" class="btn btn-block btn-social btn-facebook" style="margin-top:2em">
 		  <i class="fa fa-facebook"></i> 페이스북 계정으로 로그인
-		</a>
+		</a> -->
+		<a href="${fbURL}" class="btn btn-block btn-social btn-facebook" style="margin-top:2em">
+          <i class="fa fa-facebook"></i> 페이스북 계정으로 로그인
+        </a>
 		<!-- <div onClick="fbLogOut();">로그아웃</div> -->
 		
       </div><!-- /.login-box-body -->
