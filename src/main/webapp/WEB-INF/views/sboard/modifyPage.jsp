@@ -59,7 +59,7 @@
 						console.log(formObj);
 
 						$(".btn-warning").on("click", function() {
-							self.location = "/springBoard/sboard/list?page=${cri.page}&perPageNum=${cri.perPageNum}"
+							self.location = "/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/sboard/list?page=${cri.page}&perPageNum=${cri.perPageNum}"
 							+"&searchType=${cri.searchType}&keyword=${cri.keyword}";
 						});
 

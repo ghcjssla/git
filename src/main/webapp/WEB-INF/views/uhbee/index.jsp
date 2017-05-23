@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="/springBoard/resources/mobile/css/smartphone.css" media="only screen and (min-device-width : 320px) and (max-device-width : 48px)">
+<link rel="stylesheet" href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/mobile/css/smartphone.css" media="only screen and (min-device-width : 320px) and (max-device-width : 48px)">
 <title>모바일 연습</title>
 <style>
 #shadowBox1{

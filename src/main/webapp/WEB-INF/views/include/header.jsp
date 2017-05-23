@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions"  prefix="fn" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -12,25 +13,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/springBoard/resources/mobile/img/app_icon.png" />
-    <link rel="apple-touch-icon-precomposed" href="/springBoard/resources/mobile/img/app_icon.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/mobile/img/app_icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/mobile/img/app_icon.png" />
  
     <title>HAPPYLOPERS</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
-    <link href="/springBoard/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="/springBoard/resources/AdminLTE/css/AdminLTE.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/AdminLTE/css/AdminLTE.min.css" rel="stylesheet" type="text/css">
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect.
     -->
-    <link rel="stylesheet" href="/springBoard/resources/AdminLTE/css/skins/skin-blue.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/AdminLTE/css/skins/skin-blue.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,12 +43,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- REQUIRED JS SCRIPTS -->
 
     <!-- jQuery 2.1.4 -->
-    <script src="/springBoard/resources/plugins/jQuery/jquery-1.11.1.js"></script>
+    <script src="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/plugins/jQuery/jquery-1.11.1.js"></script>
     <!-- Bootstrap 3.3.5 -->
-    <script src="/springBoard/resources/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/bootstrap/js/bootstrap.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="/springBoard/resources/AdminLTE/js/app.min.js"></script>
-    <script type="text/javascript" src="/springBoard/resources/js/facebook_init.js"></script>
+    <script src="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/AdminLTE/js/app.min.js"></script>
+    <script type="text/javascript" src="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/js/facebook_init.js"></script>
     <script>
     function fbLogOut(){
         FB.logout(function(response) {
@@ -56,7 +57,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     
     function happyLopersLogOut(){
     	fbLogOut();
-    	location.href="/springBoard/user/logout";
+    	location.href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/user/logout";
     }
     </script>
   </head>
@@ -87,7 +88,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <header class="main-header">
 
         <!-- Logo -->
-        <a href="/springBoard/sboard/list" class="logo">
+        <a href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/sboard/list" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>HAPPYLOPERS</b></span>
           <!-- logo for regular state and mobile devices -->
@@ -121,7 +122,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <a href="#">
                           <div class="pull-left">
                             <!-- User Image -->
-                            <img src="/springBoard/resources/AdminLTE/img/myImg_160X160.jpg" class="img-circle" alt="User Image">
+                            <img src="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/AdminLTE/img/myImg_160X160.jpg" class="img-circle" alt="User Image">
                           </div>
                           <!-- Message title and timestamp -->
                           <h4>
@@ -200,7 +201,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <c:choose>
               <c:when test="${empty login}">
               <li>
-                  <a href="/springBoard/user/login"><i class="fa"></i> <span>로그인 </span></a>
+                  <a href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/user/login"><i class="fa"></i> <span>로그인 </span></a>
               </li>
               </c:when>
               <c:when test="${!empty login}">
@@ -208,14 +209,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Menu Toggle Button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <!-- The user image in the navbar-->
-                  <img src="/springBoard/resources/AdminLTE/img/<c:choose><c:when test="${null eq login.userimg}">boxed-bg.jpg</c:when><c:otherwise>${login.userimg}</c:otherwise></c:choose>" class="user-image" alt="User Image">
+                  <img src="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/AdminLTE/img/<c:choose><c:when test="${null eq login.userimg}">boxed-bg.jpg</c:when><c:otherwise>${login.userimg}</c:otherwise></c:choose>" class="user-image" alt="User Image">
                   <!-- hidden-xs hides the username on small devices so only the image appears. -->
                   <span class="hidden-xs">${login.uname}</span>
                 </a>
                 <ul style=' padgin:0px; margin:0px;' class="dropdown-menu">
                   <!-- The user image in the menu -->
                   <li class="user-header">
-                    <img src='/springBoard/resources/AdminLTE/img/<c:choose><c:when test="${null eq login.userimg}">boxed-bg.jpg</c:when><c:otherwise>${login.userimg}</c:otherwise></c:choose>' class="img-circle" alt="User Image">
+                    <img src='/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/AdminLTE/img/<c:choose><c:when test="${null eq login.userimg}">boxed-bg.jpg</c:when><c:otherwise>${login.userimg}</c:otherwise></c:choose>' class="img-circle" alt="User Image">
                     <p>${login.uname}<br />
                       <small>가입일 <fmt:formatDate value="${login.regdate}" pattern="yyyy-MM-dd"/></small>
 	                 </p>
@@ -251,17 +252,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <li>
                 <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
               </li>              
-              <li class="active"><a href="/springBoard/wakeup/list"><i class="fa fa-calendar"></i> <span>기상 일지</span></a></li>
-              <li class="active"><a href="/springBoard/bookLog/list"><i class="fa fa-book"></i> <span>책 일지</span></a></li>
-              <li class="active"><a href="/springBoard/sboard/list"><i class="fa fa-list-alt"></i> <span>게시판</span></a></li>
+              <li class="active"><a href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/wakeup/list"><i class="fa fa-calendar"></i> <span>기상 일지</span></a></li>
+              <li class="active"><a href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/bookLog/list"><i class="fa fa-book"></i> <span>책 일지</span></a></li>
+              <li class="active"><a href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/sboard/list"><i class="fa fa-list-alt"></i> <span>게시판</span></a></li>
               
               <li class="active">
               <c:choose>
 	              <c:when test="${empty userVO}">
-	                  <a href="/springBoard/user/login"><i class="fa"></i> <span>로그인 </span></a>
+	                  <a href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/user/login"><i class="fa"></i> <span>로그인 </span></a>
 	              </c:when>
 	              <c:when test="${!empty userVO}">
-	                  <a href="/springBoard/user/logout"><i class="fa"></i> <span>로그아웃 </span></a>
+	                  <a href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/user/logout"><i class="fa"></i> <span>로그아웃 </span></a>
 	              </c:when>
               </c:choose>
               </li>
@@ -279,7 +280,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Sidebar user panel (optional) -->
           <div class="user-panel">
             <div class="pull-left image">
-              <img src="/springBoard/resources/AdminLTE/img/myImg_160X160.jpg" class="img-circle" alt="User Image">
+              <img src="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/AdminLTE/img/myImg_160X160.jpg" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
               <p>HAPPYLOPERS 김호성</p>
@@ -306,10 +307,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li class="header">HEADER</li>
              --%>
             <!-- Optionally, you can add icons to the links -->
-            <!-- <li class="active"><a href="/springBoard/wakeup/list"><i class="fa fa-calendar"></i> <span>기상 일지</span></a></li> -->
-            <li class="active"><a href="/springBoard/calendar/main"><i class="fa fa-calendar"></i> <span>일정</span></a></li>
-            <li class="active"><a href="/springBoard/bookLog/list"><i class="fa fa-book"></i> <span>책 일지</span></a></li>
-            <li class="active"><a href="/springBoard/sboard/list"><i class="fa fa-list-alt"></i> <span>게시판</span></a></li>
+            <!-- <li class="active"><a href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/wakeup/list"><i class="fa fa-calendar"></i> <span>기상 일지</span></a></li> -->
+            <li class="active"><a href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/calendar/main"><i class="fa fa-calendar"></i> <span>일정</span></a></li>
+            <li class="active"><a href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/bookLog/list"><i class="fa fa-book"></i> <span>책 일지</span></a></li>
+            <li class="active"><a href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/sboard/list"><i class="fa fa-list-alt"></i> <span>게시판</span></a></li>
             <!-- <li class="active"><a href="http://www.happylopers.com/redmine"><i class="fa fa-list-alt"></i><span>레드마인</span></a></li> -->
             <li><a href="https://github.com/ghcjssla/git/issues"><i class="fa fa-github"></i><span>git issues</span></a></li>
             <%--

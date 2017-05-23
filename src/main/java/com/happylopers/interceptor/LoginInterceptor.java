@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
@@ -15,6 +16,9 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 	private static final String LOGIN = "login";
 	private static final Logger logger = LoggerFactory.getLogger(LoginInterceptor.class);
 
+	@Value("#{propGlobal['APP_ROOT']}")
+    private String APP_ROOT="springBoard";
+	
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)throws Exception{
 		logger.info("로그인 인터셉터 동작 : preHandle");
 		HttpSession session = request.getSession();
@@ -44,7 +48,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 			if (request.getParameter("useCookie") != null) {
 				logger.info("자동로그인 기능 사용");
 				Cookie loginCookie = new Cookie("loginCookie", session.getId());
-				loginCookie.setPath("/springBoard");
+				loginCookie.setPath("/"+APP_ROOT);
 				//일주일
 				loginCookie.setMaxAge(60 * 60 * 24 * 7);
 				response.addCookie(loginCookie);
@@ -60,7 +64,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 			
 			Object preURI = session.getAttribute("preURI");
 			logger.info("권한 체크하고 방급 URI로 보내주기 : "+preURI);
-			response.sendRedirect(preURI != null ? (String)preURI:"/springBoard/bookLog/list");
+			response.sendRedirect(preURI != null ? (String)preURI:"/"+APP_ROOT+"/bookLog/list");
 		}
 	}
 	

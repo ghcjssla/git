@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions"  prefix="fn" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -16,18 +17,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
-    <link href="/springBoard/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="/springBoard/resources/AdminLTE/css/AdminLTE.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/AdminLTE/css/AdminLTE.min.css" rel="stylesheet" type="text/css">
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect.
     -->
-    <link rel="stylesheet" href="/springBoard/resources/AdminLTE/css/skins/skin-blue.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/AdminLTE/css/skins/skin-blue.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -63,7 +64,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <header class="main-header">
 
         <!-- Logo -->
-        <a href="/springBoard/adminLTE" class="logo">
+        <a href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/adminLTE" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>HAPPYLOPERS</b></span>
           <!-- logo for regular state and mobile devices -->
@@ -97,7 +98,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <a href="#">
                           <div class="pull-left">
                             <!-- User Image -->
-                            <img src="/springBoard/resources/AdminLTE/img/myImg_160X160.jpg" class="img-circle" alt="User Image">
+                            <img src="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/AdminLTE/img/myImg_160X160.jpg" class="img-circle" alt="User Image">
                           </div>
                           <!-- Message title and timestamp -->
                           <h4>
@@ -177,14 +178,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Menu Toggle Button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <!-- The user image in the navbar-->
-                  <img src="/springBoard/resources/AdminLTE/img/myImg_160X160.jpg" class="user-image" alt="User Image">
+                  <img src="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/AdminLTE/img/myImg_160X160.jpg" class="user-image" alt="User Image">
                   <!-- hidden-xs hides the username on small devices so only the image appears. -->
                   <span class="hidden-xs">HAPPYLOPER 김호성</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- The user image in the menu -->
                   <li class="user-header">
-                    <img src="/springBoard/resources/AdminLTE/img/myImg_160X160.jpg" class="img-circle" alt="User Image">
+                    <img src="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/AdminLTE/img/myImg_160X160.jpg" class="img-circle" alt="User Image">
                     <p>HAPPYLOPER 김호성<br />웹서비스 개발자
                       <small>가입일 2016-01-16</small>
                     </p>
@@ -231,7 +232,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Sidebar user panel (optional) -->
           <div class="user-panel">
             <div class="pull-left image">
-              <img src="/springBoard/resources/AdminLTE/img/myImg_160X160.jpg" class="img-circle" alt="User Image">
+              <img src="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/AdminLTE/img/myImg_160X160.jpg" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
               <p>HAPPYLOPERS 김호성</p>
@@ -375,11 +376,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- REQUIRED JS SCRIPTS -->
 
     <!-- jQuery 2.1.4 -->
-    <script src="/springBoard/resources/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script src="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <!-- Bootstrap 3.3.5 -->
-    <script src="/springBoard/resources/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/bootstrap/js/bootstrap.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="/springBoard/resources/AdminLTE/js/app.min.js"></script>
+    <script src="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/AdminLTE/js/app.min.js"></script>
 
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
          Both of these plugins are recommended to enhance the

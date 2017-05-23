@@ -61,7 +61,7 @@
 						<c:set var="reversI" value="${fn:length(list) - status.index }" scope="page" />
 							<tr>
 								<%-- <td class="text-center">${(pageMaker.totalCount - (pageMaker.cri.perPageNum * (pageMaker.cri.page-1))) - status.index}</td>--%>
-								<td><a href='/springBoard/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page) }&bno=${boardVO.bno}'>
+								<td><a href='/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page) }&bno=${boardVO.bno}'>
 								${fn:substring(boardVO.title, 0, 20)}<strong>[${boardVO.replycnt}]</strong>..
 									</a>
 								</td>
@@ -169,6 +169,4 @@
 
 			});
 </script>
-
-
 <%@include file="../include/footer.jsp"%>

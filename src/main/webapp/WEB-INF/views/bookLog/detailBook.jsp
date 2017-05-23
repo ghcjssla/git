@@ -391,7 +391,7 @@ choose
 <!-- /.content -->
 
 
-<script type="text/javascript" src="/springBoard/resources/js/jquery.validate.js"></script>
+<script type="text/javascript" src="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/js/jquery.validate.js"></script>
 <script>
 <%--
 $.validator.setDefaults({
@@ -430,19 +430,19 @@ $().ready(function() {
 
 <script>
 $("#startBtn").on("click",function(){
-	$("#startBookLogFrm").attr("action","/springBoard/bookLog/insertBookLog");
+	$("#startBookLogFrm").attr("action","/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/bookLog/insertBookLog");
 	$("#startBookLogFrm").attr("method","post");
 	$("#startBookLogFrm").submit();
 });
 
 $("#bookLogFrmSubmitBtn").on("click",function(){
-    $("#bookLogFrom").attr("action","/springBoard/bookLog/updateBookLog");
+    $("#bookLogFrom").attr("action","/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/bookLog/updateBookLog");
     $("#bookLogFrom").attr("method","post");
     $("#bookLogFrom").submit();
 });
 
 $("#bookUpdateFrmSubmitBtn").on("click",function(){
-    $("#bookUpdateFrom").attr("action","/springBoard/bookLog/updateBook");
+    $("#bookUpdateFrom").attr("action","/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/bookLog/updateBook");
     $("#bookUpdateFrom").attr("method","post");
     $("#bookUpdateFrom").submit();
 });
@@ -464,9 +464,9 @@ $("#bookDeleteFrmSubmitBtn").on("click",function(){
 	//alert("seq : "+$("#bookDeleteFrom input[name=seq]").val()+"/"+"book_seq : "+$("#bookDeleteFrom input[name=book_seq]").val());
 	var deleteTarget = $("input[name=deleteTarget]").val();
 	if("book" == deleteTarget){
-		$("#bookDeleteFrom").attr("action","/springBoard/bookLog/deleteBookAll");
+		$("#bookDeleteFrom").attr("action","/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/bookLog/deleteBookAll");
 	}else if("bookLog" == deleteTarget){
-		$("#bookDeleteFrom").attr("action","/springBoard/bookLog/deleteBookLog");
+		$("#bookDeleteFrom").attr("action","/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/bookLog/deleteBookLog");
 	}
     $("#bookDeleteFrom").attr("method","post");
     $("#bookDeleteFrom").submit();
@@ -486,7 +486,7 @@ $("#bookReportDeleteBtn").on("click",function(){
 });
 
 function bookUpdateReportCommonAction(){
-	$("#bookUpdateReportFrom").attr("action","/springBoard/bookLog/updateBookReport");
+	$("#bookUpdateReportFrom").attr("action","/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/bookLog/updateBookReport");
     $("#bookUpdateReportFrom").attr("method","post");
     $("#bookUpdateReportFrom").submit();
 }

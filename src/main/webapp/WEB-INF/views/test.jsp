@@ -1,8 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Ajax 테스트!!</title>
+
+<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>
+<spring:eval expression="@propGlobal['uploadPath']"></spring:eval>
+
+
 
 <style>
 #modDiv {
@@ -74,17 +80,17 @@
 
 
 	<!-- jQuery 2.1.4 -->
-	<script src="/springBoard/resources/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+	<script src="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/plugins/jQuery/jQuery-2.1.4.min.js"></script>
 
 	<script>
-	var springBoard = "/springBoard";
+	var <spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval> = "/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>";
 		var bno = 548;
 
 		getPageList(1);
 
 		function getAllList() {
 
-	    $.getJSON(springBoard+"/replies/all/" + bno, function(data) {
+	    $.getJSON(<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>+"/replies/all/" + bno, function(data) {
 	
 				console.log(data.length);
 	
@@ -109,7 +115,7 @@
 
 			$.ajax({
 				type : 'post',
-				url : springBoard+'/replies',
+				url : <spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>+'/replies',
 				headers : {
 					"Content-Type" : "application/json",
 					"X-HTTP-Method-Override" : "POST"
@@ -154,7 +160,7 @@
 
 			$.ajax({
 				type : 'delete',
-				url : springBoard+'/replies/' + rno,
+				url : <spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>+'/replies/' + rno,
 				headers : {
 					"Content-Type" : "application/json",
 					"X-HTTP-Method-Override" : "DELETE"
@@ -179,7 +185,7 @@
 
 			$.ajax({
 				type : 'put',
-				url : springBoard+'/replies/' + rno,
+				url : <spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>+'/replies/' + rno,
 				headers : {
 					"Content-Type" : "application/json",
 					"X-HTTP-Method-Override" : "PUT"
@@ -200,7 +206,7 @@
 		
 		function getPageList(page) {
 
-			$.getJSON(springBoard+"/replies/" + bno + "/" + page,
+			$.getJSON(<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>+"/replies/" + bno + "/" + page,
 							function(data) {
 
 								console.log("getPageList 호출 : "+data.list.length);

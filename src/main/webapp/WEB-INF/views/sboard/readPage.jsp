@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@include file="../include/header.jsp"%>
-<script type="text/javascript" src="/springBoard/resources/js/upload.js"></script>
+<script type="text/javascript" src="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/js/upload.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
 
 
@@ -190,7 +190,7 @@
 <script>
     function goLogin(){
     	//이 부분  preURI 처리 필요
-        location.href = "/springBoard/user/login";
+        location.href = "/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/user/login";
     }
 
     Handlebars.registerHelper("eqReplyer", function(replyer, block) {
@@ -258,7 +258,7 @@
         if ($(".timeline li").size() > 1) {
             return;
         }
-        getPage("/springBoard/replies/" + bno + "/1");
+        getPage("/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/replies/" + bno + "/1");
     });
     
 
@@ -268,7 +268,7 @@
         
         replyPage = $(this).attr("href");
         
-        getPage("/springBoard/replies/"+bno+"/"+replyPage);
+        getPage("/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/replies/"+bno+"/"+replyPage);
         
     });
     
@@ -283,7 +283,7 @@
           
           $.ajax({
                 type:'post',
-                url:'/springBoard/replies/',
+                url:'/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/replies/',
                 headers: { 
                       "Content-Type": "application/json",
                       "X-HTTP-Method-Override": "POST" },
@@ -294,7 +294,7 @@
                     if(result == 'SUCCESS'){
                         alert("등록 되었습니다.");
                         replyPage = 1;
-                        getPage("/springBoard/replies/"+bno+"/"+replyPage );
+                        getPage("/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/replies/"+bno+"/"+replyPage );
                         replyerObj.val("");
                         replytextObj.val("");
                     }
@@ -320,7 +320,7 @@
           
           $.ajax({
                 type:'put',
-                url:'/springBoard/replies/'+rno,
+                url:'/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/replies/'+rno,
                 headers: { 
                       "Content-Type": "application/json",
                       "X-HTTP-Method-Override": "PUT" },
@@ -330,7 +330,7 @@
                     console.log("result: " + result);
                     if(result == 'SUCCESS'){
                         alert("수정 되었습니다.");
-                        getPage("/springBoard/replies/"+bno+"/"+replyPage );
+                        getPage("/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/replies/"+bno+"/"+replyPage );
                     }
             }});
     });
@@ -343,7 +343,7 @@
           
           $.ajax({
                 type:'delete',
-                url:'/springBoard/replies/'+rno,
+                url:'/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/replies/'+rno,
                 headers: { 
                       "Content-Type": "application/json",
                       "X-HTTP-Method-Override": "DELETE" },
@@ -352,7 +352,7 @@
                     console.log("result: " + result);
                     if(result == 'SUCCESS'){
                         alert("삭제 되었습니다.");
-                        getPage("/springBoard/replies/"+bno+"/"+replyPage );
+                        getPage("/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/replies/"+bno+"/"+replyPage );
                     }
             }});
     });
@@ -367,7 +367,7 @@
         console.log(formObj);
 
         $("#modifyBtn").on("click", function() {
-            formObj.attr("action", "/springBoard/sboard/modifyPage");
+            formObj.attr("action", "/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/sboard/modifyPage");
             formObj.attr("method", "get");
             formObj.submit();
         });
@@ -386,17 +386,17 @@
             });
             
             if(Number(arr.length) > Number(0)){
-                $.post("/springBoard/deleteAllFiles",{files:arr}, function(){
+                $.post("/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/deleteAllFiles",{files:arr}, function(){
                 	
                 });
             }
-            formObj.attr("action","/springBoard/sboard/removePage");
+            formObj.attr("action","/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/sboard/removePage");
             formObj.submit();
         });
 
         $("#goListBtn").on("click", function() {
             formObj.attr("method","get");
-            formObj.attr("action","/springBoard/sboard/list");
+            formObj.attr("action","/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/sboard/list");
             formObj.submit();
         });
 
@@ -404,7 +404,7 @@
         var bno = ${boardVO.bno};
         var template = Handlebars.compile($("#templateAttach").html());
         
-        $.getJSON("/springBoard/sboard/getAttach/"+bno,function(list){
+        $.getJSON("/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/sboard/getAttach/"+bno,function(list){
             $(list).each(function(){
                 var fileInfo = getFileInfo(this);
                 var html = template(fileInfo);

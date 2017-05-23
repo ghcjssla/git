@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import org.springframework.web.util.WebUtils;
 
@@ -20,6 +21,9 @@ public class AuthInterceptor extends HandlerInterceptorAdapter{
 	private UserService service;
 	  
 	private static final Logger logger = LoggerFactory.getLogger(AuthInterceptor.class);
+	
+	@Value("#{propGlobal['APP_ROOT']}")
+    private String APP_ROOT="springBoard";
 	
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)throws Exception{
 		logger.info("로그인 체크 인터셉터");
@@ -43,7 +47,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter{
 				}
 			}
 			
-			response.sendRedirect("/springBoard/user/login");
+			response.sendRedirect("/"+APP_ROOT+"/user/login");
 			return false;
 		}
 		return true;

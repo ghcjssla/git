@@ -17,9 +17,9 @@
 <%--
 <nav>
     <ul class="nav nav-tabs nav-justified">
-      <li role="presentation" id="learning" <c:if test="${'L' eq mode}">class="active"</c:if>><a href="/springBoard/bookLog/list?mode=L">학습중&nbsp;&nbsp;<span class="badge">${bookStateNum.L}</span></a></li>
-      <li role="presentation" id="waiting" <c:if test="${'W' eq mode}">class="active"</c:if>><a href="/springBoard/bookLog/list?mode=W">대기중&nbsp;&nbsp;<span class="badge">${bookStateNum.W}</span></a></li>
-      <li role="presentation" id="studied" <c:if test="${'S' eq mode}">class="active"</c:if>><a href="/springBoard/bookLog/list?mode=S">완료&nbsp;&nbsp;<span class="badge">${bookStateNum.S}</span></a></li>
+      <li role="presentation" id="learning" <c:if test="${'L' eq mode}">class="active"</c:if>><a href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/bookLog/list?mode=L">학습중&nbsp;&nbsp;<span class="badge">${bookStateNum.L}</span></a></li>
+      <li role="presentation" id="waiting" <c:if test="${'W' eq mode}">class="active"</c:if>><a href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/bookLog/list?mode=W">대기중&nbsp;&nbsp;<span class="badge">${bookStateNum.W}</span></a></li>
+      <li role="presentation" id="studied" <c:if test="${'S' eq mode}">class="active"</c:if>><a href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/bookLog/list?mode=S">완료&nbsp;&nbsp;<span class="badge">${bookStateNum.S}</span></a></li>
     </ul>
 </nav>
  --%>
@@ -38,7 +38,7 @@
 		<c:forEach items="${list}" var="BookVO">
 		<c:set var="percent" value="${(BookVO.last_page*100)/BookVO.total_page}"></c:set>
 			<li class="list-group-item">
-				<a href="/springBoard/bookLog/detailBook?book_seq=${BookVO.seq}&mode=${mode}">
+				<a href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/bookLog/detailBook?book_seq=${BookVO.seq}&mode=${mode}">
 				<c:choose>
 				     <c:when test="${fn:length(BookVO.name) > 19}">
 				      <c:out value="${fn:substring(BookVO.name,0,19)}"/>…
@@ -93,14 +93,14 @@
 <!-- /.content -->
 <script>
 $("#modalBookFrmSubmitBtn").on("click",function(){
-	$("#bookFrom").attr("action","/springBoard/bookLog/registerBook");
+	$("#bookFrom").attr("action","/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/bookLog/registerBook");
 	$("#bookFrom").attr("method","post");
     $("#bookFrom").submit();
 });
 </script>
 
 
-<script type="text/javascript" src="/springBoard/resources/js/jquery.validate.js"></script>
+<script type="text/javascript" src="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/js/jquery.validate.js"></script>
 <script>
 <%--
 $.validator.setDefaults({
@@ -151,7 +151,7 @@ $().ready(function() {
     });
     
     function goBookList(obj){
-    	var goURL = "/springBoard/bookLog/list";
+    	var goURL = "/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/bookLog/list";
     	
     	if("learning"==$(obj).attr("id")){
     		$("#learning").attr("class","active");
@@ -234,7 +234,7 @@ function commonSearchBook(searchKeyWord, nowPage, searchMode){
 	$.ajax({
         type: "GET"
         ,dataType: "xml"
-        ,url: "/springBoard/bookLog/searchNaverBook/"
+        ,url: "/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/bookLog/searchNaverBook/"
         ,data:{keyWord:searchKeyWord,start:nowPage,display:perPage}
         ,success: function(xml){
         	if("goBookSearch"==searchMode){

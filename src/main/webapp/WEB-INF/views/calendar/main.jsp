@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@include file="../include/header.jsp"%>
 <!-- fullCalendar 2.6.1-->
-    <link rel="stylesheet" href="/springBoard/resources/plugins/fullcalendar/fullcalendar.min.css">
-    <link rel="stylesheet" href="/springBoard/resources/plugins/fullcalendar/fullcalendar.print.css" media="print">
+    <link rel="stylesheet" href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/plugins/fullcalendar/fullcalendar.min.css">
+    <link rel="stylesheet" href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/plugins/fullcalendar/fullcalendar.print.css" media="print">
 
         <!-- Main content -->
         <section class="content">
@@ -80,16 +80,16 @@
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <!-- fullCalendar 2.6.1 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
-    <script src="/springBoard/resources/plugins/fullcalendar/fullcalendar.min.js"></script>
+    <script src="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/plugins/fullcalendar/fullcalendar.min.js"></script>
     <!-- Page specific script -->
     <script>
     /* function goSleep(){
-    	$("[name=goSleepForm]").attr("action","/springBoard/calendar/goSleep");
+    	$("[name=goSleepForm]").attr("action","/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/calendar/goSleep");
         $("[name=goSleepForm]").submit();
     } */
     
     function wakeUp(){
-    	$("[name=wakeUpForm]").attr("action","/springBoard/calendar/wakeUp");
+    	$("[name=wakeUpForm]").attr("action","/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/calendar/wakeUp");
     	//$("[name=seq]").val("${latestDateInfo.seq}");
     	//alert($("[name=seq]").val());
         $("[name=wakeUpForm]").submit();

@@ -67,7 +67,7 @@
 </section>
 <!-- /.content -->
 
-<script type="text/javascript" src="/springBoard/resources/js/upload.js"></script>
+<script type="text/javascript" src="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/js/upload.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
 
 <script id="template" type="text/x-handlebars-template">
@@ -98,7 +98,7 @@ $(".fileDrop").on("drop", function(event){
     
     
     $.ajax({
-          url: '/springBoard/uploadAjax',
+          url: '/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/uploadAjax',
           data: formData,
           dataType:'text',
           processData: false,

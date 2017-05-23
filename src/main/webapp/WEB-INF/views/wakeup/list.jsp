@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions"  prefix="fn" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page session="false"%>
@@ -15,7 +16,7 @@
 <meta name="description" content="이건 기상일지">
 <meta name="author" content="해피로퍼 김호성">
 <meta name="keywords" content="happylopers, happyloper, 해피로퍼, 김호성, 해피로퍼 김호성">
-<link rel="apple-touch-icon-precomposed" href="/springBoard/resources/mobile/img/app_icon.png" />
+<link rel="apple-touch-icon-precomposed" href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/mobile/img/app_icon.png" />
 
 <script type="text/javascript" language = "javascript">
  window.addEventListener('load', function() {
@@ -31,15 +32,15 @@
 <title>기상일지 페이지</title>
 
 <!-- Bootstrap core CSS -->
-<link href="/springBoard/resources/bootstrap/css/bootstrap.min.css"
+<link href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
 <!-- Bootstrap theme -->
 <link
-	href="/springBoard/resources/bootstrap/css/bootstrap-theme.min.css"
+	href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/bootstrap/css/bootstrap-theme.min.css"
 	rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="/springBoard/resources/bootstrap/css/wakeup/theme.css"
+<link href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/bootstrap/css/wakeup/theme.css"
 	rel="stylesheet">
 <style>
  /* 모바일웹 css 설정 */
@@ -185,13 +186,13 @@ html {
 	        //alert("클릭했나");
 	        //alert("날짜 값 : "+$("#date").val());
 	        //$("#ss").val($.now());
-	        $("[name=dailyLogForm]").attr("action","/springBoard/wakeup/register");
+	        $("[name=dailyLogForm]").attr("action","/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/wakeup/register");
 	        //alert("액션 값 : "+$("[name=dailyLogForm]").attr("action"));
 	        $("[name=dailyLogForm]").submit();
 	    });
 	    
 	    $("#modifyBtn").click(function(){
-            $("[name=modifyDailyLogForm]").attr("action","/springBoard/wakeup/modify");
+            $("[name=modifyDailyLogForm]").attr("action","/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/wakeup/modify");
             $("[name=modifyDailyLogForm]").submit();
         }); 
 	    
@@ -201,7 +202,7 @@ html {
 	    	var seq = $(this).attr("seq")
 	    	console.log("선택한 SEQ : "+seq);
 	    	$("[name=seq]").val(seq);
-	    	$("[name=dailyLogForm]").attr("action","/springBoard/wakeup/delete");
+	    	$("[name=dailyLogForm]").attr("action","/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/wakeup/delete");
 	    	$("[name=dailyLogForm]").submit();
 	    	}
         });
@@ -232,6 +233,6 @@ html {
 	<!-- Bootstrap core JavaScript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="/springBoard/resources/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

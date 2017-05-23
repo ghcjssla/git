@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,13 +8,13 @@
     <title>HAPPYLOPERS-해피로퍼즈 - 로그인</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
-    <link href="/springBoard/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Font Awesome Icons -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
-    <link href="/springBoard/resources/AdminLTE/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+    <link href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/AdminLTE/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
     <!-- iCheck -->
-    <link href="/springBoard/resources/plugins/iCheck/square/blue.css" rel="stylesheet" type="text/css" />
+    <link href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/plugins/iCheck/square/blue.css" rel="stylesheet" type="text/css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,7 +26,7 @@
   <body class="login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href="/springBoard/resources/index2.html"><b>HAPPY</b>LOPERS</a>
+        <a href="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/index2.html"><b>HAPPY</b>LOPERS</a>
       </div><!-- /.login-logo -->
 		<div class="register-box-body">
 		    <p class="login-box-msg">Register a new membership</p>
@@ -82,13 +83,13 @@
 		<!-- /.register-box -->
 
     <!-- jQuery 2.1.4 -->
-    <script src="/springBoard/resources/plugins/jQuery/jquery-1.11.1.js"></script>
+    <script src="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/plugins/jQuery/jquery-1.11.1.js"></script>
     <!-- Bootstrap 3.3.2 JS -->
-    <script src="/springBoard/resources/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <!-- iCheck -->
-    <script src="/springBoard/resources/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="/springBoard/resources/js/jquery.validate.js"></script>
-    <script type="text/javascript" src="/springBoard/resources/js/additional-methods.js"></script>
+    <script src="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/js/jquery.validate.js"></script>
+    <script type="text/javascript" src="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/js/additional-methods.js"></script>
     <script type="text/javascript">
     var validId = false;
     $(function(){
@@ -174,7 +175,7 @@
       });
     </script>
     
-    <script type="text/javascript" src="/springBoard/resources/js/facebook_init.js"></script>
+    <script type="text/javascript" src="/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/resources/js/facebook_init.js"></script>
 	<script>
 	/**
 	* 1. 페이스북 특성상 우선 페이스북이 로그인이 되어야 한다.
@@ -219,14 +220,14 @@
             if(formValidate()){
                 $.ajax({
                     async: false,
-                    url:'/springBoard/user/joinTheHappyLopers',
+                    url:'/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/user/joinTheHappyLopers',
                     type:'post',
                     data:$("#joinFrm").serialize(),
                     success:function(data){
                         isJoin = data;
                         if(isJoin){
                         	alert("가입되었습니다.");
-                        	$("#joinFrm").attr("action","/springBoard/user/loginPost");
+                        	$("#joinFrm").attr("action","/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/user/loginPost");
                         	$("#joinFrm").submit();
                         }
                     }
@@ -242,7 +243,7 @@
             if (response.authResponse) {
             console.log('Welcome!  Fetching your information.... ');
                 FB.api('/me?fields=email,id,name', function(response) {
-                    $("#joinFrm").attr("action","/springBoard/user/loginPost");
+                    $("#joinFrm").attr("action","/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/user/loginPost");
                     $("#joinFrm input[name=fbid]").val(response.id);
                     $("#joinFrm").submit();
                 });
@@ -267,7 +268,7 @@
 		$("#joinFrm input[name=fbid]").val(fbid);
         $.ajax({
         	async: false,
-            url:'/springBoard/user/checkDuplicatedUserWithFacebook',
+            url:'/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/user/checkDuplicatedUserWithFacebook',
             type:'post',
             data:$("#joinFrm").serialize(),
             success:function(data){
@@ -294,7 +295,7 @@
 		if(formValidate()){
 			$.ajax({
 	            async: false,
-	            url:'/springBoard/user/joinTheHappyLopers',
+	            url:'/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/user/joinTheHappyLopers',
 	            type:'post',
 	            data:$("#joinFrm").serialize(),
 	            success:function(data){
@@ -315,7 +316,7 @@
 		var isDuplicate = false;
         $.ajax({
             async: false,
-            url:'/springBoard/user/checkDuplicatedUserId',
+            url:'/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/user/checkDuplicatedUserId',
             type:'post',
             data: { "uid": targetId },
             success:function(data){

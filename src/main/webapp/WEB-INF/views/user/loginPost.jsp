@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -9,7 +10,7 @@
 </head>
 <body>
   <script type="text/javascript">
-    self.location = "/springBoard/bookLog/list";
+    self.location = "/<spring:eval expression="@propGlobal['APP_ROOT']"></spring:eval>/bookLog/list";
   </script>
 </body>
 </html>

@@ -14,6 +14,7 @@ import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -40,8 +41,12 @@ public class UserController {
 	@Autowired
 	private FBGraph fbGraph;
 	
-	/*@Value("#{fb['fb.login.uri']}")*/
-	private String fbLoginURI="http://www.happylopers.com/springBoard/user/fbLogin";
+	@Value("#{propGlobal['APP_ROOT']}")
+    private String APP_ROOT;
+	
+	@Value("#{props['fb.login.uri']}")
+	private String fbLoginURI;
+	//private String fbLoginURI="http://www.happylopers.com/springBoard/user/fbLogin";
 	//private String fbLoginURI="http://localhost/springBoard/user/fbLogin";
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -117,13 +122,13 @@ public class UserController {
 			if (loginCookie != null) {
 				logger.info("쿠키삭제진행");
 				//패스가 제대로 적용이 안될시 쿠키는 삭제 안됨
-				loginCookie.setPath("/springBoard");
+				loginCookie.setPath("/"+APP_ROOT);
 				loginCookie.setMaxAge(0);
 				response.addCookie(loginCookie);
 				service.keepLogin(vo.getUid(), session.getId(), new Date());
 			}
 		}
-		response.sendRedirect("/springBoard/user/login");
+		response.sendRedirect("/"+APP_ROOT+"/user/login");
 	}
 	
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
