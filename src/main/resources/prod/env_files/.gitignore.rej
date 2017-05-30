@@ -1,3 +1,0 @@
-diff a/src/main/resources/prod/env_files/.gitignore b/src/main/resources/prod/env_files/.gitignore	(rejected hunks)
-@@ -0,0 +1 @@
-+/db.properties
