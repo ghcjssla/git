@@ -24,7 +24,7 @@
 		<property name="password" value="book_ex"></property>
 		 -->
 		<property name="url"
-            value="jdbc:log4jdbc:mysql://www.happylopers.com:3306/book_ex?zeroDateTimeBehavior=convertToNull"></property>
+            value="jdbc:log4jdbc:mysql://teatime.pe.kr:3306/happylopers?zeroDateTimeBehavior=convertToNull"></property>
         <property name="username" value="${db.username}"></property>
         <property name="password" value="${db.password}"></property>
 	</bean>

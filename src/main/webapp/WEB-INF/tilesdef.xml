@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<!-- no tiles //타일즈 미 적용 -->
+	<definition name="/jsp/*/front/*/*" template="/WEB-INF/jsp/tiles_layouts/layout_no_front.jsp">
+		<put-attribute name="front_app_header_sub" value="/WEB-INF/jsp/tiles_template/front_app_header_sub.jsp" type="template"/>
+		<put-attribute name="front_content" value="/WEB-INF/jsp/{1}/front/{2}/{3}.jsp" type="template"/>
+	</definition>
+	
+	<definition name="/jsp/*/admin/*/*" template="/WEB-INF/jsp/tiles_layouts/layout_no_admin.jsp">
+		<put-attribute name="admin_content" value="/WEB-INF/jsp/{1}/admin/{2}/{3}.jsp" type="template"/>
+	</definition>
+	
+	<definition name="front_index" template="/WEB-INF/jsp/tiles_layouts/layout_front_index.jsp">
+		<put-attribute name="front_app_header" value="/WEB-INF/jsp/tiles_template/front_app_header.jsp" type="template"/>
+		<put-attribute name="front_header_main" value="/WEB-INF/jsp/tiles_template/front_header_main.jsp" type="template"/>
+		<put-attribute name="front_content" value="/WEB-INF/jsp/KVCA/front/index.jsp" type="template"/>
+		<put-attribute name="front_footer" value="/WEB-INF/jsp/tiles_template/front_footer.jsp" type="template"/>
+		<put-attribute name="front_app_footer" value="/WEB-INF/jsp/tiles_template/front_app_footer.jsp" type="template"/>
+	</definition>
+	
+	<definition name="front_template" template="/WEB-INF/jsp/tiles_layouts/layout_front.jsp">
+		<put-attribute name="front_app_header_sub" value="/WEB-INF/jsp/tiles_template/front_app_header_sub.jsp" type="template"/>
+		<put-attribute name="front_header_sub" value="/WEB-INF/jsp/tiles_template/front_header_sub.jsp" type="template"/>
+		<put-attribute name="front_content" value="" type="template"/>
+		<put-attribute name="front_footer" value="/WEB-INF/jsp/tiles_template/front_footer.jsp" type="template"/>
+		<put-attribute name="front_app_footer" value="/WEB-INF/jsp/tiles_template/front_app_footer.jsp" type="template"/>
+	</definition>
+	
+	<definition name="*/front/*/*" extends="front_template">
+		<put-attribute name="front_content" value="/WEB-INF/jsp/{1}/front/{2}/{3}.jsp" type="template"/>
+	</definition>
+	
+	
+	<definition name="error/*" extends="front_template_vir">
+		<put-attribute name="front_content_vir" value="/WEB-INF/jsp/egovframework/cmmn/{1}.jsp" type="template"/>
+	</definition>
+	
+	<!-- 
+	<definition name="*/*" extends="Front_Template">
+		<put-attribute name="front_content" value="/WEB-INF/jsp/{1}/{2}.jsp" type="template"/>
+	</definition>
+
+	<definition name="*/*/*" extends="Front_Template">
+		<put-attribute name="front_content" value="/WEB-INF/jsp/{1}/{2}/{3}.jsp" type="template"/>
+	</definition>
+
+	<definition name="*/*/*/*" extends="Front_Template">
+		<put-attribute name="front_content" value="/WEB-INF/jsp/{1}/{2}/{3}/{4}.jsp" type="template"/> 
+	</definition>
+
+	<definition name="*/*/*/*/*" extends="Front_Template">
+		<put-attribute name="front_content" value="/WEB-INF/jsp/{1}/{2}/{3}/{4}/{5}.jsp" type="template"/>
+	</definition>
+ 	-->
+ 	
+ 	<definition name="admin_login_form" template="/WEB-INF/jsp/tiles_layouts/layout_blank.jsp">
+		<put-attribute name="admin_content" value="/WEB-INF/jsp/planB/admin/auth/LoginVm.jsp" type="template"/>
+	</definition>
+	
+	<definition name="admin_index" template="/WEB-INF/jsp/tiles_layouts/layout_admin.jsp">
+		<put-attribute name="admin_header" value="/WEB-INF/jsp/tiles_template/admin_header.jsp" type="template"/>
+		<put-attribute name="admin_menu" value="/WEB-INF/jsp/tiles_template/admin_menu.jsp" type="template"/>
+		<put-attribute name="admin_content" value="/WEB-INF/jsp/planB/admin/index.jsp" type="template"/>
+		<put-attribute name="admin_footer" value="/WEB-INF/jsp/tiles_template/admin_footer.jsp" type="template"/>
+		<put-attribute name="admin_control_sidebar" value="/WEB-INF/jsp/tiles_template/admin_control_sidebar.jsp" type="template"/>
+	</definition>
+	
+	<definition name="admin_template" template="/WEB-INF/jsp/tiles_layouts/layout_admin.jsp">
+		<put-attribute name="admin_header" value="/WEB-INF/jsp/tiles_template/admin_header.jsp" type="template"/>
+		<put-attribute name="admin_menu" value="/WEB-INF/jsp/tiles_template/admin_menu.jsp" type="template"/>
+		<put-attribute name="admin_content" value="" type="template"/>
+		<put-attribute name="admin_footer" value="/WEB-INF/jsp/tiles_template/admin_footer.jsp" type="template"/>
+		<put-attribute name="admin_control_sidebar" value="/WEB-INF/jsp/tiles_template/admin_control_sidebar.jsp" type="template"/>
+	</definition>
+	
+	<definition name="admin_error" extends="admin_template">
+		<put-attribute name="admin_content" value="/WEB-INF/jsp/planB/common/error.jsp" type="template"/>
+	</definition>
+	
+	<definition name="*/admin/*/*" extends="admin_template">
+		<put-attribute name="admin_content" value="/WEB-INF/jsp/{1}/admin/{2}/{3}.jsp" type="template"/>
+	</definition>
+	
+	<definition name="*/admin/*/*/*" extends="admin_template">
+		<put-attribute name="admin_content" value="/WEB-INF/jsp/{1}/admin/{2}/{3}/{4}.jsp" type="template"/>
+	</definition>
+	
+	<definition name="*/admin/*/*/*/*" extends="admin_template">
+		<put-attribute name="admin_content" value="/WEB-INF/jsp/{1}/admin/{2}/{3}/{4}/{5}.jsp" type="template"/>
+	</definition>
+	
+</tiles-definitions>
+
